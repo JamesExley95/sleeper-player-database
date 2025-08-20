@@ -44,6 +44,6 @@ URL: `https://raw.githubusercontent.com/YOUR_USERNAME/sleeper-player-database/ma
 ```
 
 ## Last Updated
-2025-08-20 15:56:30
+2025-08-20 17:36:36
 
 Total Players: 11400
