@@ -1,0 +1,29 @@
+{
+  "position_limits": {
+    "QB": 25,
+    "RB": 50,
+    "WR": 50,
+    "TE": 25,
+    "K": 15,
+    "DEF": 25,
+    "DL": 25,
+    "LB": 25,
+    "DB": 30
+  },
+  "data_sources": {
+    "primary": "nflverse/nfldata",
+    "adp": "fantasyfootballcalculator.com",
+    "injuries": "nfl.com",
+    "existing_db": "fantasy_football_2025.db"
+  },
+  "sync_settings": {
+    "json_to_sqlite": true,
+    "backup_frequency": "daily",
+    "update_schedule": "01:00 UTC"
+  },
+  "analysis_config": {
+    "trend_window_weeks": 4,
+    "consistency_threshold": 0.7,
+    "injury_impact_weight": 0.3
+  }
+}
