@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "last_updated": "2025-08-27T15:36:22.340Z",
+    "version": "1.0",
+    "total_players": 0,
+    "position_breakdown": {
+      "QB": 0,
+      "RB": 0,
+      "WR": 0,
+      "TE": 0,
+      "K": 0,
+      "DEF": 0,
+      "DL": 0,
+      "LB": 0,
+      "DB": 0
+    },
+    "data_source": "nflverse + fantasyfootballcalculator.com",
+    "compatible_with": "existing fantasy_football_2025.db"
+  },
+  "players": {
+    "example_player_id": {
+      "player_name": "Example Player",
+      "team": "NFL",
+      "position": "RB",
+      "adp_overall": 15,
+      "adp_position": 8,
+      "years_exp": 4,
+      "age": 25,
+      "last_updated": "2025-08-27T15:36:22.340Z"
+    }
+  }
+}
