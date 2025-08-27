@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "last_updated": "2025-08-27T15:39:06.620Z",
-    "version": "1.0",
+    "last_updated": "2025-08-27T15:59:57.099Z",
+    "version": "2.1",
     "total_players": 18,
     "position_breakdown": {
       "QB": 5,
@@ -14,9 +14,13 @@
       "LB": 0,
       "DB": 0
     },
-    "data_source": "nflverse + fantasyfootballcalculator.com",
-    "compatible_with": "existing fantasy_football_2025.db",
-    "data_collection_status": "completed"
+    "data_collection_status": "completed",
+    "data_source": "sleeper_api_live",
+    "season": 2025,
+    "week": 1,
+    "collection_type": "weekly_automated",
+    "adp_last_updated": "2025-08-27T15:59:57.099Z",
+    "injury_last_updated": "2025-08-27T15:59:57.099Z"
   },
   "players": {
     "mccaffrey_christian": {
@@ -28,9 +32,12 @@
       "years_exp": 7,
       "adp_overall": 1,
       "adp_position": 1,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 1,
+      "week_updated": 1
     },
     "josh_allen": {
       "player_id": "josh_allen",
@@ -39,11 +46,14 @@
       "position": "QB",
       "age": 28,
       "years_exp": 6,
-      "adp_overall": 2,
+      "adp_overall": 1,
       "adp_position": 1,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "doubtful",
+      "adp_round": 1,
+      "adp_pick": 1,
+      "week_updated": 1
     },
     "ekeler_austin": {
       "player_id": "ekeler_austin",
@@ -52,11 +62,14 @@
       "position": "RB",
       "age": 29,
       "years_exp": 7,
-      "adp_overall": 3,
+      "adp_overall": 8,
       "adp_position": 2,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 8,
+      "week_updated": 1
     },
     "kupp_cooper": {
       "player_id": "kupp_cooper",
@@ -65,11 +78,14 @@
       "position": "WR",
       "age": 31,
       "years_exp": 7,
-      "adp_overall": 4,
+      "adp_overall": 6,
       "adp_position": 1,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 6,
+      "week_updated": 1
     },
     "lamar_jackson": {
       "player_id": "lamar_jackson",
@@ -78,11 +94,14 @@
       "position": "QB",
       "age": 27,
       "years_exp": 6,
-      "adp_overall": 5,
+      "adp_overall": 1,
       "adp_position": 2,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 1,
+      "week_updated": 1
     },
     "henry_derrick": {
       "player_id": "henry_derrick",
@@ -91,11 +110,14 @@
       "position": "RB",
       "age": 30,
       "years_exp": 8,
-      "adp_overall": 6,
+      "adp_overall": 1,
       "adp_position": 3,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 1,
+      "week_updated": 1
     },
     "jefferson_justin": {
       "player_id": "jefferson_justin",
@@ -104,11 +126,14 @@
       "position": "WR",
       "age": 25,
       "years_exp": 4,
-      "adp_overall": 7,
+      "adp_overall": 12,
       "adp_position": 2,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 12,
+      "week_updated": 1
     },
     "joe_burrow": {
       "player_id": "joe_burrow",
@@ -117,11 +142,14 @@
       "position": "QB",
       "age": 27,
       "years_exp": 4,
-      "adp_overall": 8,
+      "adp_overall": 12,
       "adp_position": 3,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 12,
+      "week_updated": 1
     },
     "cook_dalvin": {
       "player_id": "cook_dalvin",
@@ -130,11 +158,14 @@
       "position": "RB",
       "age": 28,
       "years_exp": 7,
-      "adp_overall": 9,
+      "adp_overall": 7,
       "adp_position": 4,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 7,
+      "week_updated": 1
     },
     "chase_jamarr": {
       "player_id": "chase_jamarr",
@@ -145,9 +176,12 @@
       "years_exp": 3,
       "adp_overall": 10,
       "adp_position": 3,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 10,
+      "week_updated": 1
     },
     "barkley_saquon": {
       "player_id": "barkley_saquon",
@@ -156,11 +190,14 @@
       "position": "RB",
       "age": 27,
       "years_exp": 6,
-      "adp_overall": 11,
+      "adp_overall": 13,
       "adp_position": 5,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 2,
+      "adp_pick": 1,
+      "week_updated": 1
     },
     "mahomes_patrick": {
       "player_id": "mahomes_patrick",
@@ -169,11 +206,14 @@
       "position": "QB",
       "age": 29,
       "years_exp": 7,
-      "adp_overall": 12,
+      "adp_overall": 7,
       "adp_position": 4,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 7,
+      "week_updated": 1
     },
     "hill_tyreek": {
       "player_id": "hill_tyreek",
@@ -182,11 +222,14 @@
       "position": "WR",
       "age": 30,
       "years_exp": 8,
-      "adp_overall": 13,
+      "adp_overall": 8,
       "adp_position": 4,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "questionable",
+      "adp_round": 1,
+      "adp_pick": 8,
+      "week_updated": 1
     },
     "adams_davante": {
       "player_id": "adams_davante",
@@ -195,11 +238,14 @@
       "position": "WR",
       "age": 32,
       "years_exp": 10,
-      "adp_overall": 14,
+      "adp_overall": 10,
       "adp_position": 5,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 1,
+      "adp_pick": 10,
+      "week_updated": 1
     },
     "herbert_justin": {
       "player_id": "herbert_justin",
@@ -208,11 +254,14 @@
       "position": "QB",
       "age": 25,
       "years_exp": 4,
-      "adp_overall": 15,
+      "adp_overall": 20,
       "adp_position": 5,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "questionable",
+      "adp_round": 2,
+      "adp_pick": 8,
+      "week_updated": 1
     },
     "kelce_travis": {
       "player_id": "kelce_travis",
@@ -221,11 +270,14 @@
       "position": "TE",
       "age": 35,
       "years_exp": 11,
-      "adp_overall": 16,
+      "adp_overall": 18,
       "adp_position": 1,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 2,
+      "adp_pick": 6,
+      "week_updated": 1
     },
     "andrews_mark": {
       "player_id": "andrews_mark",
@@ -234,11 +286,14 @@
       "position": "TE",
       "age": 29,
       "years_exp": 6,
-      "adp_overall": 18,
+      "adp_overall": 19,
       "adp_position": 2,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 2,
+      "adp_pick": 7,
+      "week_updated": 1
     },
     "kittle_george": {
       "player_id": "kittle_george",
@@ -247,11 +302,14 @@
       "position": "TE",
       "age": 31,
       "years_exp": 7,
-      "adp_overall": 20,
+      "adp_overall": 21,
       "adp_position": 3,
-      "last_updated": "2025-08-27T15:39:06.620Z",
+      "last_updated": "2025-08-27T15:59:57.099Z",
       "status": "active",
-      "injury_status": "healthy"
+      "injury_status": "healthy",
+      "adp_round": 2,
+      "adp_pick": 9,
+      "week_updated": 1
     }
   }
 }
