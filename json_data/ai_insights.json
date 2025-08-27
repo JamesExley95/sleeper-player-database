@@ -1,16 +1,370 @@
 {
   "metadata": {
-    "last_updated": "2025-08-27T15:36:22.340Z",
+    "last_updated": "2025-08-27T15:44:54.452Z",
     "analysis_week": 1,
     "season": 2025,
-    "model_version": "v1.0"
+    "model_version": "v1.0",
+    "players_analyzed": 18,
+    "analysis_type": "weekly_recommendations"
+  },
+  "executive_summary": {
+    "total_players_analyzed": 18,
+    "analysis_date": "2025-08-27T15:44:54.452Z",
+    "key_insights": [
+      "Analyzed 18 top fantasy players across all positions",
+      "Identified 6 must-start options",
+      "Found 0 sleeper candidates",
+      "Analysis based on ADP value, experience, and age factors"
+    ],
+    "position_breakdown": {
+      "RB": 5,
+      "QB": 5,
+      "WR": 5,
+      "TE": 3
+    },
+    "top_recommendation": {
+      "player_name": "Christian McCaffrey",
+      "position": "RB",
+      "team": "SF",
+      "score": 148,
+      "reason": "Top-tier talent with proven track record"
+    },
+    "top_sleeper": null
   },
   "weekly_recommendations": {
-    "must_starts": [],
+    "must_starts": [
+      {
+        "player_name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "score": 148,
+        "reason": "Top-tier talent with proven track record"
+      },
+      {
+        "player_name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "score": 142,
+        "reason": "Core roster piece with high ceiling"
+      },
+      {
+        "player_name": "Austin Ekeler",
+        "position": "RB",
+        "team": "WAS",
+        "score": 144,
+        "reason": "Core roster piece with high ceiling"
+      },
+      {
+        "player_name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "score": 141,
+        "reason": "Top-tier talent with proven track record"
+      },
+      {
+        "player_name": "Derrick Henry",
+        "position": "RB",
+        "team": "BAL",
+        "score": 144,
+        "reason": "Top-tier talent with proven track record"
+      },
+      {
+        "player_name": "Davante Adams",
+        "position": "WR",
+        "team": "LV",
+        "score": 142,
+        "reason": "Core roster piece with high ceiling"
+      }
+    ],
     "sleepers": [],
     "busts_to_avoid": [],
     "injury_alerts": [],
     "trend_alerts": []
   },
-  "player_analysis": {}
+  "player_analysis": {
+    "mccaffrey_christian": {
+      "player_name": "Christian McCaffrey",
+      "team": "SF",
+      "position": "RB",
+      "analysis_category": "MUST_START",
+      "total_score": 148,
+      "breakdown": {
+        "adp_score": 99,
+        "experience_score": 35,
+        "age_score": 14
+      },
+      "insight": "Top-tier talent with proven track record",
+      "recommendation": "START",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "josh_allen": {
+      "player_name": "Josh Allen",
+      "team": "BUF",
+      "position": "QB",
+      "analysis_category": "MUST_START",
+      "total_score": 142,
+      "breakdown": {
+        "adp_score": 98,
+        "experience_score": 30,
+        "age_score": 14
+      },
+      "insight": "Core roster piece with high ceiling",
+      "recommendation": "START",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "ekeler_austin": {
+      "player_name": "Austin Ekeler",
+      "team": "WAS",
+      "position": "RB",
+      "analysis_category": "MUST_START",
+      "total_score": 144,
+      "breakdown": {
+        "adp_score": 97,
+        "experience_score": 35,
+        "age_score": 12
+      },
+      "insight": "Core roster piece with high ceiling",
+      "recommendation": "START",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "kupp_cooper": {
+      "player_name": "Cooper Kupp",
+      "team": "LAR",
+      "position": "WR",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 139,
+      "breakdown": {
+        "adp_score": 96,
+        "experience_score": 35,
+        "age_score": 8
+      },
+      "insight": "Reliable starter with good upside",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "lamar_jackson": {
+      "player_name": "Lamar Jackson",
+      "team": "BAL",
+      "position": "QB",
+      "analysis_category": "MUST_START",
+      "total_score": 141,
+      "breakdown": {
+        "adp_score": 95,
+        "experience_score": 30,
+        "age_score": 16
+      },
+      "insight": "Top-tier talent with proven track record",
+      "recommendation": "START",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "henry_derrick": {
+      "player_name": "Derrick Henry",
+      "team": "BAL",
+      "position": "RB",
+      "analysis_category": "MUST_START",
+      "total_score": 144,
+      "breakdown": {
+        "adp_score": 94,
+        "experience_score": 40,
+        "age_score": 10
+      },
+      "insight": "Top-tier talent with proven track record",
+      "recommendation": "START",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "jefferson_justin": {
+      "player_name": "Justin Jefferson",
+      "team": "MIN",
+      "position": "WR",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 133,
+      "breakdown": {
+        "adp_score": 93,
+        "experience_score": 20,
+        "age_score": 20
+      },
+      "insight": "Strong weekly floor with TD potential",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "joe_burrow": {
+      "player_name": "Joe Burrow",
+      "team": "CIN",
+      "position": "QB",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 128,
+      "breakdown": {
+        "adp_score": 92,
+        "experience_score": 20,
+        "age_score": 16
+      },
+      "insight": "Strong weekly floor with TD potential",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "cook_dalvin": {
+      "player_name": "Dalvin Cook",
+      "team": "NYJ",
+      "position": "RB",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 140,
+      "breakdown": {
+        "adp_score": 91,
+        "experience_score": 35,
+        "age_score": 14
+      },
+      "insight": "Quality option in favorable matchups",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "chase_jamarr": {
+      "player_name": "Ja'Marr Chase",
+      "team": "CIN",
+      "position": "WR",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 127,
+      "breakdown": {
+        "adp_score": 90,
+        "experience_score": 15,
+        "age_score": 22
+      },
+      "insight": "Strong weekly floor with TD potential",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "barkley_saquon": {
+      "player_name": "Saquon Barkley",
+      "team": "PHI",
+      "position": "RB",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 135,
+      "breakdown": {
+        "adp_score": 89,
+        "experience_score": 30,
+        "age_score": 16
+      },
+      "insight": "Quality option in favorable matchups",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "mahomes_patrick": {
+      "player_name": "Patrick Mahomes",
+      "team": "KC",
+      "position": "QB",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 135,
+      "breakdown": {
+        "adp_score": 88,
+        "experience_score": 35,
+        "age_score": 12
+      },
+      "insight": "Quality option in favorable matchups",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "hill_tyreek": {
+      "player_name": "Tyreek Hill",
+      "team": "MIA",
+      "position": "WR",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 137,
+      "breakdown": {
+        "adp_score": 87,
+        "experience_score": 40,
+        "age_score": 10
+      },
+      "insight": "Strong weekly floor with TD potential",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "adams_davante": {
+      "player_name": "Davante Adams",
+      "team": "LV",
+      "position": "WR",
+      "analysis_category": "MUST_START",
+      "total_score": 142,
+      "breakdown": {
+        "adp_score": 86,
+        "experience_score": 50,
+        "age_score": 6
+      },
+      "insight": "Core roster piece with high ceiling",
+      "recommendation": "START",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "herbert_justin": {
+      "player_name": "Justin Herbert",
+      "team": "LAC",
+      "position": "QB",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 125,
+      "breakdown": {
+        "adp_score": 85,
+        "experience_score": 20,
+        "age_score": 20
+      },
+      "insight": "Reliable starter with good upside",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "kelce_travis": {
+      "player_name": "Travis Kelce",
+      "team": "KC",
+      "position": "TE",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 134,
+      "breakdown": {
+        "adp_score": 84,
+        "experience_score": 50,
+        "age_score": 0
+      },
+      "insight": "Strong weekly floor with TD potential",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "andrews_mark": {
+      "player_name": "Mark Andrews",
+      "team": "BAL",
+      "position": "TE",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 124,
+      "breakdown": {
+        "adp_score": 82,
+        "experience_score": 30,
+        "age_score": 12
+      },
+      "insight": "Strong weekly floor with TD potential",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    },
+    "kittle_george": {
+      "player_name": "George Kittle",
+      "team": "SF",
+      "position": "TE",
+      "analysis_category": "STRONG_PLAY",
+      "total_score": 123,
+      "breakdown": {
+        "adp_score": 80,
+        "experience_score": 35,
+        "age_score": 8
+      },
+      "insight": "Strong weekly floor with TD potential",
+      "recommendation": "CONSIDER",
+      "last_updated": "2025-08-27T15:44:54.452Z"
+    }
+  },
+  "methodology": {
+    "scoring_factors": [
+      "ADP (Average Draft Position) - Lower ADP = Higher score",
+      "Experience - More experienced players get bonus points",
+      "Age - Younger players in prime get higher scores"
+    ],
+    "categories": [
+      "MUST_START (140+ points) - Elite weekly options",
+      "STRONG_PLAY (120+ points) - Reliable starters",
+      "SOLID_OPTION (100+ points) - Good depth pieces",
+      "SLEEPER (80+ points) - Under-radar options",
+      "DEEP_SLEEPER (<80 points) - Speculative adds"
+    ]
+  }
 }
