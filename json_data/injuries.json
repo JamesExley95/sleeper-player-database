@@ -1,24 +1,24 @@
 {
   "metadata": {
-    "last_updated": "2025-08-28T04:06:02.739Z",
+    "last_updated": "2025-08-28T04:08:46.699Z",
     "active_injuries": 2,
     "season": 2025,
     "week": 1
   },
   "current_injuries": {
-    "ekeler_austin": {
-      "player_name": "Austin Ekeler",
-      "team": "WAS",
-      "position": "RB",
-      "injury_status": "doubtful",
-      "last_updated": "2025-08-28T04:06:02.739Z"
-    },
-    "hill_tyreek": {
-      "player_name": "Tyreek Hill",
-      "team": "MIA",
+    "jefferson_justin": {
+      "player_name": "Justin Jefferson",
+      "team": "MIN",
       "position": "WR",
-      "injury_status": "out",
-      "last_updated": "2025-08-28T04:06:02.739Z"
+      "injury_status": "doubtful",
+      "last_updated": "2025-08-28T04:08:46.699Z"
+    },
+    "joe_burrow": {
+      "player_name": "Joe Burrow",
+      "team": "CIN",
+      "position": "QB",
+      "injury_status": "questionable",
+      "last_updated": "2025-08-28T04:08:46.699Z"
     }
   },
   "injury_history": {},
