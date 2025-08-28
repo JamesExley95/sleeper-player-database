@@ -1,31 +1,24 @@
 {
   "metadata": {
-    "last_updated": "2025-08-27T15:59:57.563Z",
-    "active_injuries": 3,
+    "last_updated": "2025-08-28T04:06:02.739Z",
+    "active_injuries": 2,
     "season": 2025,
     "week": 1
   },
   "current_injuries": {
-    "josh_allen": {
-      "player_name": "Josh Allen",
-      "team": "BUF",
-      "position": "QB",
+    "ekeler_austin": {
+      "player_name": "Austin Ekeler",
+      "team": "WAS",
+      "position": "RB",
       "injury_status": "doubtful",
-      "last_updated": "2025-08-27T15:59:57.563Z"
+      "last_updated": "2025-08-28T04:06:02.739Z"
     },
     "hill_tyreek": {
       "player_name": "Tyreek Hill",
       "team": "MIA",
       "position": "WR",
-      "injury_status": "questionable",
-      "last_updated": "2025-08-27T15:59:57.563Z"
-    },
-    "herbert_justin": {
-      "player_name": "Justin Herbert",
-      "team": "LAC",
-      "position": "QB",
-      "injury_status": "questionable",
-      "last_updated": "2025-08-27T15:59:57.563Z"
+      "injury_status": "out",
+      "last_updated": "2025-08-28T04:06:02.739Z"
     }
   },
   "injury_history": {},
