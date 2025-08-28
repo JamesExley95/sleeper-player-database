@@ -112,9 +112,20 @@ def process_players(rosters_df, position_limits, adp_data):
     processed_players = {}
     position_counts = {pos: 0 for pos in position_limits.keys()}
     
-    # Sort by depth_chart_position and years_exp for better player selection
-    fantasy_rosters = fantasy_rosters.sort_values(['position', 'depth_chart_position', 'years_exp'], 
-                                                   ascending=[True, True, False])
+    # Sort by position and available columns for better player selection
+    # Check which columns actually exist first
+    available_columns = fantasy_rosters.columns.tolist()
+    sort_columns = ['position']
+    
+    # Add optional columns if they exist
+    if 'depth_chart_position' in available_columns:
+        sort_columns.append('depth_chart_position')
+    if 'years_exp' in available_columns:
+        sort_columns.append('years_exp')
+    elif 'season' in available_columns:  # Alternative sorting column
+        sort_columns.append('season')
+    
+    fantasy_rosters = fantasy_rosters.sort_values(sort_columns, ascending=[True] * len(sort_columns))
     
     for _, player in fantasy_rosters.iterrows():
         position = player['position']
@@ -122,15 +133,16 @@ def process_players(rosters_df, position_limits, adp_data):
         # Apply position limits
         if position_counts[position] < position_limits[position]:
             # Create unique player ID
-            player_id = f"{player.get('player_name', 'unknown').lower().replace(' ', '_')}_{position.lower()}"
+            player_name = player.get('player_name', player.get('player_display_name', 'unknown'))
+            player_id = f"{player_name.lower().replace(' ', '_')}_{position.lower()}"
             
             # Calculate ADP data (simulated)
             simulated_adp = 50 + position_counts[position] * 10 + (position_counts.get(position, 0) * 5)
             
             processed_players[player_id] = {
                 'player_id': player.get('player_id', player_id),
-                'player_name': player.get('player_name', 'Unknown'),
-                'team': player.get('team', 'FA'),
+                'player_name': player_name,
+                'team': player.get('team', player.get('recent_team', 'FA')),
                 'position': position,
                 'team_id': player.get('team_id'),
                 'team_name': player.get('team_name'),
@@ -159,7 +171,7 @@ def process_players(rosters_df, position_limits, adp_data):
                 'height': player.get('height'),
                 'weight': player.get('weight'),
                 'college': player.get('college'),
-                'depth_chart_position': player.get('depth_chart_position')
+                'depth_chart_position': player.get('depth_chart_position', position_counts[position] + 1)
             }
             
             position_counts[position] += 1
