@@ -31,8 +31,15 @@ def fetch_position_limits():
     except FileNotFoundError:
         print("Settings file not found, using default position limits")
         return {
-            'QB': 25, 'RB': 50, 'WR': 50, 'TE': 25, 
-            'K': 15, 'DEF': 25, 'DL': 25, 'LB': 25, 'DB': 30
+            'QB': 35,   # Increased for 2-QB leagues and deep benches
+            'RB': 75,   # More RBs for FLEX heavy leagues and handcuffs  
+            'WR': 85,   # Most critical position, deepest benches
+            'TE': 35,   # TE premium leagues and streaming options
+            'K': 25,    # Enable kickers (was 0)
+            'DEF': 32,  # All teams plus streaming (was 0)
+            'DL': 30,   # IDP leagues - was 0
+            'LB': 40,   # IDP leagues - was 0  
+            'DB': 35    # IDP leagues - was 0
         }
 
 def fetch_adp_data():
