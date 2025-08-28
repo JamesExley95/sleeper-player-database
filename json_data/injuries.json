@@ -1,26 +1,11 @@
 {
   "metadata": {
-    "last_updated": "2025-08-28T04:08:46.699Z",
-    "active_injuries": 2,
+    "last_updated": "2025-08-28T04:55:19.019640",
+    "active_injuries": 0,
     "season": 2025,
     "week": 1
   },
-  "current_injuries": {
-    "jefferson_justin": {
-      "player_name": "Justin Jefferson",
-      "team": "MIN",
-      "position": "WR",
-      "injury_status": "doubtful",
-      "last_updated": "2025-08-28T04:08:46.699Z"
-    },
-    "joe_burrow": {
-      "player_name": "Joe Burrow",
-      "team": "CIN",
-      "position": "QB",
-      "injury_status": "questionable",
-      "last_updated": "2025-08-28T04:08:46.699Z"
-    }
-  },
+  "current_injuries": {},
   "injury_history": {},
   "return_timeline": {}
 }
