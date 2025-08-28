@@ -1,14 +1,14 @@
 {
   "position_limits": {
-    "QB": 25,
-    "RB": 50,
-    "WR": 50,
-    "TE": 25,
-    "K": 15,
-    "DEF": 25,
-    "DL": 25,
-    "LB": 25,
-    "DB": 30
+    "QB": 35,
+    "RB": 75, 
+    "WR": 85,
+    "TE": 35,
+    "K": 25,
+    "DEF": 32,
+    "DL": 30,
+    "LB": 40,
+    "DB": 35
   },
   "data_sources": {
     "primary": "nflverse/nfldata",
