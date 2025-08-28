@@ -113,6 +113,13 @@ def process_players(rosters_df, position_limits, adp_data):
     fantasy_positions = list(position_limits.keys())
     fantasy_rosters = rosters_df[rosters_df['position'].isin(fantasy_positions)].copy()
     
+    # DEBUG: Show actual position values in the dataset
+    print(f"DEBUG: All unique positions in dataset: {sorted(rosters_df['position'].unique())}")
+    print(f"DEBUG: Position counts in full dataset:")
+    position_counts_debug = rosters_df['position'].value_counts()
+    for pos, count in position_counts_debug.head(20).items():
+        print(f"  {pos}: {count}")
+    
     print(f"Filtered to {len(fantasy_rosters)} fantasy-relevant players")
     
     # Group by position and apply limits
