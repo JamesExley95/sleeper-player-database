@@ -127,20 +127,28 @@ def process_players(rosters_df, position_limits, adp_data):
     
     fantasy_rosters = fantasy_rosters.sort_values(sort_columns, ascending=[True] * len(sort_columns))
     
+    player_index = 0
     for _, player in fantasy_rosters.iterrows():
         position = player['position']
         
         # Apply position limits
         if position_counts[position] < position_limits[position]:
-            # Create unique player ID
-            player_name = player.get('player_name', player.get('player_display_name', 'unknown'))
-            player_id = f"{player_name.lower().replace(' ', '_')}_{position.lower()}"
+            # Create unique player ID - use player_id from nfl_data_py if available
+            nfl_player_id = player.get('player_id')
+            player_name = player.get('player_name', player.get('player_display_name', f'player_{player_index}'))
             
-            # Calculate ADP data (simulated)
-            simulated_adp = 50 + position_counts[position] * 10 + (position_counts.get(position, 0) * 5)
+            if nfl_player_id:
+                player_id = str(nfl_player_id)
+            else:
+                # Fallback to name-based ID with index to ensure uniqueness
+                clean_name = player_name.lower().replace(' ', '_').replace('.', '').replace("'", '')
+                player_id = f"{clean_name}_{position.lower()}_{position_counts[position]}"
+            
+            # Calculate ADP data (simulated) - fix the position count reference
+            simulated_adp = 50 + position_counts[position] * 8 + (player_index % 50)
             
             processed_players[player_id] = {
-                'player_id': player.get('player_id', player_id),
+                'player_id': player_id,
                 'player_name': player_name,
                 'team': player.get('team', player.get('recent_team', 'FA')),
                 'position': position,
@@ -171,10 +179,12 @@ def process_players(rosters_df, position_limits, adp_data):
                 'height': player.get('height'),
                 'weight': player.get('weight'),
                 'college': player.get('college'),
-                'depth_chart_position': player.get('depth_chart_position', position_counts[position] + 1)
+                'depth_chart_position': position_counts[position] + 1
             }
             
             position_counts[position] += 1
+        
+        player_index += 1
     
     print("Player counts by position:")
     total_players = 0
