@@ -128,6 +128,8 @@ def process_players(rosters_df, position_limits, adp_data):
     fantasy_rosters = fantasy_rosters.sort_values(sort_columns, ascending=[True] * len(sort_columns))
     
     player_index = 0
+    processed_count = 0
+    
     for _, player in fantasy_rosters.iterrows():
         position = player['position']
         
@@ -143,6 +145,13 @@ def process_players(rosters_df, position_limits, adp_data):
                 # Fallback to name-based ID with index to ensure uniqueness
                 clean_name = player_name.lower().replace(' ', '_').replace('.', '').replace("'", '')
                 player_id = f"{clean_name}_{position.lower()}_{position_counts[position]}"
+            
+            # Check for duplicate IDs and make unique if necessary
+            original_player_id = player_id
+            counter = 1
+            while player_id in processed_players:
+                player_id = f"{original_player_id}_{counter}"
+                counter += 1
             
             # Calculate ADP data (simulated) - fix the position count reference
             simulated_adp = 50 + position_counts[position] * 8 + (player_index % 50)
@@ -176,15 +185,18 @@ def process_players(rosters_df, position_limits, adp_data):
                 'injury_status': 'healthy',
                 'years_exp': player.get('years_exp', 0),
                 'age': player.get('age'),
-                'height': player.get('height'),
+                'height': player.get('weight'),
                 'weight': player.get('weight'),
                 'college': player.get('college'),
                 'depth_chart_position': position_counts[position] + 1
             }
             
             position_counts[position] += 1
+            processed_count += 1
         
         player_index += 1
+    
+    print(f"DEBUG: Processed {processed_count} players, dictionary has {len(processed_players)} entries")
     
     print("Player counts by position:")
     total_players = 0
@@ -256,11 +268,25 @@ def save_players_data(processed_players, position_counts):
     """Save processed players to JSON file"""
     current_week = calculate_current_week()
     
+    print(f"DEBUG: About to save {len(processed_players)} players to JSON")
+    print(f"DEBUG: Position counts being saved: {position_counts}")
+    
+    # Verify we have the expected number of players
+    expected_total = sum(position_counts.values())
+    actual_total = len(processed_players)
+    
+    if expected_total != actual_total:
+        print(f"WARNING: Expected {expected_total} players but have {actual_total}")
+        
+    # Debug: Print first few player IDs
+    player_ids = list(processed_players.keys())[:5]
+    print(f"DEBUG: First 5 player IDs: {player_ids}")
+    
     players_data = {
         'metadata': {
             'last_updated': datetime.now().isoformat(),
             'version': '3.0',
-            'total_players': len(processed_players),
+            'total_players': len(processed_players),  # Use actual count, not expected
             'position_breakdown': position_counts,
             'data_collection_status': 'completed',
             'data_source': 'nfl_data_py_automated',
@@ -278,7 +304,8 @@ def save_players_data(processed_players, position_counts):
     with open('json_data/players.json', 'w') as f:
         json.dump(players_data, f, indent=2)
     
-    print(f"Saved {len(processed_players)} players to json_data/players.json")
+    print(f"Successfully saved {len(processed_players)} players to json_data/players.json")
+    print(f"File size: {os.path.getsize('json_data/players.json') / 1024:.2f} KB")
 
 def save_injury_data(injury_df):
     """Save injury data to JSON file"""
