@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2025-08-29T07:21:40.342460",
+    "last_updated": "2025-08-29T07:31:47.799975",
     "version": "3.1",
     "total_players": 230,
     "position_breakdown": {
@@ -29,7 +29,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 49,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341435"
+      "last_updated": "2025-08-29T07:31:47.798927"
     },
     "JAllen_QB_BUF_001": {
       "player_name": "J.Allen",
@@ -45,7 +45,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 46,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341450"
+      "last_updated": "2025-08-29T07:31:47.798942"
     },
     "JDaniels_QB_WAS_002": {
       "player_name": "J.Daniels",
@@ -61,7 +61,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 37,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341457"
+      "last_updated": "2025-08-29T07:31:47.798949"
     },
     "JHurts_QB_PHI_003": {
       "player_name": "J.Hurts",
@@ -77,7 +77,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 42,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341462"
+      "last_updated": "2025-08-29T07:31:47.798954"
     },
     "BMayfield_QB_TB_004": {
       "player_name": "B.Mayfield",
@@ -93,7 +93,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 46,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341467"
+      "last_updated": "2025-08-29T07:31:47.798959"
     },
     "JBurrow_QB_CIN_005": {
       "player_name": "J.Burrow",
@@ -109,7 +109,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 45,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341472"
+      "last_updated": "2025-08-29T07:31:47.798964"
     },
     "PMahomes_QB_KC_006": {
       "player_name": "P.Mahomes",
@@ -125,7 +125,7 @@
       "receiving_yards_2024": 2.0,
       "total_tds_2024": 35,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341477"
+      "last_updated": "2025-08-29T07:31:47.798970"
     },
     "JGoff_QB_DET_007": {
       "player_name": "J.Goff",
@@ -141,7 +141,7 @@
       "receiving_yards_2024": 7.0,
       "total_tds_2024": 39,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341486"
+      "last_updated": "2025-08-29T07:31:47.798979"
     },
     "BNix_QB_DEN_008": {
       "player_name": "B.Nix",
@@ -157,7 +157,7 @@
       "receiving_yards_2024": 2.0,
       "total_tds_2024": 35,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341492"
+      "last_updated": "2025-08-29T07:31:47.798985"
     },
     "SDarnold_QB_MIN_009": {
       "player_name": "S.Darnold",
@@ -173,7 +173,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 37,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341498"
+      "last_updated": "2025-08-29T07:31:47.798991"
     },
     "KMurray_QB_ARI_010": {
       "player_name": "K.Murray",
@@ -189,7 +189,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 26,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341502"
+      "last_updated": "2025-08-29T07:31:47.798996"
     },
     "JHerbert_QB_LAC_011": {
       "player_name": "J.Herbert",
@@ -205,7 +205,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 26,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341507"
+      "last_updated": "2025-08-29T07:31:47.799001"
     },
     "BPurdy_QB_SF_012": {
       "player_name": "B.Purdy",
@@ -221,7 +221,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 25,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341512"
+      "last_updated": "2025-08-29T07:31:47.799005"
     },
     "GSmith_QB_SEA_013": {
       "player_name": "G.Smith",
@@ -237,7 +237,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 23,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341516"
+      "last_updated": "2025-08-29T07:31:47.799010"
     },
     "ARodgers_QB_NYJ_014": {
       "player_name": "A.Rodgers",
@@ -253,7 +253,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 28,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341521"
+      "last_updated": "2025-08-29T07:31:47.799015"
     },
     "CWilliams_QB_CHI_015": {
       "player_name": "C.Williams",
@@ -269,7 +269,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 20,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341525"
+      "last_updated": "2025-08-29T07:31:47.799019"
     },
     "CStroud_QB_HOU_016": {
       "player_name": "C.Stroud",
@@ -285,7 +285,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 21,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341530"
+      "last_updated": "2025-08-29T07:31:47.799023"
     },
     "MStafford_QB_LA_017": {
       "player_name": "M.Stafford",
@@ -301,7 +301,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 24,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341534"
+      "last_updated": "2025-08-29T07:31:47.799028"
     },
     "JLove_QB_GB_018": {
       "player_name": "J.Love",
@@ -317,7 +317,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 26,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341538"
+      "last_updated": "2025-08-29T07:31:47.799032"
     },
     "BYoung_QB_CAR_019": {
       "player_name": "B.Young",
@@ -333,7 +333,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 21,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341543"
+      "last_updated": "2025-08-29T07:31:47.799036"
     },
     "RWilson_QB_PIT_020": {
       "player_name": "R.Wilson",
@@ -349,7 +349,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 20,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341547"
+      "last_updated": "2025-08-29T07:31:47.799041"
     },
     "TTagovailoa_QB_MIA_021": {
       "player_name": "T.Tagovailoa",
@@ -365,7 +365,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 19,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341552"
+      "last_updated": "2025-08-29T07:31:47.799045"
     },
     "DMaye_QB_NE_022": {
       "player_name": "D.Maye",
@@ -381,7 +381,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 17,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341556"
+      "last_updated": "2025-08-29T07:31:47.799050"
     },
     "KCousins_QB_ATL_023": {
       "player_name": "K.Cousins",
@@ -397,7 +397,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 18,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341561"
+      "last_updated": "2025-08-29T07:31:47.799054"
     },
     "ARichardson_QB_IND_024": {
       "player_name": "A.Richardson",
@@ -413,7 +413,7 @@
       "receiving_yards_2024": -1.0,
       "total_tds_2024": 14,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341565"
+      "last_updated": "2025-08-29T07:31:47.799059"
     },
     "DCarr_QB_NO_025": {
       "player_name": "D.Carr",
@@ -429,7 +429,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 16,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341569"
+      "last_updated": "2025-08-29T07:31:47.799063"
     },
     "TLawrence_QB_JAX_026": {
       "player_name": "T.Lawrence",
@@ -445,7 +445,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 14,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341573"
+      "last_updated": "2025-08-29T07:31:47.799067"
     },
     "DJones_QB_NYG_027": {
       "player_name": "D.Jones",
@@ -461,7 +461,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 10,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341578"
+      "last_updated": "2025-08-29T07:31:47.799072"
     },
     "JWinston_QB_CLE_028": {
       "player_name": "J.Winston",
@@ -477,7 +477,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 14,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341583"
+      "last_updated": "2025-08-29T07:31:47.799077"
     },
     "WLevis_QB_TEN_029": {
       "player_name": "W.Levis",
@@ -493,7 +493,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 13,
       "risk_score": 7.0,
-      "last_updated": "2025-08-29T07:21:40.341587"
+      "last_updated": "2025-08-29T07:31:47.799082"
     },
     "JFields_QB_PIT_030": {
       "player_name": "J.Fields",
@@ -509,7 +509,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 10,
       "risk_score": 8.4,
-      "last_updated": "2025-08-29T07:21:40.341592"
+      "last_updated": "2025-08-29T07:31:47.799086"
     },
     "DPrescott_QB_DAL_031": {
       "player_name": "D.Prescott",
@@ -525,7 +525,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 12,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341597"
+      "last_updated": "2025-08-29T07:31:47.799091"
     },
     "CRush_QB_DAL_032": {
       "player_name": "C.Rush",
@@ -541,7 +541,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 12,
       "risk_score": 5.5,
-      "last_updated": "2025-08-29T07:21:40.341601"
+      "last_updated": "2025-08-29T07:31:47.799109"
     },
     "JFlacco_QB_IND_033": {
       "player_name": "J.Flacco",
@@ -557,7 +557,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 12,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341606"
+      "last_updated": "2025-08-29T07:31:47.799114"
     },
     "GMinshew_QB_LV_034": {
       "player_name": "G.Minshew",
@@ -573,7 +573,7 @@
       "receiving_yards_2024": 0,
       "total_tds_2024": 9,
       "risk_score": 6.4,
-      "last_updated": "2025-08-29T07:21:40.341610"
+      "last_updated": "2025-08-29T07:31:47.799119"
     },
     "BRobinson_RB_ATL_035": {
       "player_name": "B.Robinson",
@@ -589,7 +589,7 @@
       "receiving_yards_2024": 612.0,
       "total_tds_2024": 25,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341614"
+      "last_updated": "2025-08-29T07:31:47.799123"
     },
     "SBarkley_RB_PHI_036": {
       "player_name": "S.Barkley",
@@ -605,7 +605,7 @@
       "receiving_yards_2024": 353.0,
       "total_tds_2024": 20,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341619"
+      "last_updated": "2025-08-29T07:31:47.799128"
     },
     "JGibbs_RB_DET_037": {
       "player_name": "J.Gibbs",
@@ -621,7 +621,7 @@
       "receiving_yards_2024": 567.0,
       "total_tds_2024": 21,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341623"
+      "last_updated": "2025-08-29T07:31:47.799132"
     },
     "DHenry_RB_BAL_038": {
       "player_name": "D.Henry",
@@ -637,7 +637,7 @@
       "receiving_yards_2024": 193.0,
       "total_tds_2024": 21,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341627"
+      "last_updated": "2025-08-29T07:31:47.799136"
     },
     "JCook_RB_BUF_039": {
       "player_name": "J.Cook",
@@ -653,7 +653,7 @@
       "receiving_yards_2024": 322.0,
       "total_tds_2024": 21,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341631"
+      "last_updated": "2025-08-29T07:31:47.799141"
     },
     "JJacobs_RB_GB_040": {
       "player_name": "J.Jacobs",
@@ -669,7 +669,7 @@
       "receiving_yards_2024": 382.0,
       "total_tds_2024": 17,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341635"
+      "last_updated": "2025-08-29T07:31:47.799145"
     },
     "DAchane_RB_MIA_041": {
       "player_name": "D.Achane",
@@ -685,7 +685,7 @@
       "receiving_yards_2024": 592.0,
       "total_tds_2024": 12,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341640"
+      "last_updated": "2025-08-29T07:31:47.799149"
     },
     "KWilliams_RB_LA_042": {
       "player_name": "K.Williams",
@@ -701,7 +701,7 @@
       "receiving_yards_2024": 197.0,
       "total_tds_2024": 17,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341644"
+      "last_updated": "2025-08-29T07:31:47.799153"
     },
     "JMixon_RB_HOU_043": {
       "player_name": "J.Mixon",
@@ -717,7 +717,7 @@
       "receiving_yards_2024": 334.0,
       "total_tds_2024": 14,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341650"
+      "last_updated": "2025-08-29T07:31:47.799159"
     },
     "AKamara_RB_NO_044": {
       "player_name": "A.Kamara",
@@ -733,7 +733,7 @@
       "receiving_yards_2024": 543.0,
       "total_tds_2024": 8,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341654"
+      "last_updated": "2025-08-29T07:31:47.799164"
     },
     "BIrving_RB_TB_045": {
       "player_name": "B.Irving",
@@ -749,7 +749,7 @@
       "receiving_yards_2024": 398.0,
       "total_tds_2024": 9,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341659"
+      "last_updated": "2025-08-29T07:31:47.799168"
     },
     "CBrown_RB_CIN_046": {
       "player_name": "C.Brown",
@@ -765,7 +765,7 @@
       "receiving_yards_2024": 360.0,
       "total_tds_2024": 11,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341663"
+      "last_updated": "2025-08-29T07:31:47.799172"
     },
     "JConner_RB_ARI_047": {
       "player_name": "J.Conner",
@@ -781,7 +781,7 @@
       "receiving_yards_2024": 414.0,
       "total_tds_2024": 9,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341667"
+      "last_updated": "2025-08-29T07:31:47.799177"
     },
     "JTaylor_RB_IND_048": {
       "player_name": "J.Taylor",
@@ -797,7 +797,7 @@
       "receiving_yards_2024": 136.0,
       "total_tds_2024": 12,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341671"
+      "last_updated": "2025-08-29T07:31:47.799181"
     },
     "AJones_RB_MIN_049": {
       "player_name": "A.Jones",
@@ -813,7 +813,7 @@
       "receiving_yards_2024": 420.0,
       "total_tds_2024": 7,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341675"
+      "last_updated": "2025-08-29T07:31:47.799185"
     },
     "CHubbard_RB_CAR_050": {
       "player_name": "C.Hubbard",
@@ -829,7 +829,7 @@
       "receiving_yards_2024": 171.0,
       "total_tds_2024": 11,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341680"
+      "last_updated": "2025-08-29T07:31:47.799189"
     },
     "BHall_RB_NYJ_051": {
       "player_name": "B.Hall",
@@ -845,7 +845,7 @@
       "receiving_yards_2024": 483.0,
       "total_tds_2024": 8,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341684"
+      "last_updated": "2025-08-29T07:31:47.799194"
     },
     "DMontgomery_RB_DET_052": {
       "player_name": "D.Montgomery",
@@ -861,7 +861,7 @@
       "receiving_yards_2024": 341.0,
       "total_tds_2024": 13,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341688"
+      "last_updated": "2025-08-29T07:31:47.799198"
     },
     "DSwift_RB_CHI_053": {
       "player_name": "D.Swift",
@@ -877,7 +877,7 @@
       "receiving_yards_2024": 386.0,
       "total_tds_2024": 6,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341692"
+      "last_updated": "2025-08-29T07:31:47.799211"
     },
     "NHarris_RB_PIT_054": {
       "player_name": "N.Harris",
@@ -893,7 +893,7 @@
       "receiving_yards_2024": 324.0,
       "total_tds_2024": 6,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341699"
+      "last_updated": "2025-08-29T07:31:47.799215"
     },
     "RWhite_RB_TB_055": {
       "player_name": "R.White",
@@ -909,7 +909,7 @@
       "receiving_yards_2024": 407.0,
       "total_tds_2024": 9,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341704"
+      "last_updated": "2025-08-29T07:31:47.799219"
     },
     "JWilliams_RB_DEN_056": {
       "player_name": "J.Williams",
@@ -925,7 +925,7 @@
       "receiving_yards_2024": 417.0,
       "total_tds_2024": 5,
       "risk_score": 1.0,
-      "last_updated": "2025-08-29T07:21:40.341708"
+      "last_updated": "2025-08-29T07:31:47.799224"
     },
     "TPollard_RB_TEN_057": {
       "player_name": "T.Pollard",
@@ -941,7 +941,7 @@
       "receiving_yards_2024": 238.0,
       "total_tds_2024": 5,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341712"
+      "last_updated": "2025-08-29T07:31:47.799228"
     },
     "RDowdle_RB_DAL_058": {
       "player_name": "R.Dowdle",
@@ -957,7 +957,7 @@
       "receiving_yards_2024": 249.0,
       "total_tds_2024": 5,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341717"
+      "last_updated": "2025-08-29T07:31:47.799232"
     },
     "JDobbins_RB_LAC_059": {
       "player_name": "J.Dobbins",
@@ -973,7 +973,7 @@
       "receiving_yards_2024": 153.0,
       "total_tds_2024": 9,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341721"
+      "last_updated": "2025-08-29T07:31:47.799237"
     },
     "ZCharbonnet_RB_SEA_060": {
       "player_name": "Z.Charbonnet",
@@ -989,7 +989,7 @@
       "receiving_yards_2024": 308.0,
       "total_tds_2024": 9,
       "risk_score": 8.4,
-      "last_updated": "2025-08-29T07:21:40.341725"
+      "last_updated": "2025-08-29T07:31:47.799241"
     },
     "KHunt_RB_KC_061": {
       "player_name": "K.Hunt",
@@ -1005,7 +1005,7 @@
       "receiving_yards_2024": 189.0,
       "total_tds_2024": 9,
       "risk_score": 9.5,
-      "last_updated": "2025-08-29T07:21:40.341729"
+      "last_updated": "2025-08-29T07:31:47.799245"
     },
     "TTracy_RB_NYG_062": {
       "player_name": "T.Tracy",
@@ -1021,7 +1021,7 @@
       "receiving_yards_2024": 284.0,
       "total_tds_2024": 6,
       "risk_score": 8.2,
-      "last_updated": "2025-08-29T07:21:40.341733"
+      "last_updated": "2025-08-29T07:31:47.799250"
     },
     "KWalker_RB_SEA_063": {
       "player_name": "K.Walker",
@@ -1037,7 +1037,7 @@
       "receiving_yards_2024": 299.0,
       "total_tds_2024": 8,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341738"
+      "last_updated": "2025-08-29T07:31:47.799254"
     },
     "RStevenson_RB_NE_064": {
       "player_name": "R.Stevenson",
@@ -1053,7 +1053,7 @@
       "receiving_yards_2024": 168.0,
       "total_tds_2024": 8,
       "risk_score": 9.9,
-      "last_updated": "2025-08-29T07:21:40.341742"
+      "last_updated": "2025-08-29T07:31:47.799259"
     },
     "AEkeler_RB_WAS_065": {
       "player_name": "A.Ekeler",
@@ -1069,7 +1069,7 @@
       "receiving_yards_2024": 450.0,
       "total_tds_2024": 4,
       "risk_score": 8.1,
-      "last_updated": "2025-08-29T07:21:40.341746"
+      "last_updated": "2025-08-29T07:31:47.799263"
     },
     "JHill_RB_BAL_066": {
       "player_name": "J.Hill",
@@ -1085,7 +1085,7 @@
       "receiving_yards_2024": 403.0,
       "total_tds_2024": 5,
       "risk_score": 4.7,
-      "last_updated": "2025-08-29T07:21:40.341751"
+      "last_updated": "2025-08-29T07:31:47.799267"
     },
     "AMattison_RB_LV_067": {
       "player_name": "A.Mattison",
@@ -1101,7 +1101,7 @@
       "receiving_yards_2024": 294.0,
       "total_tds_2024": 5,
       "risk_score": 6.7,
-      "last_updated": "2025-08-29T07:21:40.341755"
+      "last_updated": "2025-08-29T07:31:47.799272"
     },
     "JFord_RB_CLE_068": {
       "player_name": "J.Ford",
@@ -1117,7 +1117,7 @@
       "receiving_yards_2024": 225.0,
       "total_tds_2024": 3,
       "risk_score": 6.3,
-      "last_updated": "2025-08-29T07:21:40.341759"
+      "last_updated": "2025-08-29T07:31:47.799276"
     },
     "JWarren_RB_PIT_069": {
       "player_name": "J.Warren",
@@ -1133,7 +1133,7 @@
       "receiving_yards_2024": 329.0,
       "total_tds_2024": 1,
       "risk_score": 3.9,
-      "last_updated": "2025-08-29T07:21:40.341764"
+      "last_updated": "2025-08-29T07:31:47.799280"
     },
     "TEtienne_RB_JAX_070": {
       "player_name": "T.Etienne",
@@ -1149,7 +1149,7 @@
       "receiving_yards_2024": 254.0,
       "total_tds_2024": 2,
       "risk_score": 4.8,
-      "last_updated": "2025-08-29T07:21:40.341768"
+      "last_updated": "2025-08-29T07:31:47.799284"
     },
     "TBigsby_RB_JAX_071": {
       "player_name": "T.Bigsby",
@@ -1165,7 +1165,7 @@
       "receiving_yards_2024": 54.0,
       "total_tds_2024": 7,
       "risk_score": 4.6,
-      "last_updated": "2025-08-29T07:21:40.341772"
+      "last_updated": "2025-08-29T07:31:47.799288"
     },
     "RDavis_RB_BUF_072": {
       "player_name": "R.Davis",
@@ -1181,7 +1181,7 @@
       "receiving_yards_2024": 189.0,
       "total_tds_2024": 7,
       "risk_score": 1.2,
-      "last_updated": "2025-08-29T07:21:40.341776"
+      "last_updated": "2025-08-29T07:31:47.799292"
     },
     "AAbdullah_RB_LV_073": {
       "player_name": "A.Abdullah",
@@ -1197,7 +1197,7 @@
       "receiving_yards_2024": 261.0,
       "total_tds_2024": 5,
       "risk_score": 6.4,
-      "last_updated": "2025-08-29T07:21:40.341780"
+      "last_updated": "2025-08-29T07:31:47.799297"
     },
     "JMason_RB_SF_074": {
       "player_name": "J.Mason",
@@ -1213,7 +1213,7 @@
       "receiving_yards_2024": 91.0,
       "total_tds_2024": 3,
       "risk_score": 6.3,
-      "last_updated": "2025-08-29T07:21:40.341784"
+      "last_updated": "2025-08-29T07:31:47.799301"
     },
     "TJohnson_RB_BUF_075": {
       "player_name": "T.Johnson",
@@ -1229,7 +1229,7 @@
       "receiving_yards_2024": 318.0,
       "total_tds_2024": 5,
       "risk_score": 0.3,
-      "last_updated": "2025-08-29T07:21:40.341788"
+      "last_updated": "2025-08-29T07:31:47.799305"
     },
     "TSpears_RB_TEN_076": {
       "player_name": "T.Spears",
@@ -1245,7 +1245,7 @@
       "receiving_yards_2024": 224.0,
       "total_tds_2024": 5,
       "risk_score": 6.1,
-      "last_updated": "2025-08-29T07:21:40.341793"
+      "last_updated": "2025-08-29T07:31:47.799310"
     },
     "TAllgeier_RB_ATL_077": {
       "player_name": "T.Allgeier",
@@ -1261,7 +1261,7 @@
       "receiving_yards_2024": 88.0,
       "total_tds_2024": 3,
       "risk_score": 0.6,
-      "last_updated": "2025-08-29T07:21:40.341797"
+      "last_updated": "2025-08-29T07:31:47.799314"
     },
     "AGibson_RB_NE_078": {
       "player_name": "A.Gibson",
@@ -1277,7 +1277,7 @@
       "receiving_yards_2024": 206.0,
       "total_tds_2024": 1,
       "risk_score": 0.3,
-      "last_updated": "2025-08-29T07:21:40.341801"
+      "last_updated": "2025-08-29T07:31:47.799318"
     },
     "EWilson_RB_GB_079": {
       "player_name": "E.Wilson",
@@ -1293,7 +1293,7 @@
       "receiving_yards_2024": 71.0,
       "total_tds_2024": 5,
       "risk_score": 0.6,
-      "last_updated": "2025-08-29T07:21:40.341805"
+      "last_updated": "2025-08-29T07:31:47.799325"
     },
     "JMcLaughlin_RB_DEN_080": {
       "player_name": "J.McLaughlin",
@@ -1309,7 +1309,7 @@
       "receiving_yards_2024": 76.0,
       "total_tds_2024": 3,
       "risk_score": 0.2,
-      "last_updated": "2025-08-29T07:21:40.341811"
+      "last_updated": "2025-08-29T07:31:47.799329"
     },
     "CAkers_RB_MIN_081": {
       "player_name": "C.Akers",
@@ -1325,7 +1325,7 @@
       "receiving_yards_2024": 68.0,
       "total_tds_2024": 5,
       "risk_score": 0.3,
-      "last_updated": "2025-08-29T07:21:40.341816"
+      "last_updated": "2025-08-29T07:31:47.799333"
     },
     "DSingletary_RB_NYG_082": {
       "player_name": "D.Singletary",
@@ -1341,7 +1341,7 @@
       "receiving_yards_2024": 119.0,
       "total_tds_2024": 4,
       "risk_score": 0.9,
-      "last_updated": "2025-08-29T07:21:40.341820"
+      "last_updated": "2025-08-29T07:31:47.799337"
     },
     "IGuerendo_RB_SF_083": {
       "player_name": "I.Guerendo",
@@ -1357,7 +1357,7 @@
       "receiving_yards_2024": 152.0,
       "total_tds_2024": 4,
       "risk_score": 2.6,
-      "last_updated": "2025-08-29T07:21:40.341824"
+      "last_updated": "2025-08-29T07:31:47.799342"
     },
     "BAllen_RB_NYJ_084": {
       "player_name": "B.Allen",
@@ -1373,7 +1373,7 @@
       "receiving_yards_2024": 148.0,
       "total_tds_2024": 3,
       "risk_score": 1.5,
-      "last_updated": "2025-08-29T07:21:40.341828"
+      "last_updated": "2025-08-29T07:31:47.799346"
     },
     "SPerine_RB_KC_085": {
       "player_name": "S.Perine",
@@ -1389,7 +1389,7 @@
       "receiving_yards_2024": 339.0,
       "total_tds_2024": 2,
       "risk_score": 2.8,
-      "last_updated": "2025-08-29T07:21:40.341832"
+      "last_updated": "2025-08-29T07:31:47.799350"
     },
     "ZMoss_RB_CIN_086": {
       "player_name": "Z.Moss",
@@ -1405,7 +1405,7 @@
       "receiving_yards_2024": 187.0,
       "total_tds_2024": 3,
       "risk_score": 7.4,
-      "last_updated": "2025-08-29T07:21:40.341838"
+      "last_updated": "2025-08-29T07:31:47.799356"
     },
     "RJohnson_RB_CHI_087": {
       "player_name": "R.Johnson",
@@ -1421,7 +1421,7 @@
       "receiving_yards_2024": 104.0,
       "total_tds_2024": 6,
       "risk_score": 1.0,
-      "last_updated": "2025-08-29T07:21:40.341842"
+      "last_updated": "2025-08-29T07:31:47.799360"
     },
     "MSanders_RB_CAR_088": {
       "player_name": "M.Sanders",
@@ -1437,7 +1437,7 @@
       "receiving_yards_2024": 148.0,
       "total_tds_2024": 3,
       "risk_score": 1.9,
-      "last_updated": "2025-08-29T07:21:40.341846"
+      "last_updated": "2025-08-29T07:31:47.799365"
     },
     "KGainwell_RB_PHI_089": {
       "player_name": "K.Gainwell",
@@ -1453,7 +1453,7 @@
       "receiving_yards_2024": 142.0,
       "total_tds_2024": 1,
       "risk_score": 3.8,
-      "last_updated": "2025-08-29T07:21:40.341850"
+      "last_updated": "2025-08-29T07:31:47.799369"
     },
     "RMostert_RB_MIA_090": {
       "player_name": "R.Mostert",
@@ -1469,7 +1469,7 @@
       "receiving_yards_2024": 161.0,
       "total_tds_2024": 2,
       "risk_score": 0.0,
-      "last_updated": "2025-08-29T07:21:40.341855"
+      "last_updated": "2025-08-29T07:31:47.799374"
     },
     "JMcNichols_RB_WAS_091": {
       "player_name": "J.McNichols",
@@ -1485,7 +1485,7 @@
       "receiving_yards_2024": 27.0,
       "total_tds_2024": 5,
       "risk_score": 2.5,
-      "last_updated": "2025-08-29T07:21:40.341859"
+      "last_updated": "2025-08-29T07:31:47.799378"
     },
     "STucker_RB_TB_092": {
       "player_name": "S.Tucker",
@@ -1501,7 +1501,7 @@
       "receiving_yards_2024": 109.0,
       "total_tds_2024": 3,
       "risk_score": 0.6,
-      "last_updated": "2025-08-29T07:21:40.341863"
+      "last_updated": "2025-08-29T07:31:47.799382"
     },
     "GEdwards_RB_LAC_093": {
       "player_name": "G.Edwards",
@@ -1517,7 +1517,7 @@
       "receiving_yards_2024": 6.0,
       "total_tds_2024": 4,
       "risk_score": 0.6,
-      "last_updated": "2025-08-29T07:21:40.341867"
+      "last_updated": "2025-08-29T07:31:47.799387"
     },
     "IPacheco_RB_KC_094": {
       "player_name": "I.Pacheco",
@@ -1533,7 +1533,7 @@
       "receiving_yards_2024": 96.0,
       "total_tds_2024": 1,
       "risk_score": 1.1,
-      "last_updated": "2025-08-29T07:21:40.341872"
+      "last_updated": "2025-08-29T07:31:47.799391"
     },
     "NChubb_RB_CLE_095": {
       "player_name": "N.Chubb",
@@ -1549,7 +1549,7 @@
       "receiving_yards_2024": 31.0,
       "total_tds_2024": 4,
       "risk_score": 3.5,
-      "last_updated": "2025-08-29T07:21:40.341876"
+      "last_updated": "2025-08-29T07:31:47.799395"
     },
     "DOgunbowale_RB_HOU_096": {
       "player_name": "D.Ogunbowale",
@@ -1565,7 +1565,7 @@
       "receiving_yards_2024": 198.0,
       "total_tds_2024": 1,
       "risk_score": 4.2,
-      "last_updated": "2025-08-29T07:21:40.341880"
+      "last_updated": "2025-08-29T07:31:47.799399"
     },
     "EElliott_RB_DAL_097": {
       "player_name": "E.Elliott",
@@ -1581,7 +1581,7 @@
       "receiving_yards_2024": 69.0,
       "total_tds_2024": 3,
       "risk_score": 3.5,
-      "last_updated": "2025-08-29T07:21:40.341884"
+      "last_updated": "2025-08-29T07:31:47.799404"
     },
     "EDemercado_RB_ARI_098": {
       "player_name": "E.Demercado",
@@ -1597,7 +1597,7 @@
       "receiving_yards_2024": 104.0,
       "total_tds_2024": 1,
       "risk_score": 2.8,
-      "last_updated": "2025-08-29T07:21:40.341890"
+      "last_updated": "2025-08-29T07:31:47.799408"
     },
     "TSermon_RB_IND_099": {
       "player_name": "T.Sermon",
@@ -1613,7 +1613,7 @@
       "receiving_yards_2024": 99.0,
       "total_tds_2024": 2,
       "risk_score": 3.5,
-      "last_updated": "2025-08-29T07:21:40.341894"
+      "last_updated": "2025-08-29T07:31:47.799412"
     },
     "AEstime_RB_DEN_100": {
       "player_name": "A.Estime",
@@ -1629,7 +1629,7 @@
       "receiving_yards_2024": 27.0,
       "total_tds_2024": 2,
       "risk_score": 3.6,
-      "last_updated": "2025-08-29T07:21:40.341898"
+      "last_updated": "2025-08-29T07:31:47.799416"
     },
     "CMcCaffrey_RB_SF_101": {
       "player_name": "C.McCaffrey",
@@ -1645,7 +1645,7 @@
       "receiving_yards_2024": 146.0,
       "total_tds_2024": 0,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341903"
+      "last_updated": "2025-08-29T07:31:47.799420"
     },
     "TBenson_RB_ARI_102": {
       "player_name": "T.Benson",
@@ -1661,7 +1661,7 @@
       "receiving_yards_2024": 59.0,
       "total_tds_2024": 1,
       "risk_score": 3.3,
-      "last_updated": "2025-08-29T07:21:40.341907"
+      "last_updated": "2025-08-29T07:31:47.799425"
     },
     "DPierce_RB_HOU_103": {
       "player_name": "D.Pierce",
@@ -1677,7 +1677,7 @@
       "receiving_yards_2024": 2.0,
       "total_tds_2024": 2,
       "risk_score": 2.9,
-      "last_updated": "2025-08-29T07:21:40.341911"
+      "last_updated": "2025-08-29T07:31:47.799429"
     },
     "IDavis_RB_NYJ_104": {
       "player_name": "I.Davis",
@@ -1693,7 +1693,7 @@
       "receiving_yards_2024": 75.0,
       "total_tds_2024": 2,
       "risk_score": 1.3,
-      "last_updated": "2025-08-29T07:21:40.341915"
+      "last_updated": "2025-08-29T07:31:47.799433"
     },
     "CBrooks_RB_GB_105": {
       "player_name": "C.Brooks",
@@ -1709,7 +1709,7 @@
       "receiving_yards_2024": 78.0,
       "total_tds_2024": 1,
       "risk_score": 3.6,
-      "last_updated": "2025-08-29T07:21:40.341920"
+      "last_updated": "2025-08-29T07:31:47.799437"
     },
     "TGoodson_RB_IND_106": {
       "player_name": "T.Goodson",
@@ -1725,7 +1725,7 @@
       "receiving_yards_2024": 61.0,
       "total_tds_2024": 2,
       "risk_score": 1.6,
-      "last_updated": "2025-08-29T07:21:40.341924"
+      "last_updated": "2025-08-29T07:31:47.799442"
     },
     "CPatterson_RB_PIT_107": {
       "player_name": "C.Patterson",
@@ -1741,7 +1741,7 @@
       "receiving_yards_2024": 80.0,
       "total_tds_2024": 1,
       "risk_score": 5.1,
-      "last_updated": "2025-08-29T07:21:40.341928"
+      "last_updated": "2025-08-29T07:31:47.799446"
     },
     "DJohnson_RB_JAX_108": {
       "player_name": "D.Johnson",
@@ -1757,7 +1757,7 @@
       "receiving_yards_2024": 96.0,
       "total_tds_2024": 0,
       "risk_score": 4.9,
-      "last_updated": "2025-08-29T07:21:40.341932"
+      "last_updated": "2025-08-29T07:31:47.799450"
     },
     "MCarter_RB_ARI_109": {
       "player_name": "M.Carter",
@@ -1773,7 +1773,7 @@
       "receiving_yards_2024": 57.0,
       "total_tds_2024": 1,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341937"
+      "last_updated": "2025-08-29T07:31:47.799455"
     },
     "JChase_WR_CIN_110": {
       "player_name": "J.Chase",
@@ -1789,7 +1789,7 @@
       "receiving_yards_2024": 1708.0,
       "total_tds_2024": 17,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341941"
+      "last_updated": "2025-08-29T07:31:47.799459"
     },
     "ASt_Brown_WR_DET_111": {
       "player_name": "A.St. Brown",
@@ -1805,7 +1805,7 @@
       "receiving_yards_2024": 1400.0,
       "total_tds_2024": 13,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341946"
+      "last_updated": "2025-08-29T07:31:47.799464"
     },
     "JJefferson_WR_MIN_112": {
       "player_name": "J.Jefferson",
@@ -1821,7 +1821,7 @@
       "receiving_yards_2024": 1591.0,
       "total_tds_2024": 10,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341950"
+      "last_updated": "2025-08-29T07:31:47.799469"
     },
     "DMoore_WR_CHI_113": {
       "player_name": "D.Moore",
@@ -1837,7 +1837,7 @@
       "receiving_yards_2024": 1317.0,
       "total_tds_2024": 9,
       "risk_score": 7.7,
-      "last_updated": "2025-08-29T07:21:40.341955"
+      "last_updated": "2025-08-29T07:31:47.799474"
     },
     "TMcLaurin_WR_WAS_114": {
       "player_name": "T.McLaurin",
@@ -1853,7 +1853,7 @@
       "receiving_yards_2024": 1323.0,
       "total_tds_2024": 16,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341959"
+      "last_updated": "2025-08-29T07:31:47.799478"
     },
     "BThomas_WR_JAX_115": {
       "player_name": "B.Thomas",
@@ -1869,7 +1869,7 @@
       "receiving_yards_2024": 1282.0,
       "total_tds_2024": 10,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341964"
+      "last_updated": "2025-08-29T07:31:47.799483"
     },
     "DLondon_WR_ATL_116": {
       "player_name": "D.London",
@@ -1885,7 +1885,7 @@
       "receiving_yards_2024": 1271.0,
       "total_tds_2024": 9,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341968"
+      "last_updated": "2025-08-29T07:31:47.799487"
     },
     "LMcConkey_WR_LAC_117": {
       "player_name": "L.McConkey",
@@ -1901,7 +1901,7 @@
       "receiving_yards_2024": 1346.0,
       "total_tds_2024": 8,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341972"
+      "last_updated": "2025-08-29T07:31:47.799491"
     },
     "MNabers_WR_NYG_118": {
       "player_name": "M.Nabers",
@@ -1917,7 +1917,7 @@
       "receiving_yards_2024": 1204.0,
       "total_tds_2024": 7,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341977"
+      "last_updated": "2025-08-29T07:31:47.799495"
     },
     "CLamb_WR_DAL_119": {
       "player_name": "C.Lamb",
@@ -1933,7 +1933,7 @@
       "receiving_yards_2024": 1194.0,
       "total_tds_2024": 6,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341981"
+      "last_updated": "2025-08-29T07:31:47.799500"
     },
     "MEvans_WR_TB_120": {
       "player_name": "M.Evans",
@@ -1949,7 +1949,7 @@
       "receiving_yards_2024": 1096.0,
       "total_tds_2024": 12,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341985"
+      "last_updated": "2025-08-29T07:31:47.799504"
     },
     "ABrown_WR_PHI_121": {
       "player_name": "A.Brown",
@@ -1965,7 +1965,7 @@
       "receiving_yards_2024": 1242.0,
       "total_tds_2024": 9,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341989"
+      "last_updated": "2025-08-29T07:31:47.799508"
     },
     "XWorthy_WR_KC_122": {
       "player_name": "X.Worthy",
@@ -1981,7 +1981,7 @@
       "receiving_yards_2024": 925.0,
       "total_tds_2024": 12,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341993"
+      "last_updated": "2025-08-29T07:31:47.799512"
     },
     "JSmith-Njigba_WR_SEA_123": {
       "player_name": "J.Smith-Njigba",
@@ -1997,7 +1997,7 @@
       "receiving_yards_2024": 1130.0,
       "total_tds_2024": 6,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.341998"
+      "last_updated": "2025-08-29T07:31:47.799517"
     },
     "CSutton_WR_DEN_124": {
       "player_name": "C.Sutton",
@@ -2013,7 +2013,7 @@
       "receiving_yards_2024": 1156.0,
       "total_tds_2024": 9,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342002"
+      "last_updated": "2025-08-29T07:31:47.799521"
     },
     "GWilson_WR_NYJ_125": {
       "player_name": "G.Wilson",
@@ -2029,7 +2029,7 @@
       "receiving_yards_2024": 1104.0,
       "total_tds_2024": 7,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342006"
+      "last_updated": "2025-08-29T07:31:47.799525"
     },
     "NCollins_WR_HOU_126": {
       "player_name": "N.Collins",
@@ -2045,7 +2045,7 @@
       "receiving_yards_2024": 1209.0,
       "total_tds_2024": 8,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342010"
+      "last_updated": "2025-08-29T07:31:47.799530"
     },
     "DAdams_WR_NYJ_127": {
       "player_name": "D.Adams",
@@ -2061,7 +2061,7 @@
       "receiving_yards_2024": 1063.0,
       "total_tds_2024": 8,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342015"
+      "last_updated": "2025-08-29T07:31:47.799534"
     },
     "JJeudy_WR_CLE_128": {
       "player_name": "J.Jeudy",
@@ -2077,7 +2077,7 @@
       "receiving_yards_2024": 1229.0,
       "total_tds_2024": 4,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342019"
+      "last_updated": "2025-08-29T07:31:47.799538"
     },
     "DSmith_WR_PHI_129": {
       "player_name": "D.Smith",
@@ -2093,7 +2093,7 @@
       "receiving_yards_2024": 1023.0,
       "total_tds_2024": 9,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342023"
+      "last_updated": "2025-08-29T07:31:47.799543"
     },
     "PNacua_WR_LA_130": {
       "player_name": "P.Nacua",
@@ -2109,7 +2109,7 @@
       "receiving_yards_2024": 1131.0,
       "total_tds_2024": 4,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342027"
+      "last_updated": "2025-08-29T07:31:47.799547"
     },
     "JWilliams_WR_DET_131": {
       "player_name": "J.Williams",
@@ -2125,7 +2125,7 @@
       "receiving_yards_2024": 1020.0,
       "total_tds_2024": 9,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342031"
+      "last_updated": "2025-08-29T07:31:47.799551"
     },
     "THiggins_WR_CIN_132": {
       "player_name": "T.Higgins",
@@ -2141,7 +2141,7 @@
       "receiving_yards_2024": 911.0,
       "total_tds_2024": 10,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342036"
+      "last_updated": "2025-08-29T07:31:47.799556"
     },
     "JAddison_WR_MIN_133": {
       "player_name": "J.Addison",
@@ -2157,7 +2157,7 @@
       "receiving_yards_2024": 904.0,
       "total_tds_2024": 10,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342040"
+      "last_updated": "2025-08-29T07:31:47.799560"
     },
     "THill_WR_MIA_134": {
       "player_name": "T.Hill",
@@ -2173,7 +2173,7 @@
       "receiving_yards_2024": 959.0,
       "total_tds_2024": 6,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342044"
+      "last_updated": "2025-08-29T07:31:47.799564"
     },
     "JMeyers_WR_LV_135": {
       "player_name": "J.Meyers",
@@ -2189,7 +2189,7 @@
       "receiving_yards_2024": 1027.0,
       "total_tds_2024": 4,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342048"
+      "last_updated": "2025-08-29T07:31:47.799569"
     },
     "KShakir_WR_BUF_136": {
       "player_name": "K.Shakir",
@@ -2205,7 +2205,7 @@
       "receiving_yards_2024": 995.0,
       "total_tds_2024": 4,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342052"
+      "last_updated": "2025-08-29T07:31:47.799573"
     },
     "JJennings_WR_SF_137": {
       "player_name": "J.Jennings",
@@ -2221,7 +2221,7 @@
       "receiving_yards_2024": 975.0,
       "total_tds_2024": 6,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342057"
+      "last_updated": "2025-08-29T07:31:47.799577"
     },
     "ZFlowers_WR_BAL_138": {
       "player_name": "Z.Flowers",
@@ -2237,7 +2237,7 @@
       "receiving_yards_2024": 1059.0,
       "total_tds_2024": 4,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342061"
+      "last_updated": "2025-08-29T07:31:47.799581"
     },
     "JReed_WR_GB_139": {
       "player_name": "J.Reed",
@@ -2253,7 +2253,7 @@
       "receiving_yards_2024": 903.0,
       "total_tds_2024": 7,
       "risk_score": 9.4,
-      "last_updated": "2025-08-29T07:21:40.342065"
+      "last_updated": "2025-08-29T07:31:47.799586"
     },
     "RBateman_WR_BAL_140": {
       "player_name": "R.Bateman",
@@ -2269,7 +2269,7 @@
       "receiving_yards_2024": 846.0,
       "total_tds_2024": 11,
       "risk_score": 9.0,
-      "last_updated": "2025-08-29T07:21:40.342069"
+      "last_updated": "2025-08-29T07:31:47.799590"
     },
     "CRidley_WR_TEN_141": {
       "player_name": "C.Ridley",
@@ -2285,7 +2285,7 @@
       "receiving_yards_2024": 1017.0,
       "total_tds_2024": 5,
       "risk_score": 9.9,
-      "last_updated": "2025-08-29T07:21:40.342074"
+      "last_updated": "2025-08-29T07:31:47.799594"
     },
     "MHarrison_WR_ARI_142": {
       "player_name": "M.Harrison",
@@ -2301,7 +2301,7 @@
       "receiving_yards_2024": 885.0,
       "total_tds_2024": 8,
       "risk_score": 9.6,
-      "last_updated": "2025-08-29T07:21:40.342078"
+      "last_updated": "2025-08-29T07:31:47.799599"
     },
     "DMooney_WR_ATL_143": {
       "player_name": "D.Mooney",
@@ -2317,7 +2317,7 @@
       "receiving_yards_2024": 992.0,
       "total_tds_2024": 5,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342082"
+      "last_updated": "2025-08-29T07:31:47.799603"
     },
     "DMetcalf_WR_SEA_144": {
       "player_name": "D.Metcalf",
@@ -2333,7 +2333,7 @@
       "receiving_yards_2024": 992.0,
       "total_tds_2024": 5,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342086"
+      "last_updated": "2025-08-29T07:31:47.799607"
     },
     "CKupp_WR_LA_145": {
       "player_name": "C.Kupp",
@@ -2349,7 +2349,7 @@
       "receiving_yards_2024": 800.0,
       "total_tds_2024": 6,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342091"
+      "last_updated": "2025-08-29T07:31:47.799612"
     },
     "KAllen_WR_CHI_146": {
       "player_name": "K.Allen",
@@ -2365,7 +2365,7 @@
       "receiving_yards_2024": 744.0,
       "total_tds_2024": 7,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342095"
+      "last_updated": "2025-08-29T07:31:47.799616"
     },
     "GPickens_WR_PIT_147": {
       "player_name": "G.Pickens",
@@ -2381,7 +2381,7 @@
       "receiving_yards_2024": 987.0,
       "total_tds_2024": 4,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342099"
+      "last_updated": "2025-08-29T07:31:47.799620"
     },
     "WRobinson_WR_NYG_148": {
       "player_name": "W.Robinson",
@@ -2397,7 +2397,7 @@
       "receiving_yards_2024": 699.0,
       "total_tds_2024": 3,
       "risk_score": 8.3,
-      "last_updated": "2025-08-29T07:21:40.342104"
+      "last_updated": "2025-08-29T07:31:47.799625"
     },
     "JDowns_WR_IND_149": {
       "player_name": "J.Downs",
@@ -2413,7 +2413,7 @@
       "receiving_yards_2024": 803.0,
       "total_tds_2024": 5,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342108"
+      "last_updated": "2025-08-29T07:31:47.799629"
     },
     "QJohnston_WR_LAC_150": {
       "player_name": "Q.Johnston",
@@ -2429,7 +2429,7 @@
       "receiving_yards_2024": 711.0,
       "total_tds_2024": 8,
       "risk_score": 8.6,
-      "last_updated": "2025-08-29T07:21:40.342112"
+      "last_updated": "2025-08-29T07:31:47.799633"
     },
     "MPittman_WR_IND_151": {
       "player_name": "M.Pittman",
@@ -2445,7 +2445,7 @@
       "receiving_yards_2024": 808.0,
       "total_tds_2024": 3,
       "risk_score": 7.6,
-      "last_updated": "2025-08-29T07:21:40.342116"
+      "last_updated": "2025-08-29T07:31:47.799638"
     },
     "APierce_WR_IND_152": {
       "player_name": "A.Pierce",
@@ -2461,7 +2461,7 @@
       "receiving_yards_2024": 824.0,
       "total_tds_2024": 7,
       "risk_score": 7.1,
-      "last_updated": "2025-08-29T07:21:40.342120"
+      "last_updated": "2025-08-29T07:31:47.799642"
     },
     "DHopkins_WR_KC_153": {
       "player_name": "D.Hopkins",
@@ -2477,7 +2477,7 @@
       "receiving_yards_2024": 639.0,
       "total_tds_2024": 6,
       "risk_score": 4.4,
-      "last_updated": "2025-08-29T07:21:40.342125"
+      "last_updated": "2025-08-29T07:31:47.799646"
     },
     "DSamuel_WR_SF_154": {
       "player_name": "D.Samuel",
@@ -2493,7 +2493,7 @@
       "receiving_yards_2024": 670.0,
       "total_tds_2024": 4,
       "risk_score": 8.9,
-      "last_updated": "2025-08-29T07:21:40.342129"
+      "last_updated": "2025-08-29T07:31:47.799650"
     },
     "JTolbert_WR_DAL_155": {
       "player_name": "J.Tolbert",
@@ -2509,7 +2509,7 @@
       "receiving_yards_2024": 610.0,
       "total_tds_2024": 7,
       "risk_score": 5.2,
-      "last_updated": "2025-08-29T07:21:40.342133"
+      "last_updated": "2025-08-29T07:31:47.799654"
     },
     "JWaddle_WR_MIA_156": {
       "player_name": "J.Waddle",
@@ -2525,7 +2525,7 @@
       "receiving_yards_2024": 744.0,
       "total_tds_2024": 2,
       "risk_score": 7.0,
-      "last_updated": "2025-08-29T07:21:40.342137"
+      "last_updated": "2025-08-29T07:31:47.799659"
     },
     "DDouglas_WR_NE_157": {
       "player_name": "D.Douglas",
@@ -2541,7 +2541,7 @@
       "receiving_yards_2024": 621.0,
       "total_tds_2024": 3,
       "risk_score": 5.7,
-      "last_updated": "2025-08-29T07:21:40.342142"
+      "last_updated": "2025-08-29T07:31:47.799663"
     },
     "ROdunze_WR_CHI_158": {
       "player_name": "R.Odunze",
@@ -2557,7 +2557,7 @@
       "receiving_yards_2024": 734.0,
       "total_tds_2024": 3,
       "risk_score": 4.5,
-      "last_updated": "2025-08-29T07:21:40.342146"
+      "last_updated": "2025-08-29T07:31:47.799667"
     },
     "RMcCloud_WR_ATL_159": {
       "player_name": "R.McCloud",
@@ -2573,7 +2573,7 @@
       "receiving_yards_2024": 686.0,
       "total_tds_2024": 1,
       "risk_score": 4.3,
-      "last_updated": "2025-08-29T07:21:40.342162"
+      "last_updated": "2025-08-29T07:31:47.799671"
     },
     "JMcMillan_WR_TB_160": {
       "player_name": "J.McMillan",
@@ -2589,7 +2589,7 @@
       "receiving_yards_2024": 502.0,
       "total_tds_2024": 8,
       "risk_score": 7.2,
-      "last_updated": "2025-08-29T07:21:40.342166"
+      "last_updated": "2025-08-29T07:31:47.799676"
     },
     "TDell_WR_HOU_161": {
       "player_name": "T.Dell",
@@ -2605,7 +2605,7 @@
       "receiving_yards_2024": 667.0,
       "total_tds_2024": 3,
       "risk_score": 7.0,
-      "last_updated": "2025-08-29T07:21:40.342171"
+      "last_updated": "2025-08-29T07:31:47.799680"
     },
     "AThielen_WR_CAR_162": {
       "player_name": "A.Thielen",
@@ -2621,7 +2621,7 @@
       "receiving_yards_2024": 615.0,
       "total_tds_2024": 5,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342175"
+      "last_updated": "2025-08-29T07:31:47.799684"
     },
     "CGodwin_WR_TB_163": {
       "player_name": "C.Godwin",
@@ -2637,7 +2637,7 @@
       "receiving_yards_2024": 576.0,
       "total_tds_2024": 5,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342179"
+      "last_updated": "2025-08-29T07:31:47.799689"
     },
     "DRobinson_WR_LA_164": {
       "player_name": "D.Robinson",
@@ -2653,7 +2653,7 @@
       "receiving_yards_2024": 602.0,
       "total_tds_2024": 7,
       "risk_score": 2.3,
-      "last_updated": "2025-08-29T07:21:40.342183"
+      "last_updated": "2025-08-29T07:31:47.799693"
     },
     "NWestbrook-Ikhine_WR_TEN_165": {
       "player_name": "N.Westbrook-Ikhine",
@@ -2669,7 +2669,7 @@
       "receiving_yards_2024": 497.0,
       "total_tds_2024": 9,
       "risk_score": 7.7,
-      "last_updated": "2025-08-29T07:21:40.342188"
+      "last_updated": "2025-08-29T07:31:47.799697"
     },
     "RDoubs_WR_GB_166": {
       "player_name": "R.Doubs",
@@ -2685,7 +2685,7 @@
       "receiving_yards_2024": 614.0,
       "total_tds_2024": 4,
       "risk_score": 6.4,
-      "last_updated": "2025-08-29T07:21:40.342192"
+      "last_updated": "2025-08-29T07:31:47.799702"
     },
     "ACooper_WR_BUF_167": {
       "player_name": "A.Cooper",
@@ -2701,7 +2701,7 @@
       "receiving_yards_2024": 588.0,
       "total_tds_2024": 4,
       "risk_score": 4.1,
-      "last_updated": "2025-08-29T07:21:40.342196"
+      "last_updated": "2025-08-29T07:31:47.799706"
     },
     "MMims_WR_DEN_168": {
       "player_name": "M.Mims",
@@ -2717,7 +2717,7 @@
       "receiving_yards_2024": 515.0,
       "total_tds_2024": 6,
       "risk_score": 3.3,
-      "last_updated": "2025-08-29T07:21:40.342200"
+      "last_updated": "2025-08-29T07:31:47.799710"
     },
     "TTucker_WR_LV_169": {
       "player_name": "T.Tucker",
@@ -2733,7 +2733,7 @@
       "receiving_yards_2024": 539.0,
       "total_tds_2024": 4,
       "risk_score": 2.9,
-      "last_updated": "2025-08-29T07:21:40.342205"
+      "last_updated": "2025-08-29T07:31:47.799715"
     },
     "OZaccheaus_WR_WAS_170": {
       "player_name": "O.Zaccheaus",
@@ -2749,7 +2749,7 @@
       "receiving_yards_2024": 551.0,
       "total_tds_2024": 3,
       "risk_score": 2.1,
-      "last_updated": "2025-08-29T07:21:40.342209"
+      "last_updated": "2025-08-29T07:31:47.799719"
     },
     "ALazard_WR_NYJ_171": {
       "player_name": "A.Lazard",
@@ -2765,7 +2765,7 @@
       "receiving_yards_2024": 530.0,
       "total_tds_2024": 6,
       "risk_score": 7.8,
-      "last_updated": "2025-08-29T07:21:40.342215"
+      "last_updated": "2025-08-29T07:31:47.799725"
     },
     "XLegette_WR_CAR_172": {
       "player_name": "X.Legette",
@@ -2781,7 +2781,7 @@
       "receiving_yards_2024": 497.0,
       "total_tds_2024": 4,
       "risk_score": 4.2,
-      "last_updated": "2025-08-29T07:21:40.342219"
+      "last_updated": "2025-08-29T07:31:47.799729"
     },
     "MWilson_WR_ARI_173": {
       "player_name": "M.Wilson",
@@ -2797,7 +2797,7 @@
       "receiving_yards_2024": 548.0,
       "total_tds_2024": 4,
       "risk_score": 3.2,
-      "last_updated": "2025-08-29T07:21:40.342223"
+      "last_updated": "2025-08-29T07:31:47.799733"
     },
     "CAustin_WR_PIT_174": {
       "player_name": "C.Austin",
@@ -2813,7 +2813,7 @@
       "receiving_yards_2024": 573.0,
       "total_tds_2024": 4,
       "risk_score": 1.7,
-      "last_updated": "2025-08-29T07:21:40.342228"
+      "last_updated": "2025-08-29T07:31:47.799738"
     },
     "SDiggs_WR_HOU_175": {
       "player_name": "S.Diggs",
@@ -2829,7 +2829,7 @@
       "receiving_yards_2024": 496.0,
       "total_tds_2024": 4,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342232"
+      "last_updated": "2025-08-29T07:31:47.799742"
     },
     "KBoutte_WR_NE_176": {
       "player_name": "K.Boutte",
@@ -2845,7 +2845,7 @@
       "receiving_yards_2024": 589.0,
       "total_tds_2024": 3,
       "risk_score": 3.8,
-      "last_updated": "2025-08-29T07:21:40.342236"
+      "last_updated": "2025-08-29T07:31:47.799746"
     },
     "TLockett_WR_SEA_177": {
       "player_name": "T.Lockett",
@@ -2861,7 +2861,7 @@
       "receiving_yards_2024": 600.0,
       "total_tds_2024": 2,
       "risk_score": 2.1,
-      "last_updated": "2025-08-29T07:21:40.342240"
+      "last_updated": "2025-08-29T07:31:47.799750"
     },
     "EMoore_WR_CLE_178": {
       "player_name": "E.Moore",
@@ -2877,7 +2877,7 @@
       "receiving_yards_2024": 538.0,
       "total_tds_2024": 1,
       "risk_score": 2.1,
-      "last_updated": "2025-08-29T07:21:40.342245"
+      "last_updated": "2025-08-29T07:31:47.799755"
     },
     "MHollins_WR_BUF_179": {
       "player_name": "M.Hollins",
@@ -2893,7 +2893,7 @@
       "receiving_yards_2024": 482.0,
       "total_tds_2024": 6,
       "risk_score": 0.8,
-      "last_updated": "2025-08-29T07:21:40.342249"
+      "last_updated": "2025-08-29T07:31:47.799759"
     },
     "AIosivas_WR_CIN_180": {
       "player_name": "A.Iosivas",
@@ -2909,7 +2909,7 @@
       "receiving_yards_2024": 479.0,
       "total_tds_2024": 6,
       "risk_score": 2.0,
-      "last_updated": "2025-08-29T07:21:40.342253"
+      "last_updated": "2025-08-29T07:31:47.799763"
     },
     "KColeman_WR_BUF_181": {
       "player_name": "K.Coleman",
@@ -2925,7 +2925,7 @@
       "receiving_yards_2024": 578.0,
       "total_tds_2024": 4,
       "risk_score": 2.6,
-      "last_updated": "2025-08-29T07:21:40.342257"
+      "last_updated": "2025-08-29T07:31:47.799767"
     },
     "DWicks_WR_GB_182": {
       "player_name": "D.Wicks",
@@ -2941,7 +2941,7 @@
       "receiving_yards_2024": 454.0,
       "total_tds_2024": 5,
       "risk_score": 1.0,
-      "last_updated": "2025-08-29T07:21:40.342261"
+      "last_updated": "2025-08-29T07:31:47.799772"
     },
     "JNailor_WR_MIN_183": {
       "player_name": "J.Nailor",
@@ -2957,7 +2957,7 @@
       "receiving_yards_2024": 447.0,
       "total_tds_2024": 6,
       "risk_score": 1.8,
-      "last_updated": "2025-08-29T07:21:40.342265"
+      "last_updated": "2025-08-29T07:31:47.799776"
     },
     "DSlayton_WR_NYG_184": {
       "player_name": "D.Slayton",
@@ -2973,7 +2973,7 @@
       "receiving_yards_2024": 573.0,
       "total_tds_2024": 2,
       "risk_score": 1.7,
-      "last_updated": "2025-08-29T07:21:40.342270"
+      "last_updated": "2025-08-29T07:31:47.799780"
     },
     "DBrown_WR_WAS_185": {
       "player_name": "D.Brown",
@@ -2989,7 +2989,7 @@
       "receiving_yards_2024": 537.0,
       "total_tds_2024": 2,
       "risk_score": 0.2,
-      "last_updated": "2025-08-29T07:21:40.342274"
+      "last_updated": "2025-08-29T07:31:47.799784"
     },
     "JPalmer_WR_LAC_186": {
       "player_name": "J.Palmer",
@@ -3005,7 +3005,7 @@
       "receiving_yards_2024": 584.0,
       "total_tds_2024": 1,
       "risk_score": 2.2,
-      "last_updated": "2025-08-29T07:21:40.342278"
+      "last_updated": "2025-08-29T07:31:47.799789"
     },
     "DVele_WR_DEN_187": {
       "player_name": "D.Vele",
@@ -3021,7 +3021,7 @@
       "receiving_yards_2024": 475.0,
       "total_tds_2024": 3,
       "risk_score": 2.9,
-      "last_updated": "2025-08-29T07:21:40.342282"
+      "last_updated": "2025-08-29T07:31:47.799793"
     },
     "CWatson_WR_GB_188": {
       "player_name": "C.Watson",
@@ -3037,7 +3037,7 @@
       "receiving_yards_2024": 620.0,
       "total_tds_2024": 2,
       "risk_score": 2.8,
-      "last_updated": "2025-08-29T07:21:40.342286"
+      "last_updated": "2025-08-29T07:31:47.799797"
     },
     "KTurpin_WR_DAL_189": {
       "player_name": "K.Turpin",
@@ -3053,7 +3053,7 @@
       "receiving_yards_2024": 420.0,
       "total_tds_2024": 2,
       "risk_score": 1.8,
-      "last_updated": "2025-08-29T07:21:40.342290"
+      "last_updated": "2025-08-29T07:31:47.799801"
     },
     "TAtwell_WR_LA_190": {
       "player_name": "T.Atwell",
@@ -3069,7 +3069,7 @@
       "receiving_yards_2024": 580.0,
       "total_tds_2024": 0,
       "risk_score": 0.8,
-      "last_updated": "2025-08-29T07:21:40.342294"
+      "last_updated": "2025-08-29T07:31:47.799806"
     },
     "PWashington_WR_JAX_191": {
       "player_name": "P.Washington",
@@ -3085,7 +3085,7 @@
       "receiving_yards_2024": 390.0,
       "total_tds_2024": 3,
       "risk_score": 2.7,
-      "last_updated": "2025-08-29T07:21:40.342299"
+      "last_updated": "2025-08-29T07:31:47.799810"
     },
     "TPatrick_WR_DET_192": {
       "player_name": "T.Patrick",
@@ -3101,7 +3101,7 @@
       "receiving_yards_2024": 416.0,
       "total_tds_2024": 3,
       "risk_score": 0.2,
-      "last_updated": "2025-08-29T07:21:40.342303"
+      "last_updated": "2025-08-29T07:31:47.799814"
     },
     "RPearsall_WR_SF_193": {
       "player_name": "R.Pearsall",
@@ -3117,7 +3117,7 @@
       "receiving_yards_2024": 400.0,
       "total_tds_2024": 3,
       "risk_score": 5.9,
-      "last_updated": "2025-08-29T07:21:40.342307"
+      "last_updated": "2025-08-29T07:31:47.799818"
     },
     "JCoker_WR_CAR_194": {
       "player_name": "J.Coker",
@@ -3133,7 +3133,7 @@
       "receiving_yards_2024": 478.0,
       "total_tds_2024": 2,
       "risk_score": 4.3,
-      "last_updated": "2025-08-29T07:21:40.342311"
+      "last_updated": "2025-08-29T07:31:47.799823"
     },
     "BBowers_TE_LV_195": {
       "player_name": "B.Bowers",
@@ -3149,7 +3149,7 @@
       "receiving_yards_2024": 1194.0,
       "total_tds_2024": 5,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342316"
+      "last_updated": "2025-08-29T07:31:47.799827"
     },
     "TMcBride_TE_ARI_196": {
       "player_name": "T.McBride",
@@ -3165,7 +3165,7 @@
       "receiving_yards_2024": 1146.0,
       "total_tds_2024": 3,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342320"
+      "last_updated": "2025-08-29T07:31:47.799832"
     },
     "GKittle_TE_SF_197": {
       "player_name": "G.Kittle",
@@ -3181,7 +3181,7 @@
       "receiving_yards_2024": 1106.0,
       "total_tds_2024": 8,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342324"
+      "last_updated": "2025-08-29T07:31:47.799836"
     },
     "TKelce_TE_KC_198": {
       "player_name": "T.Kelce",
@@ -3197,7 +3197,7 @@
       "receiving_yards_2024": 998.0,
       "total_tds_2024": 4,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342328"
+      "last_updated": "2025-08-29T07:31:47.799840"
     },
     "JSmith_TE_MIA_199": {
       "player_name": "J.Smith",
@@ -3213,7 +3213,7 @@
       "receiving_yards_2024": 884.0,
       "total_tds_2024": 8,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342333"
+      "last_updated": "2025-08-29T07:31:47.799845"
     },
     "ZErtz_TE_WAS_200": {
       "player_name": "Z.Ertz",
@@ -3229,7 +3229,7 @@
       "receiving_yards_2024": 809.0,
       "total_tds_2024": 8,
       "risk_score": 8.4,
-      "last_updated": "2025-08-29T07:21:40.342337"
+      "last_updated": "2025-08-29T07:31:47.799849"
     },
     "MAndrews_TE_BAL_201": {
       "player_name": "M.Andrews",
@@ -3245,7 +3245,7 @@
       "receiving_yards_2024": 761.0,
       "total_tds_2024": 11,
       "risk_score": 8.2,
-      "last_updated": "2025-08-29T07:21:40.342341"
+      "last_updated": "2025-08-29T07:31:47.799853"
     },
     "SLaPorta_TE_DET_202": {
       "player_name": "S.LaPorta",
@@ -3261,7 +3261,7 @@
       "receiving_yards_2024": 777.0,
       "total_tds_2024": 8,
       "risk_score": 9.2,
-      "last_updated": "2025-08-29T07:21:40.342345"
+      "last_updated": "2025-08-29T07:31:47.799857"
     },
     "PFreiermuth_TE_PIT_203": {
       "player_name": "P.Freiermuth",
@@ -3277,7 +3277,7 @@
       "receiving_yards_2024": 668.0,
       "total_tds_2024": 7,
       "risk_score": 6.3,
-      "last_updated": "2025-08-29T07:21:40.342349"
+      "last_updated": "2025-08-29T07:31:47.799861"
     },
     "TKraft_TE_GB_204": {
       "player_name": "T.Kraft",
@@ -3293,7 +3293,7 @@
       "receiving_yards_2024": 733.0,
       "total_tds_2024": 7,
       "risk_score": 6.2,
-      "last_updated": "2025-08-29T07:21:40.342353"
+      "last_updated": "2025-08-29T07:31:47.799866"
     },
     "DGoedert_TE_PHI_205": {
       "player_name": "D.Goedert",
@@ -3309,7 +3309,7 @@
       "receiving_yards_2024": 711.0,
       "total_tds_2024": 3,
       "risk_score": 8.1,
-      "last_updated": "2025-08-29T07:21:40.342358"
+      "last_updated": "2025-08-29T07:31:47.799870"
     },
     "ILikely_TE_BAL_206": {
       "player_name": "I.Likely",
@@ -3325,7 +3325,7 @@
       "receiving_yards_2024": 603.0,
       "total_tds_2024": 7,
       "risk_score": 4.9,
-      "last_updated": "2025-08-29T07:21:40.342362"
+      "last_updated": "2025-08-29T07:31:47.799874"
     },
     "DNjoku_TE_CLE_207": {
       "player_name": "D.Njoku",
@@ -3341,7 +3341,7 @@
       "receiving_yards_2024": 505.0,
       "total_tds_2024": 5,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342366"
+      "last_updated": "2025-08-29T07:31:47.799878"
     },
     "COtton_TE_TB_208": {
       "player_name": "C.Otton",
@@ -3357,7 +3357,7 @@
       "receiving_yards_2024": 632.0,
       "total_tds_2024": 4,
       "risk_score": 6.5,
-      "last_updated": "2025-08-29T07:21:40.342370"
+      "last_updated": "2025-08-29T07:31:47.799883"
     },
     "HHenry_TE_NE_209": {
       "player_name": "H.Henry",
@@ -3373,7 +3373,7 @@
       "receiving_yards_2024": 674.0,
       "total_tds_2024": 2,
       "risk_score": 5.4,
-      "last_updated": "2025-08-29T07:21:40.342375"
+      "last_updated": "2025-08-29T07:31:47.799887"
     },
     "MGesicki_TE_CIN_210": {
       "player_name": "M.Gesicki",
@@ -3389,7 +3389,7 @@
       "receiving_yards_2024": 665.0,
       "total_tds_2024": 2,
       "risk_score": 5.0,
-      "last_updated": "2025-08-29T07:21:40.342379"
+      "last_updated": "2025-08-29T07:31:47.799891"
     },
     "DSchultz_TE_HOU_211": {
       "player_name": "D.Schultz",
@@ -3405,7 +3405,7 @@
       "receiving_yards_2024": 618.0,
       "total_tds_2024": 2,
       "risk_score": 1.9,
-      "last_updated": "2025-08-29T07:21:40.342383"
+      "last_updated": "2025-08-29T07:31:47.799896"
     },
     "KPitts_TE_ATL_212": {
       "player_name": "K.Pitts",
@@ -3421,7 +3421,7 @@
       "receiving_yards_2024": 602.0,
       "total_tds_2024": 4,
       "risk_score": 3.1,
-      "last_updated": "2025-08-29T07:21:40.342387"
+      "last_updated": "2025-08-29T07:31:47.799900"
     },
     "JJohnson_TE_NO_213": {
       "player_name": "J.Johnson",
@@ -3437,7 +3437,7 @@
       "receiving_yards_2024": 548.0,
       "total_tds_2024": 3,
       "risk_score": 3.9,
-      "last_updated": "2025-08-29T07:21:40.342391"
+      "last_updated": "2025-08-29T07:31:47.799904"
     },
     "TConklin_TE_NYJ_214": {
       "player_name": "T.Conklin",
@@ -3453,7 +3453,7 @@
       "receiving_yards_2024": 449.0,
       "total_tds_2024": 4,
       "risk_score": 3.0,
-      "last_updated": "2025-08-29T07:21:40.342395"
+      "last_updated": "2025-08-29T07:31:47.799908"
     },
     "CKmet_TE_CHI_215": {
       "player_name": "C.Kmet",
@@ -3469,7 +3469,7 @@
       "receiving_yards_2024": 474.0,
       "total_tds_2024": 4,
       "risk_score": 4.6,
-      "last_updated": "2025-08-29T07:21:40.342399"
+      "last_updated": "2025-08-29T07:31:47.799913"
     },
     "NGray_TE_KC_216": {
       "player_name": "N.Gray",
@@ -3485,7 +3485,7 @@
       "receiving_yards_2024": 452.0,
       "total_tds_2024": 5,
       "risk_score": 1.2,
-      "last_updated": "2025-08-29T07:21:40.342404"
+      "last_updated": "2025-08-29T07:31:47.799917"
     },
     "DKincaid_TE_BUF_217": {
       "player_name": "D.Kincaid",
@@ -3501,7 +3501,7 @@
       "receiving_yards_2024": 519.0,
       "total_tds_2024": 2,
       "risk_score": 2.1,
-      "last_updated": "2025-08-29T07:21:40.342408"
+      "last_updated": "2025-08-29T07:31:47.799921"
     },
     "WDissly_TE_LAC_218": {
       "player_name": "W.Dissly",
@@ -3517,7 +3517,7 @@
       "receiving_yards_2024": 497.0,
       "total_tds_2024": 2,
       "risk_score": 2.1,
-      "last_updated": "2025-08-29T07:21:40.342412"
+      "last_updated": "2025-08-29T07:31:47.799925"
     },
     "COkonkwo_TE_TEN_219": {
       "player_name": "C.Okonkwo",
@@ -3533,7 +3533,7 @@
       "receiving_yards_2024": 479.0,
       "total_tds_2024": 2,
       "risk_score": 2.1,
-      "last_updated": "2025-08-29T07:21:40.342416"
+      "last_updated": "2025-08-29T07:31:47.799930"
     },
     "AHooper_TE_NE_220": {
       "player_name": "A.Hooper",
@@ -3549,7 +3549,7 @@
       "receiving_yards_2024": 476.0,
       "total_tds_2024": 3,
       "risk_score": 0.9,
-      "last_updated": "2025-08-29T07:21:40.342420"
+      "last_updated": "2025-08-29T07:31:47.799934"
     },
     "JFerguson_TE_DAL_221": {
       "player_name": "J.Ferguson",
@@ -3565,7 +3565,7 @@
       "receiving_yards_2024": 494.0,
       "total_tds_2024": 0,
       "risk_score": 2.7,
-      "last_updated": "2025-08-29T07:21:40.342425"
+      "last_updated": "2025-08-29T07:31:47.799938"
     },
     "NFant_TE_SEA_222": {
       "player_name": "N.Fant",
@@ -3581,7 +3581,7 @@
       "receiving_yards_2024": 500.0,
       "total_tds_2024": 1,
       "risk_score": 2.6,
-      "last_updated": "2025-08-29T07:21:40.342429"
+      "last_updated": "2025-08-29T07:31:47.799942"
     },
     "THockenson_TE_MIN_223": {
       "player_name": "T.Hockenson",
@@ -3597,7 +3597,7 @@
       "receiving_yards_2024": 519.0,
       "total_tds_2024": 1,
       "risk_score": 6.1,
-      "last_updated": "2025-08-29T07:21:40.342433"
+      "last_updated": "2025-08-29T07:31:47.799946"
     },
     "FMoreau_TE_NO_224": {
       "player_name": "F.Moreau",
@@ -3613,7 +3613,7 @@
       "receiving_yards_2024": 413.0,
       "total_tds_2024": 5,
       "risk_score": 1.7,
-      "last_updated": "2025-08-29T07:21:40.342437"
+      "last_updated": "2025-08-29T07:31:47.799951"
     },
     "THill_TE_NO_225": {
       "player_name": "T.Hill",
@@ -3629,7 +3629,7 @@
       "receiving_yards_2024": 187.0,
       "total_tds_2024": 6,
       "risk_score": 10.0,
-      "last_updated": "2025-08-29T07:21:40.342441"
+      "last_updated": "2025-08-29T07:31:47.799955"
     },
     "BStrange_TE_JAX_226": {
       "player_name": "B.Strange",
@@ -3645,7 +3645,7 @@
       "receiving_yards_2024": 411.0,
       "total_tds_2024": 2,
       "risk_score": 1.1,
-      "last_updated": "2025-08-29T07:21:40.342445"
+      "last_updated": "2025-08-29T07:31:47.799959"
     },
     "JAkins_TE_CLE_227": {
       "player_name": "J.Akins",
@@ -3661,7 +3661,7 @@
       "receiving_yards_2024": 390.0,
       "total_tds_2024": 2,
       "risk_score": 0.3,
-      "last_updated": "2025-08-29T07:21:40.342450"
+      "last_updated": "2025-08-29T07:31:47.799963"
     },
     "EEngram_TE_JAX_228": {
       "player_name": "E.Engram",
@@ -3677,7 +3677,7 @@
       "receiving_yards_2024": 365.0,
       "total_tds_2024": 1,
       "risk_score": 6.9,
-      "last_updated": "2025-08-29T07:21:40.342454"
+      "last_updated": "2025-08-29T07:31:47.799968"
     },
     "ABarner_TE_SEA_229": {
       "player_name": "A.Barner",
@@ -3693,7 +3693,7 @@
       "receiving_yards_2024": 245.0,
       "total_tds_2024": 4,
       "risk_score": 0.5,
-      "last_updated": "2025-08-29T07:21:40.342458"
+      "last_updated": "2025-08-29T07:31:47.799973"
     }
   }
 }
