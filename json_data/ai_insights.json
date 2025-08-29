@@ -1,370 +1,3836 @@
 {
   "metadata": {
-    "last_updated": "2025-08-27T15:44:54.452Z",
-    "analysis_week": 1,
-    "season": 2025,
-    "model_version": "v1.0",
-    "players_analyzed": 18,
-    "analysis_type": "weekly_recommendations"
+    "analysis_date": "2025-08-29T07:15:07.617049",
+    "players_analyzed": 230,
+    "roster_corrections": 0,
+    "adp_updates": 0,
+    "ai_version": "enhanced_v2.0"
   },
-  "executive_summary": {
-    "total_players_analyzed": 18,
-    "analysis_date": "2025-08-27T15:44:54.452Z",
-    "key_insights": [
-      "Analyzed 18 top fantasy players across all positions",
-      "Identified 6 must-start options",
-      "Found 0 sleeper candidates",
-      "Analysis based on ADP value, experience, and age factors"
-    ],
-    "position_breakdown": {
-      "RB": 5,
-      "QB": 5,
-      "WR": 5,
-      "TE": 3
-    },
-    "top_recommendation": {
-      "player_name": "Christian McCaffrey",
-      "position": "RB",
-      "team": "SF",
-      "score": 148,
-      "reason": "Top-tier talent with proven track record"
-    },
-    "top_sleeper": null
-  },
-  "weekly_recommendations": {
-    "must_starts": [
-      {
-        "player_name": "Christian McCaffrey",
-        "position": "RB",
-        "team": "SF",
-        "score": 148,
-        "reason": "Top-tier talent with proven track record"
-      },
-      {
-        "player_name": "Josh Allen",
-        "position": "QB",
-        "team": "BUF",
-        "score": 142,
-        "reason": "Core roster piece with high ceiling"
-      },
-      {
-        "player_name": "Austin Ekeler",
-        "position": "RB",
-        "team": "WAS",
-        "score": 144,
-        "reason": "Core roster piece with high ceiling"
-      },
-      {
-        "player_name": "Lamar Jackson",
-        "position": "QB",
-        "team": "BAL",
-        "score": 141,
-        "reason": "Top-tier talent with proven track record"
-      },
-      {
-        "player_name": "Derrick Henry",
-        "position": "RB",
-        "team": "BAL",
-        "score": 144,
-        "reason": "Top-tier talent with proven track record"
-      },
-      {
-        "player_name": "Davante Adams",
-        "position": "WR",
-        "team": "LV",
-        "score": 142,
-        "reason": "Core roster piece with high ceiling"
-      }
-    ],
-    "sleepers": [],
-    "busts_to_avoid": [],
-    "injury_alerts": [],
-    "trend_alerts": []
-  },
-  "player_analysis": {
-    "mccaffrey_christian": {
-      "player_name": "Christian McCaffrey",
-      "team": "SF",
-      "position": "RB",
-      "analysis_category": "MUST_START",
-      "total_score": 148,
-      "breakdown": {
-        "adp_score": 99,
-        "experience_score": 35,
-        "age_score": 14
-      },
-      "insight": "Top-tier talent with proven track record",
-      "recommendation": "START",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "josh_allen": {
-      "player_name": "Josh Allen",
-      "team": "BUF",
+  "roster_corrections_made": [],
+  "must_starts": [
+    {
+      "player_id": "00-0023459",
+      "name": "A.Rodgers",
       "position": "QB",
-      "analysis_category": "MUST_START",
-      "total_score": 142,
-      "breakdown": {
-        "adp_score": 98,
-        "experience_score": 30,
-        "age_score": 14
-      },
-      "insight": "Core roster piece with high ceiling",
-      "recommendation": "START",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "ekeler_austin": {
-      "player_name": "Austin Ekeler",
-      "team": "WAS",
-      "position": "RB",
-      "analysis_category": "MUST_START",
-      "total_score": 144,
-      "breakdown": {
-        "adp_score": 97,
-        "experience_score": 35,
-        "age_score": 12
-      },
-      "insight": "Core roster piece with high ceiling",
-      "recommendation": "START",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "kupp_cooper": {
-      "player_name": "Cooper Kupp",
-      "team": "LAR",
-      "position": "WR",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 139,
-      "breakdown": {
-        "adp_score": 96,
-        "experience_score": 35,
-        "age_score": 8
-      },
-      "insight": "Reliable starter with good upside",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "lamar_jackson": {
-      "player_name": "Lamar Jackson",
-      "team": "BAL",
-      "position": "QB",
-      "analysis_category": "MUST_START",
-      "total_score": 141,
-      "breakdown": {
-        "adp_score": 95,
-        "experience_score": 30,
-        "age_score": 16
-      },
-      "insight": "Top-tier talent with proven track record",
-      "recommendation": "START",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "henry_derrick": {
-      "player_name": "Derrick Henry",
-      "team": "BAL",
-      "position": "RB",
-      "analysis_category": "MUST_START",
-      "total_score": 144,
-      "breakdown": {
-        "adp_score": 94,
-        "experience_score": 40,
-        "age_score": 10
-      },
-      "insight": "Top-tier talent with proven track record",
-      "recommendation": "START",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "jefferson_justin": {
-      "player_name": "Justin Jefferson",
-      "team": "MIN",
-      "position": "WR",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 133,
-      "breakdown": {
-        "adp_score": 93,
-        "experience_score": 20,
-        "age_score": 20
-      },
-      "insight": "Strong weekly floor with TD potential",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "joe_burrow": {
-      "player_name": "Joe Burrow",
-      "team": "CIN",
-      "position": "QB",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 128,
-      "breakdown": {
-        "adp_score": 92,
-        "experience_score": 20,
-        "age_score": 16
-      },
-      "insight": "Strong weekly floor with TD potential",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "cook_dalvin": {
-      "player_name": "Dalvin Cook",
       "team": "NYJ",
-      "position": "RB",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 140,
-      "breakdown": {
-        "adp_score": 91,
-        "experience_score": 35,
-        "age_score": 14
-      },
-      "insight": "Quality option in favorable matchups",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
+      "score": 230.0,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
     },
-    "chase_jamarr": {
-      "player_name": "Ja'Marr Chase",
-      "team": "CIN",
-      "position": "WR",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 127,
-      "breakdown": {
-        "adp_score": 90,
-        "experience_score": 15,
-        "age_score": 22
-      },
-      "insight": "Strong weekly floor with TD potential",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "barkley_saquon": {
-      "player_name": "Saquon Barkley",
-      "team": "PHI",
-      "position": "RB",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 135,
-      "breakdown": {
-        "adp_score": 89,
-        "experience_score": 30,
-        "age_score": 16
-      },
-      "insight": "Quality option in favorable matchups",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "mahomes_patrick": {
-      "player_name": "Patrick Mahomes",
-      "team": "KC",
+    {
+      "player_id": "00-0023459_1",
+      "name": "A.Rodgers",
       "position": "QB",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 135,
-      "breakdown": {
-        "adp_score": 88,
-        "experience_score": 35,
-        "age_score": 12
-      },
-      "insight": "Quality option in favorable matchups",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
+      "team": "NYJ",
+      "score": 219.3,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
     },
-    "hill_tyreek": {
-      "player_name": "Tyreek Hill",
-      "team": "MIA",
-      "position": "WR",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 137,
-      "breakdown": {
-        "adp_score": 87,
-        "experience_score": 40,
-        "age_score": 10
-      },
-      "insight": "Strong weekly floor with TD potential",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "adams_davante": {
-      "player_name": "Davante Adams",
-      "team": "LV",
-      "position": "WR",
-      "analysis_category": "MUST_START",
-      "total_score": 142,
-      "breakdown": {
-        "adp_score": 86,
-        "experience_score": 50,
-        "age_score": 6
-      },
-      "insight": "Core roster piece with high ceiling",
-      "recommendation": "START",
-      "last_updated": "2025-08-27T15:44:54.452Z"
-    },
-    "herbert_justin": {
-      "player_name": "Justin Herbert",
-      "team": "LAC",
+    {
+      "player_id": "00-0023459_2",
+      "name": "A.Rodgers",
       "position": "QB",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 125,
-      "breakdown": {
-        "adp_score": 85,
-        "experience_score": 20,
-        "age_score": 20
-      },
-      "insight": "Reliable starter with good upside",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
+      "team": "NYJ",
+      "score": 208.6,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
     },
-    "kelce_travis": {
-      "player_name": "Travis Kelce",
-      "team": "KC",
+    {
+      "player_id": "00-0023459_3",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 197.9,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0023459_4",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 187.2,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0023459_5",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 176.5,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0023459_6",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 165.8,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0023459_7",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 155.1,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0023459_8",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 144.4,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 253.1,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_1",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 240.2,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_2",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 227.4,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_3",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 232.6,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_4",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 219.7,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_5",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 206.9,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_6",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 194.0,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_7",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 181.2,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_8",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 168.4,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_9",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 155.5,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030578_10",
+      "name": "C.Patterson",
+      "position": "RB",
+      "team": "PIT",
+      "score": 142.7,
+      "reason": "Elite RB with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0024243",
+      "name": "M.Lewis",
       "position": "TE",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 134,
-      "breakdown": {
-        "adp_score": 84,
-        "experience_score": 50,
-        "age_score": 0
-      },
-      "insight": "Strong weekly floor with TD potential",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
+      "team": "CHI",
+      "score": 290.6,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
     },
-    "andrews_mark": {
-      "player_name": "Mark Andrews",
+    {
+      "player_id": "00-0030061",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 276.6,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_1",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 262.7,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_2",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 248.8,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_3",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 234.9,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_4",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 221.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_5",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 207.1,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_6",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 193.2,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_7",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 179.3,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_8",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 165.4,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_9",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 151.5,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_10",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 147.9,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_11",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 144.4,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030061_12",
+      "name": "Z.Ertz",
+      "position": "TE",
+      "team": "WAS",
+      "score": 140.9,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_1",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_2",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_3",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_4",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_5",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_6",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_7",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_8",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_9",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_10",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_11",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_12",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030506_13",
+      "name": "T.Kelce",
+      "position": "TE",
+      "team": "KC",
+      "score": 140.0,
+      "reason": "Elite TE with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 233.6,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035_1",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 221.9,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035_2",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 210.1,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035_3",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 198.3,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035_4",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 186.6,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035_5",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 174.8,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035_6",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 163.0,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035_7",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 151.2,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035_8",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 156.0,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    },
+    {
+      "player_id": "00-0030035_9",
+      "name": "A.Thielen",
+      "position": "WR",
+      "team": "CAR",
+      "score": 144.2,
+      "reason": "Elite WR with excellent ADP value and strong team situation"
+    }
+  ],
+  "sleepers": [
+    {
+      "player_id": "00-0023459_13",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 114.9,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0023459_14",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 112.2,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0023459_15",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 109.5,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0023459_16",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 106.8,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026158",
+      "name": "J.Flacco",
+      "position": "QB",
+      "team": "IND",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026158_1",
+      "name": "J.Flacco",
+      "position": "QB",
+      "team": "IND",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026158_2",
+      "name": "J.Flacco",
+      "position": "QB",
+      "team": "IND",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026158_3",
+      "name": "J.Flacco",
+      "position": "QB",
+      "team": "IND",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026158_4",
+      "name": "J.Flacco",
+      "position": "QB",
+      "team": "IND",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026158_5",
+      "name": "J.Flacco",
+      "position": "QB",
+      "team": "IND",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026158_6",
+      "name": "J.Flacco",
+      "position": "QB",
+      "team": "IND",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026300",
+      "name": "J.Johnson",
+      "position": "QB",
       "team": "BAL",
-      "position": "TE",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 124,
-      "breakdown": {
-        "adp_score": 82,
-        "experience_score": 30,
-        "age_score": 12
-      },
-      "insight": "Strong weekly floor with TD potential",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
     },
-    "kittle_george": {
-      "player_name": "George Kittle",
-      "team": "SF",
-      "position": "TE",
-      "analysis_category": "STRONG_PLAY",
-      "total_score": 123,
-      "breakdown": {
-        "adp_score": 80,
-        "experience_score": 35,
-        "age_score": 8
-      },
-      "insight": "Strong weekly floor with TD potential",
-      "recommendation": "CONSIDER",
-      "last_updated": "2025-08-27T15:44:54.452Z"
+    {
+      "player_id": "00-0026300_1",
+      "name": "J.Johnson",
+      "position": "QB",
+      "team": "BAL",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026300_2",
+      "name": "J.Johnson",
+      "position": "QB",
+      "team": "BAL",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026300_3",
+      "name": "J.Johnson",
+      "position": "QB",
+      "team": "BAL",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026498",
+      "name": "M.Stafford",
+      "position": "QB",
+      "team": "LA",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026498_1",
+      "name": "M.Stafford",
+      "position": "QB",
+      "team": "LA",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026498_2",
+      "name": "M.Stafford",
+      "position": "QB",
+      "team": "LA",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026498_3",
+      "name": "M.Stafford",
+      "position": "QB",
+      "team": "LA",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026498_4",
+      "name": "M.Stafford",
+      "position": "QB",
+      "team": "LA",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026498_5",
+      "name": "M.Stafford",
+      "position": "QB",
+      "team": "LA",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0026498_6",
+      "name": "M.Stafford",
+      "position": "QB",
+      "team": "LA",
+      "score": 100.0,
+      "reason": "Undervalued QB with breakout potential"
+    },
+    {
+      "player_id": "00-0030279_6",
+      "name": "K.Allen",
+      "position": "WR",
+      "team": "CHI",
+      "score": 114.6,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030279_7",
+      "name": "K.Allen",
+      "position": "WR",
+      "team": "CHI",
+      "score": 111.7,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030279_8",
+      "name": "K.Allen",
+      "position": "WR",
+      "team": "CHI",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030279_9",
+      "name": "K.Allen",
+      "position": "WR",
+      "team": "CHI",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030279_10",
+      "name": "K.Allen",
+      "position": "WR",
+      "team": "CHI",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030279_11",
+      "name": "K.Allen",
+      "position": "WR",
+      "team": "CHI",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030279_12",
+      "name": "K.Allen",
+      "position": "WR",
+      "team": "CHI",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030279_13",
+      "name": "K.Allen",
+      "position": "WR",
+      "team": "CHI",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030279_14",
+      "name": "K.Allen",
+      "position": "WR",
+      "team": "CHI",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_1",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_2",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_3",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_4",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_5",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_6",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_7",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_8",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_9",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_10",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_11",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030431_12",
+      "name": "R.Woods",
+      "position": "WR",
+      "team": "HOU",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030564",
+      "name": "D.Hopkins",
+      "position": "WR",
+      "team": "TEN",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030564_1",
+      "name": "D.Hopkins",
+      "position": "WR",
+      "team": "TEN",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030564_2",
+      "name": "D.Hopkins",
+      "position": "WR",
+      "team": "TEN",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030564_3",
+      "name": "D.Hopkins",
+      "position": "WR",
+      "team": "TEN",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030564_4",
+      "name": "D.Hopkins",
+      "position": "WR",
+      "team": "TEN",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0030564_5",
+      "name": "D.Hopkins",
+      "position": "WR",
+      "team": "TEN",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031235",
+      "name": "O.Beckham",
+      "position": "WR",
+      "team": "MIA",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031235_1",
+      "name": "O.Beckham",
+      "position": "WR",
+      "team": "MIA",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031235_2",
+      "name": "O.Beckham",
+      "position": "WR",
+      "team": "MIA",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031235_3",
+      "name": "O.Beckham",
+      "position": "WR",
+      "team": "MIA",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031235_4",
+      "name": "O.Beckham",
+      "position": "WR",
+      "team": "MIA",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031235_5",
+      "name": "O.Beckham",
+      "position": "WR",
+      "team": "MIA",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031235_6",
+      "name": "O.Beckham",
+      "position": "WR",
+      "team": "MIA",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031235_7",
+      "name": "O.Beckham",
+      "position": "WR",
+      "team": "MIA",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236_1",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236_2",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236_3",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236_4",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236_5",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236_6",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236_7",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236_8",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031236_9",
+      "name": "B.Cooks",
+      "position": "WR",
+      "team": "DAL",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031381",
+      "name": "D.Adams",
+      "position": "WR",
+      "team": "LV",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031381_1",
+      "name": "D.Adams",
+      "position": "WR",
+      "team": "LV",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    },
+    {
+      "player_id": "00-0031381_2",
+      "name": "D.Adams",
+      "position": "WR",
+      "team": "LV",
+      "score": 110.0,
+      "reason": "Undervalued WR with breakout potential"
+    }
+  ],
+  "busts": [],
+  "player_analysis": {
+    "00-0023459": {
+      "score": 230.0,
+      "category_reason": "Elite QB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 30,
+      "components": {
+        "base_projection": 180,
+        "adp_value": 45.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 230.0
+      }
+    },
+    "00-0023459_1": {
+      "score": 219.3,
+      "category_reason": "Elite QB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 31,
+      "components": {
+        "base_projection": 172,
+        "adp_value": 42.3,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 219.3
+      }
+    },
+    "00-0023459_2": {
+      "score": 208.6,
+      "category_reason": "Elite QB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 32,
+      "components": {
+        "base_projection": 164,
+        "adp_value": 39.6,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 208.6
+      }
+    },
+    "00-0023459_3": {
+      "score": 197.9,
+      "category_reason": "Elite QB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 33,
+      "components": {
+        "base_projection": 156,
+        "adp_value": 36.9,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 197.9
+      }
+    },
+    "00-0023459_4": {
+      "score": 187.2,
+      "category_reason": "Elite QB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 34,
+      "components": {
+        "base_projection": 148,
+        "adp_value": 34.2,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 187.2
+      }
+    },
+    "00-0023459_5": {
+      "score": 176.5,
+      "category_reason": "Elite QB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 35,
+      "components": {
+        "base_projection": 140,
+        "adp_value": 31.5,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 176.5
+      }
+    },
+    "00-0023459_6": {
+      "score": 165.8,
+      "category_reason": "Elite QB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 36,
+      "components": {
+        "base_projection": 132,
+        "adp_value": 28.8,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 165.8
+      }
+    },
+    "00-0023459_7": {
+      "score": 155.1,
+      "category_reason": "Elite QB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 37,
+      "components": {
+        "base_projection": 124,
+        "adp_value": 26.1,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 155.1
+      }
+    },
+    "00-0023459_8": {
+      "score": 144.4,
+      "category_reason": "Elite QB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 38,
+      "components": {
+        "base_projection": 116,
+        "adp_value": 23.4,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 144.4
+      }
+    },
+    "00-0023459_9": {
+      "score": 133.7,
+      "category_reason": "Solid QB option for depth",
+      "adp_vs_projection": 39,
+      "components": {
+        "base_projection": 108,
+        "adp_value": 20.7,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 133.7
+      }
+    },
+    "00-0023459_10": {
+      "score": 123.0,
+      "category_reason": "Solid QB option for depth",
+      "adp_vs_projection": 40,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 18.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 123.0
+      }
+    },
+    "00-0023459_11": {
+      "score": 120.3,
+      "category_reason": "Solid QB option for depth",
+      "adp_vs_projection": 49,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 15.3,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 120.3
+      }
+    },
+    "00-0023459_12": {
+      "score": 117.6,
+      "category_reason": "Solid QB option for depth",
+      "adp_vs_projection": 58,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 12.6,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 117.6
+      }
+    },
+    "00-0023459_13": {
+      "score": 114.9,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 67,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 9.9,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 114.9
+      }
+    },
+    "00-0023459_14": {
+      "score": 112.2,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 76,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 7.2,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 112.2
+      }
+    },
+    "00-0023459_15": {
+      "score": 109.5,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 85,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 4.5,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 109.5
+      }
+    },
+    "00-0023459_16": {
+      "score": 106.8,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 94,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 1.8,
+        "position_multiplier": 1.0,
+        "team_adjustment": 5,
+        "final_score": 106.8
+      }
+    },
+    "00-0026158": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 103,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026158_1": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 112,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026158_2": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 121,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026158_3": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 130,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026158_4": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 139,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026158_5": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 148,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026158_6": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 157,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026300": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 166,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026300_1": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 175,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026300_2": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 184,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026300_3": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 193,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026498": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 202,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026498_1": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 211,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026498_2": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 220,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026498_3": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 229,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026498_4": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 238,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026498_5": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 247,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0026498_6": {
+      "score": 100.0,
+      "category_reason": "Undervalued QB with breakout potential",
+      "adp_vs_projection": 256,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.0,
+        "team_adjustment": 0,
+        "final_score": 100.0
+      }
+    },
+    "00-0030578": {
+      "score": 253.1,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 77,
+      "components": {
+        "base_projection": 180,
+        "adp_value": 30.9,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 253.1
+      }
+    },
+    "00-0030578_1": {
+      "score": 240.2,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 78,
+      "components": {
+        "base_projection": 172,
+        "adp_value": 28.2,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 240.2
+      }
+    },
+    "00-0030578_2": {
+      "score": 227.4,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 79,
+      "components": {
+        "base_projection": 164,
+        "adp_value": 25.5,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 227.4
+      }
+    },
+    "00-0030578_3": {
+      "score": 232.6,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 30,
+      "components": {
+        "base_projection": 156,
+        "adp_value": 37.8,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 232.6
+      }
+    },
+    "00-0030578_4": {
+      "score": 219.7,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 31,
+      "components": {
+        "base_projection": 148,
+        "adp_value": 35.1,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 219.7
+      }
+    },
+    "00-0030578_5": {
+      "score": 206.9,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 32,
+      "components": {
+        "base_projection": 140,
+        "adp_value": 32.4,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 206.9
+      }
+    },
+    "00-0030578_6": {
+      "score": 194.0,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 33,
+      "components": {
+        "base_projection": 132,
+        "adp_value": 29.7,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 194.0
+      }
+    },
+    "00-0030578_7": {
+      "score": 181.2,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 34,
+      "components": {
+        "base_projection": 124,
+        "adp_value": 27.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 181.2
+      }
+    },
+    "00-0030578_8": {
+      "score": 168.4,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 35,
+      "components": {
+        "base_projection": 116,
+        "adp_value": 24.3,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 168.4
+      }
+    },
+    "00-0030578_9": {
+      "score": 155.5,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 36,
+      "components": {
+        "base_projection": 108,
+        "adp_value": 21.6,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 155.5
+      }
+    },
+    "00-0030578_10": {
+      "score": 142.7,
+      "category_reason": "Elite RB with excellent ADP value and strong team situation",
+      "adp_vs_projection": 37,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 18.9,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 142.7
+      }
+    },
+    "00-0030578_11": {
+      "score": 139.4,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 46,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 16.2,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 139.4
+      }
+    },
+    "00-0030578_12": {
+      "score": 136.2,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 55,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 13.5,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 136.2
+      }
+    },
+    "00-0031687": {
+      "score": 133.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 64,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 10.8,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 133.0
+      }
+    },
+    "00-0031687_1": {
+      "score": 129.7,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 73,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 8.1,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 129.7
+      }
+    },
+    "00-0031687_2": {
+      "score": 126.5,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 82,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 5.4,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 126.5
+      }
+    },
+    "00-0031687_3": {
+      "score": 123.2,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 91,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 2.7,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 123.2
+      }
+    },
+    "00-0031687_4": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 100,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0031687_5": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 109,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0031687_6": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 118,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0031687_7": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 127,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0031687_8": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 136,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0031687_9": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 145,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0031687_10": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 154,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0031687_11": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 163,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 172,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_1": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 181,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_2": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 190,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_3": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 199,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_4": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 208,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_5": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 217,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_6": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 226,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_7": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 235,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_8": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 244,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_9": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 253,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_10": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 262,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_11": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 271,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032104_12": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 280,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 289,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_1": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 298,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_2": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 307,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_3": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 316,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_4": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 325,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_5": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 334,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_6": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 343,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_7": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 352,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_8": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 361,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_9": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 370,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_10": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 379,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_11": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 388,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_12": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 397,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_13": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 406,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_14": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 415,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_15": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 374,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_16": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 383,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_17": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 392,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0032764_18": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 401,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 410,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_1": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 419,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_2": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 428,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_3": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 437,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_4": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 446,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_5": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 455,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_6": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 464,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_7": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 473,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_8": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 482,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_9": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 491,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_10": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 500,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_11": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 509,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_12": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 518,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_13": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 527,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033045_14": {
+      "score": 120.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 536,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 0,
+        "final_score": 120.0
+      }
+    },
+    "00-0033280": {
+      "score": 128.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 545,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 8,
+        "final_score": 128.0
+      }
+    },
+    "00-0033280_1": {
+      "score": 128.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 554,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 8,
+        "final_score": 128.0
+      }
+    },
+    "00-0033280_2": {
+      "score": 128.0,
+      "category_reason": "Solid RB option for depth",
+      "adp_vs_projection": 563,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.2,
+        "team_adjustment": 8,
+        "final_score": 128.0
+      }
+    },
+    "00-0024243": {
+      "score": 290.6,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 35,
+      "components": {
+        "base_projection": 180,
+        "adp_value": 43.5,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 290.6
+      }
+    },
+    "00-0030061": {
+      "score": 276.6,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 36,
+      "components": {
+        "base_projection": 172,
+        "adp_value": 40.8,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 276.6
+      }
+    },
+    "00-0030061_1": {
+      "score": 262.7,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 37,
+      "components": {
+        "base_projection": 164,
+        "adp_value": 38.1,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 262.7
+      }
+    },
+    "00-0030061_2": {
+      "score": 248.8,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 38,
+      "components": {
+        "base_projection": 156,
+        "adp_value": 35.4,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 248.8
+      }
+    },
+    "00-0030061_3": {
+      "score": 234.9,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 39,
+      "components": {
+        "base_projection": 148,
+        "adp_value": 32.7,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 234.9
+      }
+    },
+    "00-0030061_4": {
+      "score": 221.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 40,
+      "components": {
+        "base_projection": 140,
+        "adp_value": 30.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 221.0
+      }
+    },
+    "00-0030061_5": {
+      "score": 207.1,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 41,
+      "components": {
+        "base_projection": 132,
+        "adp_value": 27.3,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 207.1
+      }
+    },
+    "00-0030061_6": {
+      "score": 193.2,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 42,
+      "components": {
+        "base_projection": 124,
+        "adp_value": 24.6,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 193.2
+      }
+    },
+    "00-0030061_7": {
+      "score": 179.3,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 43,
+      "components": {
+        "base_projection": 116,
+        "adp_value": 21.9,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 179.3
+      }
+    },
+    "00-0030061_8": {
+      "score": 165.4,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 44,
+      "components": {
+        "base_projection": 108,
+        "adp_value": 19.2,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 165.4
+      }
+    },
+    "00-0030061_9": {
+      "score": 151.5,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 45,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 16.5,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 151.5
+      }
+    },
+    "00-0030061_10": {
+      "score": 147.9,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 54,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 13.8,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 147.9
+      }
+    },
+    "00-0030061_11": {
+      "score": 144.4,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 63,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 11.1,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 144.4
+      }
+    },
+    "00-0030061_12": {
+      "score": 140.9,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 72,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 8.4,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 140.9
+      }
+    },
+    "00-0030061_13": {
+      "score": 137.4,
+      "category_reason": "Solid TE option for depth",
+      "adp_vs_projection": 81,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 5.7,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 137.4
+      }
+    },
+    "00-0030061_14": {
+      "score": 133.9,
+      "category_reason": "Solid TE option for depth",
+      "adp_vs_projection": 90,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 3.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 133.9
+      }
+    },
+    "00-0030061_15": {
+      "score": 130.4,
+      "category_reason": "Solid TE option for depth",
+      "adp_vs_projection": 99,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.3,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 130.4
+      }
+    },
+    "00-0030061_16": {
+      "score": 130.0,
+      "category_reason": "Solid TE option for depth",
+      "adp_vs_projection": 108,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 130.0
+      }
+    },
+    "00-0030061_17": {
+      "score": 130.0,
+      "category_reason": "Solid TE option for depth",
+      "adp_vs_projection": 117,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 130.0
+      }
+    },
+    "00-0030061_18": {
+      "score": 130.0,
+      "category_reason": "Solid TE option for depth",
+      "adp_vs_projection": 126,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 130.0
+      }
+    },
+    "00-0030061_19": {
+      "score": 130.0,
+      "category_reason": "Solid TE option for depth",
+      "adp_vs_projection": 135,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 0,
+        "final_score": 130.0
+      }
+    },
+    "00-0030506": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 144,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_1": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 153,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_2": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 162,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_3": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 171,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_4": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 180,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_5": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 189,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_6": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 198,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_7": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 207,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_8": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 216,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_9": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 225,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_10": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 234,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_11": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 243,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_12": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 252,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030506_13": {
+      "score": 140.0,
+      "category_reason": "Elite TE with excellent ADP value and strong team situation",
+      "adp_vs_projection": 261,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.3,
+        "team_adjustment": 10,
+        "final_score": 140.0
+      }
+    },
+    "00-0030035": {
+      "score": 233.6,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 72,
+      "components": {
+        "base_projection": 180,
+        "adp_value": 32.4,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 233.6
+      }
+    },
+    "00-0030035_1": {
+      "score": 221.9,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 73,
+      "components": {
+        "base_projection": 172,
+        "adp_value": 29.7,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 221.9
+      }
+    },
+    "00-0030035_2": {
+      "score": 210.1,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 74,
+      "components": {
+        "base_projection": 164,
+        "adp_value": 27.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 210.1
+      }
+    },
+    "00-0030035_3": {
+      "score": 198.3,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 75,
+      "components": {
+        "base_projection": 156,
+        "adp_value": 24.3,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 198.3
+      }
+    },
+    "00-0030035_4": {
+      "score": 186.6,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 76,
+      "components": {
+        "base_projection": 148,
+        "adp_value": 21.6,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 186.6
+      }
+    },
+    "00-0030035_5": {
+      "score": 174.8,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 77,
+      "components": {
+        "base_projection": 140,
+        "adp_value": 18.9,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 174.8
+      }
+    },
+    "00-0030035_6": {
+      "score": 163.0,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 78,
+      "components": {
+        "base_projection": 132,
+        "adp_value": 16.2,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 163.0
+      }
+    },
+    "00-0030035_7": {
+      "score": 151.2,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 79,
+      "components": {
+        "base_projection": 124,
+        "adp_value": 13.5,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 151.2
+      }
+    },
+    "00-0030035_8": {
+      "score": 156.0,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 30,
+      "components": {
+        "base_projection": 116,
+        "adp_value": 25.8,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 156.0
+      }
+    },
+    "00-0030035_9": {
+      "score": 144.2,
+      "category_reason": "Elite WR with excellent ADP value and strong team situation",
+      "adp_vs_projection": 31,
+      "components": {
+        "base_projection": 108,
+        "adp_value": 23.1,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 144.2
+      }
+    },
+    "00-0030279": {
+      "score": 132.4,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 32,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 20.4,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 132.4
+      }
+    },
+    "00-0030279_1": {
+      "score": 129.5,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 41,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 17.7,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 129.5
+      }
+    },
+    "00-0030279_2": {
+      "score": 126.5,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 50,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 15.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 126.5
+      }
+    },
+    "00-0030279_3": {
+      "score": 123.5,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 59,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 12.3,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 123.5
+      }
+    },
+    "00-0030279_4": {
+      "score": 120.6,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 68,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 9.6,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 120.6
+      }
+    },
+    "00-0030279_5": {
+      "score": 117.6,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 77,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 6.9,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 117.6
+      }
+    },
+    "00-0030279_6": {
+      "score": 114.6,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 86,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 4.2,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 114.6
+      }
+    },
+    "00-0030279_7": {
+      "score": 111.7,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 95,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 1.5,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 111.7
+      }
+    },
+    "00-0030279_8": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 104,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030279_9": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 113,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030279_10": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 122,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030279_11": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 131,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030279_12": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 140,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030279_13": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 149,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030279_14": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 158,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 167,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_1": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 176,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_2": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 185,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_3": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 194,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_4": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 203,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_5": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 212,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_6": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 221,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_7": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 230,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_8": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 239,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_9": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 248,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_10": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 257,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_11": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 266,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030431_12": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 275,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030564": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 284,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030564_1": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 293,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030564_2": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 302,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030564_3": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 311,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030564_4": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 320,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030564_5": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 329,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0030564_6": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 338,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_7": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 347,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_8": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 356,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_9": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 365,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_10": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 374,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_11": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 383,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_12": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 392,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_13": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 401,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_14": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 410,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_15": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 419,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_16": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 428,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_17": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 437,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0030564_18": {
+      "score": 120.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 446,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 10,
+        "final_score": 120.0
+      }
+    },
+    "00-0031235": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 455,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031235_1": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 414,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031235_2": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 423,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031235_3": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 432,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031235_4": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 441,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031235_5": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 450,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031235_6": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 459,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031235_7": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 468,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 477,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236_1": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 486,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236_2": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 495,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236_3": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 504,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236_4": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 513,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236_5": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 522,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236_6": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 531,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236_7": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 540,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236_8": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 549,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031236_9": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 558,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031381": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 567,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031381_1": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 576,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031381_2": {
+      "score": 110.0,
+      "category_reason": "Undervalued WR with breakout potential",
+      "adp_vs_projection": 585,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 0,
+        "final_score": 110.0
+      }
+    },
+    "00-0031381_3": {
+      "score": 115.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 594,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 5,
+        "final_score": 115.0
+      }
+    },
+    "00-0031381_4": {
+      "score": 115.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 603,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 5,
+        "final_score": 115.0
+      }
+    },
+    "00-0031381_5": {
+      "score": 115.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 612,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 5,
+        "final_score": 115.0
+      }
+    },
+    "00-0031381_6": {
+      "score": 115.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 621,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 5,
+        "final_score": 115.0
+      }
+    },
+    "00-0031381_7": {
+      "score": 115.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 630,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 5,
+        "final_score": 115.0
+      }
+    },
+    "00-0031381_8": {
+      "score": 115.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 639,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 5,
+        "final_score": 115.0
+      }
+    },
+    "00-0031381_9": {
+      "score": 115.0,
+      "category_reason": "Solid WR option for depth",
+      "adp_vs_projection": 648,
+      "components": {
+        "base_projection": 100,
+        "adp_value": 0.0,
+        "position_multiplier": 1.1,
+        "team_adjustment": 5,
+        "final_score": 115.0
+      }
     }
   },
-  "methodology": {
-    "scoring_factors": [
-      "ADP (Average Draft Position) - Lower ADP = Higher score",
-      "Experience - More experienced players get bonus points",
-      "Age - Younger players in prime get higher scores"
+  "executive_summary": {
+    "total_players_analyzed": 230,
+    "roster_corrections_made": 0,
+    "adp_updates_applied": 0,
+    "key_insights": [
+      "Identified 58 must-start players",
+      "Found 71 sleeper candidates",
+      "Flagged 0 potential bust risks",
+      "Made 0 roster corrections"
     ],
-    "categories": [
-      "MUST_START (140+ points) - Elite weekly options",
-      "STRONG_PLAY (120+ points) - Reliable starters",
-      "SOLID_OPTION (100+ points) - Good depth pieces",
-      "SLEEPER (80+ points) - Under-radar options",
-      "DEEP_SLEEPER (<80 points) - Speculative adds"
-    ]
+    "top_recommendation": {
+      "player_id": "00-0023459",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 230.0,
+      "reason": "Elite QB with excellent ADP value and strong team situation"
+    },
+    "top_sleeper": {
+      "player_id": "00-0023459_13",
+      "name": "A.Rodgers",
+      "position": "QB",
+      "team": "NYJ",
+      "score": 114.9,
+      "reason": "Undervalued QB with breakout potential"
+    }
   }
 }
