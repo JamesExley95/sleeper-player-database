@@ -1,316 +1,47 @@
 #!/usr/bin/env python3
 """
-Enhanced NFL Data Collection Script with Proper Deduplication and AI Analysis
-Fixes the Aaron Rodgers duplication bug and roster verification errors
+DEBUGGED NFL Data Collection Script
+Version: 3.1.1-debug
 """
 
 import nfl_data_py as nfl
 import json
 import os
+import hashlib
 from datetime import datetime
 import requests
 
-def enhanced_ai_analysis_with_roster_verification():
-    """
-    AI-powered fantasy analysis with real-time roster verification
-    Fixed version with proper error handling
-    """
-    print("=== ENHANCED AI FANTASY ANALYSIS WITH ROSTER VERIFICATION ===")
-    
-    # Download player data from GitHub
-    players_data = fetch_github_player_data()
-    
-    if not players_data:
-        return {"error": "Failed to fetch player data"}
-    
-    # Get Fantasy Football Calculator ADP data (free API)
-    current_adp_data = fetch_current_adp_data()
-    
-    # Perform AI analysis with roster verification
-    analysis_results = perform_enhanced_analysis(players_data, current_adp_data)
-    
-    # Save enhanced analysis back to GitHub
-    save_enhanced_analysis(analysis_results)
-    
-    return {
-        "message": "Enhanced AI analysis completed with roster verification",
-        "players_analyzed": len(players_data.get('players', {})),
-        "roster_updates_made": analysis_results['metadata']['roster_corrections'],  # Fixed key path
-        "must_starts": len(analysis_results.get('must_starts', [])),
-        "sleepers": len(analysis_results.get('sleepers', [])),
-        "analysis_file": "json_data/ai_insights.json",
-        "adp_source": "fantasy_football_calculator" if current_adp_data else "simulated"
-    }
+# Debug: Print script version and location immediately
+SCRIPT_VERSION = "3.1.1-debug"
+print(f"=== SCRIPT VERSION: {SCRIPT_VERSION} ===")
+print(f"Script location: {__file__}")
+print(f"Working directory: {os.getcwd()}")
+print(f"Environment: {os.environ.get('GITHUB_ACTIONS', 'local')}")
 
-def fetch_github_player_data():
-    """Fetch current player data from GitHub repository"""
-    try:
-        url = "https://raw.githubusercontent.com/JamesExley95/sleeper-player-database/main/json_data/players.json"
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-        return response.json()
-    except Exception as e:
-        print(f"Error fetching player data: {e}")
-        return None
-
-def fetch_current_adp_data():
-    """Fetch current ADP data from Fantasy Football Calculator API (free)"""
-    try:
-        url = "https://fantasyfootballcalculator.com/api/v1/adp/standard"
-        params = {
-            'teams': 12,
-            'year': 2025,
-            'format': 'standard'
-        }
+def debug_file_status(filepath):
+    """Debug helper to check file status"""
+    if os.path.exists(filepath):
+        stat = os.stat(filepath)
+        with open(filepath, 'r') as f:
+            content = f.read()
+        content_hash = hashlib.md5(content.encode()).hexdigest()
+        print(f"File exists: {filepath}")
+        print(f"Size: {stat.st_size} bytes")
+        print(f"Modified: {datetime.fromtimestamp(stat.st_mtime)}")
+        print(f"Content hash: {content_hash[:16]}")
         
-        response = requests.get(url, params=params, timeout=15)
-        response.raise_for_status()
-        
-        adp_data = response.json()
-        print(f"✅ Fetched current ADP data for {len(adp_data.get('players', []))} players")
-        
-        # Convert to lookup dictionary
-        adp_lookup = {}
-        for player in adp_data.get('players', []):
-            name = player.get('name', '').lower().replace(' ', '_')
-            adp_lookup[name] = {
-                'adp_overall': player.get('adp'),
-                'adp_position': player.get('position_rank'),
-                'position': player.get('position'),
-                'team': player.get('team')
-            }
-        
-        return adp_lookup
-        
-    except Exception as e:
-        print(f"Failed to fetch ADP data: {e}")
-        return None
-
-def perform_enhanced_analysis(players_data, current_adp_data):
-    """Enhanced analysis with proper error handling"""
-    players = players_data.get('players', {})
-    analysis_results = {
-        'metadata': {
-            'analysis_date': datetime.now().isoformat(),
-            'players_analyzed': len(players),
-            'roster_corrections': 0,  # This is the correct location
-            'adp_updates': 0,
-            'ai_version': 'enhanced_v2.0'
-        },
-        'roster_corrections_made': [],
-        'must_starts': [],
-        'sleepers': [],
-        'busts': [],
-        'player_analysis': {},
-        'executive_summary': {}
-    }
-    
-    print("Performing enhanced AI analysis with roster verification...")
-    
-    # Process each player
-    for player_id, player_data in players.items():
-        
-        # AI-powered roster verification for key players
-        if should_verify_roster(player_data):
-            corrected_data = ai_verify_player_roster(player_data)
-            if corrected_data['updated']:
-                analysis_results['metadata']['roster_corrections'] += 1  # Fixed key path
-                analysis_results['roster_corrections_made'].append({
-                    'player': player_data['player_name'],
-                    'old_team': player_data.get('team', 'Unknown'),
-                    'new_team': corrected_data['current_team'],
-                    'fantasy_impact': corrected_data['fantasy_impact']
-                })
-                player_data.update(corrected_data['updates'])
-        
-        # Update ADP data if available
-        if current_adp_data:
-            player_name_key = player_data['player_name'].lower().replace(' ', '_')
-            if player_name_key in current_adp_data:
-                adp_info = current_adp_data[player_name_key]
-                old_adp = player_data.get('adp_overall', 999)
-                new_adp = adp_info.get('adp_overall', old_adp)
-                
-                if abs(old_adp - new_adp) > 10:
-                    analysis_results['metadata']['adp_updates'] += 1  # Fixed key path
-                
-                player_data.update({
-                    'adp_overall': new_adp,
-                    'adp_position': adp_info.get('adp_position', player_data.get('adp_position')),
-                    'adp_source': 'fantasy_football_calculator',
-                    'adp_last_updated': datetime.now().isoformat()
-                })
-        
-        # Perform AI analysis on each player
-        player_analysis = analyze_player_with_ai(player_data)
-        analysis_results['player_analysis'][player_id] = player_analysis
-        
-        # Categorize players
-        if player_analysis['score'] >= 140:
-            analysis_results['must_starts'].append({
-                'player_id': player_id,
-                'name': player_data['player_name'],
-                'position': player_data['position'],
-                'team': player_data.get('team'),
-                'score': player_analysis['score'],
-                'reason': player_analysis['category_reason']
-            })
-        elif player_analysis['score'] >= 95 and player_analysis['score'] < 115:
-            analysis_results['sleepers'].append({
-                'player_id': player_id,
-                'name': player_data['player_name'],
-                'position': player_data['position'],
-                'team': player_data.get('team'),
-                'score': player_analysis['score'],
-                'reason': player_analysis['category_reason']
-            })
-        elif player_analysis['adp_vs_projection'] < -20:
-            analysis_results['busts'].append({
-                'player_id': player_id,
-                'name': player_data['player_name'],
-                'position': player_data['position'],
-                'team': player_data.get('team'),
-                'score': player_analysis['score'],
-                'adp_vs_projection': player_analysis['adp_vs_projection'],
-                'reason': "ADP significantly higher than AI projection"
-            })
-    
-    # Generate executive summary
-    analysis_results['executive_summary'] = generate_executive_summary(analysis_results)
-    
-    print(f"✅ Enhanced analysis complete:")
-    print(f"   Roster corrections: {analysis_results['metadata']['roster_corrections']}")
-    print(f"   ADP updates: {analysis_results['metadata']['adp_updates']}")
-    print(f"   Must-starts identified: {len(analysis_results['must_starts'])}")
-    print(f"   Sleepers identified: {len(analysis_results['sleepers'])}")
-    print(f"   Potential busts: {len(analysis_results['busts'])}")
-    
-    return analysis_results
-
-def should_verify_roster(player_data):
-    """Determine if a player needs AI roster verification"""
-    if player_data.get('adp_overall', 999) <= 100:
-        return True
-    
-    position = player_data.get('position', '')
-    if position in ['QB', 'RB', 'WR'] and player_data.get('adp_overall', 999) <= 150:
-        return True
-    
-    team = player_data.get('team', '').upper()
-    if team in ['FA', 'N/A', '', None]:
-        return True
-    
-    return False
-
-def ai_verify_player_roster(player_data):
-    """Use AI web search to verify current player team assignment"""
-    player_name = player_data.get('player_name', '')
-    current_team = player_data.get('team', '')
-    
-    # Known corrections (in real implementation, this would use web search)
-    known_corrections = {
-        'Justin Fields': {
-            'current_team': 'NYJ',
-            'fantasy_impact': 'Positive - Starting opportunity with Jets increases value',
-            'updated': True,
-            'updates': {'team': 'NYJ', 'status': 'starting_qb', 'last_verified': datetime.now().isoformat()}
-        },
-        'Mike Williams': {
-            'current_team': 'RETIRED',
-            'fantasy_impact': 'Critical - Player retired, remove from all analysis',
-            'updated': True,
-            'updates': {'team': 'RETIRED', 'status': 'retired', 'last_verified': datetime.now().isoformat()}
-        }
-    }
-    
-    if player_name in known_corrections:
-        correction = known_corrections[player_name]
-        print(f"🔍 Roster correction: {player_name} - {current_team} → {correction['current_team']}")
-        return correction
-    
-    return {
-        'updated': False,
-        'current_team': current_team,
-        'fantasy_impact': 'No change detected',
-        'updates': {}
-    }
-
-def analyze_player_with_ai(player_data):
-    """AI analysis of individual player with enhanced scoring"""
-    position = player_data.get('position', 'Unknown')
-    team = player_data.get('team', 'Unknown')
-    adp = player_data.get('adp_overall', 999)
-    projected_points = player_data.get('projected_points_ppr', 100)
-    
-    # Enhanced scoring algorithm
-    base_score = projected_points
-    adp_value = max(200 - adp, 0) * 0.3
-    
-    position_multipliers = {'QB': 1.0, 'RB': 1.2, 'WR': 1.1, 'TE': 1.3}
-    position_multiplier = position_multipliers.get(position, 1.0)
-    
-    team_adjustments = {
-        'KC': 10, 'BUF': 8, 'SF': 8, 'NYJ': 5, 'RETIRED': -999
-    }
-    team_adjustment = team_adjustments.get(team, 0)
-    
-    final_score = (base_score + adp_value) * position_multiplier + team_adjustment
-    
-    if final_score >= 140:
-        category_reason = f"Elite {position} with excellent ADP value and strong team situation"
-    elif final_score >= 95 and final_score < 115:
-        category_reason = f"Undervalued {position} with breakout potential"
+        # Check first few lines for version info
+        lines = content.split('\n')[:10]
+        for line in lines:
+            if 'version' in line.lower() or 'last_updated' in line.lower():
+                print(f"Version info: {line.strip()}")
     else:
-        category_reason = f"Solid {position} option for depth"
-    
-    if team == 'RETIRED':
-        category_reason = "Player has retired - do not draft"
-        final_score = 0
-    
-    return {
-        'score': round(final_score, 1),
-        'category_reason': category_reason,
-        'adp_vs_projection': projected_points - (200 - adp),
-        'components': {
-            'base_projection': projected_points,
-            'adp_value': round(adp_value, 1),
-            'position_multiplier': position_multiplier,
-            'team_adjustment': team_adjustment,
-            'final_score': round(final_score, 1)
-        }
-    }
-
-def generate_executive_summary(analysis_results):
-    """Generate executive summary of analysis"""
-    return {
-        'total_players_analyzed': analysis_results['metadata']['players_analyzed'],
-        'roster_corrections_made': analysis_results['metadata']['roster_corrections'],
-        'adp_updates_applied': analysis_results['metadata']['adp_updates'],
-        'key_insights': [
-            f"Identified {len(analysis_results['must_starts'])} must-start players",
-            f"Found {len(analysis_results['sleepers'])} sleeper candidates",
-            f"Flagged {len(analysis_results['busts'])} potential bust risks",
-            f"Made {analysis_results['metadata']['roster_corrections']} roster corrections"
-        ],
-        'top_recommendation': analysis_results['must_starts'][0] if analysis_results['must_starts'] else None,
-        'top_sleeper': analysis_results['sleepers'][0] if analysis_results['sleepers'] else None
-    }
-
-def save_enhanced_analysis(analysis_results):
-    """Save enhanced analysis results"""
-    try:
-        os.makedirs('json_data', exist_ok=True)
-        with open('json_data/ai_insights.json', 'w') as f:
-            json.dump(analysis_results, f, indent=2)
-        print("💾 Saved enhanced analysis to json_data/ai_insights.json")
-        return True
-    except Exception as e:
-        print(f"Error saving analysis: {e}")
-        return False
+        print(f"File does not exist: {filepath}")
 
 def load_nfl_data():
-    """Load NFL data with proper error handling"""
+    """Load NFL data with enhanced debugging"""
     try:
+        print("=== DATA LOADING DEBUG ===")
         print("Loading NFL weekly data for 2024...")
         weekly_data = nfl.import_weekly_data([2024], columns=[
             'player_id', 'player_name', 'position', 'recent_team', 
@@ -318,23 +49,37 @@ def load_nfl_data():
             'receiving_yards', 'passing_tds', 'rushing_tds', 'receiving_tds'
         ])
         print(f"Loaded {len(weekly_data)} total weekly records")
+        
+        # Debug: Check data structure
+        print("Sample raw data:")
+        print(weekly_data.head(3).to_string())
+        print(f"Unique players in raw data: {weekly_data['player_name'].nunique()}")
+        print(f"Unique player_ids: {weekly_data['player_id'].nunique()}")
+        
         return weekly_data
     except Exception as e:
-        print(f"Error loading NFL data: {e}")
+        print(f"ERROR loading NFL data: {e}")
         return None
 
 def process_players(weekly_data, target_counts):
-    """Process and deduplicate players with enhanced logic"""
+    """Process and deduplicate players with extensive debugging"""
     if weekly_data is None or weekly_data.empty:
-        print("No data to process")
+        print("ERROR: No data to process")
         return []
     
+    print(f"=== DEDUPLICATION DEBUG ===")
     print(f"Processing {len(weekly_data)} weekly records...")
+    
+    # Debug: Show some raw data
+    print("Raw data sample:")
+    sample_data = weekly_data[['player_name', 'position', 'recent_team', 'fantasy_points_ppr']].head(10)
+    print(sample_data.to_string())
     
     # Create player summaries by aggregating all their weekly data
     player_stats = {}
+    duplicate_keys_found = []
     
-    for _, row in weekly_data.iterrows():
+    for idx, row in weekly_data.iterrows():
         player_name = row.get('player_name', 'Unknown')
         position = row.get('position', 'Unknown')
         team = row.get('recent_team', 'Unknown')
@@ -360,6 +105,10 @@ def process_players(weekly_data, target_counts):
                 'total_receiving_tds': 0,
                 'games_played': 0
             }
+        else:
+            # Track duplicate key occurrences
+            if unique_key not in duplicate_keys_found:
+                duplicate_keys_found.append(unique_key)
         
         # Aggregate stats
         stats = player_stats[unique_key]
@@ -375,7 +124,15 @@ def process_players(weekly_data, target_counts):
         # Use most recent team
         stats['team'] = team
     
-    print(f"Aggregated to {len(player_stats)} unique players")
+    print(f"Raw weekly records: {len(weekly_data)}")
+    print(f"Unique players after aggregation: {len(player_stats)}")
+    print(f"Duplicate keys processed: {len(duplicate_keys_found)}")
+    
+    # Debug: Show some aggregated players
+    print("Sample aggregated players:")
+    sample_players = list(player_stats.items())[:5]
+    for key, stats in sample_players:
+        print(f"  {key}: {stats['total_fantasy_points']:.1f} pts, {stats['games_played']} games")
     
     # Filter to fantasy-relevant players
     fantasy_players = []
@@ -383,7 +140,7 @@ def process_players(weekly_data, target_counts):
         if is_fantasy_relevant(stats):
             fantasy_players.append(stats)
     
-    print(f"Found {len(fantasy_players)} fantasy-relevant players")
+    print(f"Fantasy-relevant players: {len(fantasy_players)}")
     
     # Sort by total fantasy points for each position
     sorted_players = {'QB': [], 'RB': [], 'WR': [], 'TE': []}
@@ -392,6 +149,11 @@ def process_players(weekly_data, target_counts):
         position = player['position']
         if position in sorted_players:
             sorted_players[position].append(player)
+    
+    # Debug position distribution
+    print("Players by position before sorting:")
+    for pos in sorted_players:
+        print(f"  {pos}: {len(sorted_players[pos])} players")
     
     # Sort each position by fantasy points
     for position in sorted_players:
@@ -407,7 +169,14 @@ def process_players(weekly_data, target_counts):
             selected = sorted_players[position][:count]
             final_players.extend(selected)
             print(f"Selected top {len(selected)} {position}s")
+            
+            # Debug: Show top 3 players for each position
+            if selected:
+                print(f"  Top 3 {position}s:")
+                for i, player in enumerate(selected[:3]):
+                    print(f"    {i+1}. {player['player_name']} ({player['team']}) - {player['total_fantasy_points']:.1f} pts")
     
+    print(f"Final player list: {len(final_players)} players")
     return final_players
 
 def is_fantasy_relevant(player_stats):
@@ -428,12 +197,18 @@ def is_fantasy_relevant(player_stats):
         return False
     
     threshold = min_thresholds[position]
-    return (total_points >= threshold['points'] and 
-            games_played >= threshold['games'])
+    is_relevant = (total_points >= threshold['points'] and 
+                   games_played >= threshold['games'])
+    
+    return is_relevant
 
 def create_player_json(processed_players):
-    """Create the final JSON structure with proper player data"""
+    """Create the final JSON structure with debugging"""
+    print(f"=== JSON CREATION DEBUG ===")
+    print(f"Creating JSON for {len(processed_players)} players")
+    
     players_dict = {}
+    player_names_created = []
     
     for i, player_data in enumerate(processed_players):
         # Create truly unique player ID
@@ -442,6 +217,10 @@ def create_player_json(processed_players):
         team = player_data['team']
         
         player_id = f"{player_name}_{position}_{team}_{i:03d}"
+        
+        # Debug: Track first 10 players created
+        if i < 10:
+            player_names_created.append(f"{player_data['player_name']} ({position})")
         
         # Calculate projections and ADP
         total_points = player_data['total_fantasy_points']
@@ -472,11 +251,84 @@ def create_player_json(processed_players):
             "last_updated": datetime.now().isoformat()
         }
     
+    print("First 10 players created:")
+    for name in player_names_created:
+        print(f"  {name}")
+    
+    print(f"Total unique player IDs created: {len(players_dict)}")
+    
+    # Debug: Check for any duplicates in final dataset
+    player_names_final = [p['player_name'] for p in players_dict.values()]
+    unique_names = set(player_names_final)
+    if len(player_names_final) != len(unique_names):
+        print(f"WARNING: Duplicate names in final dataset!")
+        from collections import Counter
+        name_counts = Counter(player_names_final)
+        duplicates = {name: count for name, count in name_counts.items() if count > 1}
+        print(f"Duplicates found: {duplicates}")
+    else:
+        print("✓ No duplicate names in final dataset")
+    
     return players_dict
 
+def save_database_with_debug(database):
+    """Save database with extensive debugging"""
+    print(f"=== FILE SAVE DEBUG ===")
+    
+    # Ensure directory exists
+    os.makedirs('json_data', exist_ok=True)
+    print(f"Directory 'json_data' exists: {os.path.exists('json_data')}")
+    
+    filepath = 'json_data/players.json'
+    
+    # Check existing file before overwrite
+    print("BEFORE save:")
+    debug_file_status(filepath)
+    
+    try:
+        # Write the file
+        print(f"Writing to: {os.path.abspath(filepath)}")
+        with open(filepath, 'w') as f:
+            json.dump(database, f, indent=2)
+        
+        print("✓ File write completed successfully")
+        
+        # Verify file was written correctly
+        print("AFTER save:")
+        debug_file_status(filepath)
+        
+        # Verify content integrity
+        with open(filepath, 'r') as f:
+            loaded_data = json.load(f)
+        
+        print(f"Verification - Players in saved file: {len(loaded_data.get('players', {}))}")
+        print(f"Verification - Metadata version: {loaded_data.get('metadata', {}).get('version', 'missing')}")
+        
+        # Show first few player names to verify diversity
+        players = loaded_data.get('players', {})
+        if players:
+            first_five_names = []
+            for i, (player_id, player_data) in enumerate(players.items()):
+                if i < 5:
+                    first_five_names.append(f"{player_data.get('player_name', 'Unknown')} ({player_data.get('position', 'Unknown')})")
+            print("First 5 players in saved file:")
+            for name in first_five_names:
+                print(f"  {name}")
+        
+        return True
+        
+    except Exception as e:
+        print(f"ERROR saving file: {e}")
+        print(f"Error type: {type(e)}")
+        import traceback
+        traceback.print_exc()
+        return False
+
 def main():
-    """Main execution function"""
-    print("Starting NFL data collection...")
+    """Main execution function with comprehensive debugging"""
+    print(f"=== MAIN EXECUTION START ===")
+    print(f"Script version: {SCRIPT_VERSION}")
+    print(f"Timestamp: {datetime.now().isoformat()}")
     
     # Target player counts for each position
     target_counts = {
@@ -486,16 +338,18 @@ def main():
         'TE': 35
     }
     
+    print(f"Target counts: {target_counts}")
+    
     # Load and process data
     weekly_data = load_nfl_data()
     if weekly_data is None:
-        print("Failed to load NFL data")
+        print("FATAL ERROR: Failed to load NFL data")
         return
     
     processed_players = process_players(weekly_data, target_counts)
     
     if not processed_players:
-        print("No players processed successfully")
+        print("FATAL ERROR: No players processed successfully")
         return
     
     # Create JSON structure
@@ -504,40 +358,52 @@ def main():
     # Create final database structure
     database = {
         "metadata": {
+            "script_version": SCRIPT_VERSION,
             "last_updated": datetime.now().isoformat(),
-            "version": "3.1",
+            "version": "3.1.1",  # Updated version number
             "total_players": len(players_dict),
             "position_breakdown": {
                 pos: len([p for p in players_dict.values() if p['position'] == pos])
                 for pos in ['QB', 'RB', 'WR', 'TE', 'K', 'DEF']
             },
-            "data_collection_method": "nflverse_2024_aggregated",
-            "next_update": "Weekly Tuesday 6AM UTC"
+            "data_collection_method": "nflverse_2024_aggregated_debugged",
+            "next_update": "Weekly Tuesday 6AM UTC",
+            "debug_info": {
+                "working_directory": os.getcwd(),
+                "github_actions": os.environ.get('GITHUB_ACTIONS', 'false'),
+                "python_version": os.sys.version
+            }
         },
         "players": players_dict
     }
     
-    # Save to file
-    os.makedirs('json_data', exist_ok=True)
+    # Save to file with debugging
+    success = save_database_with_debug(database)
     
-    with open('json_data/players.json', 'w') as f:
-        json.dump(database, f, indent=2)
+    if success:
+        print(f"\n✅ SUCCESS: Created database with {len(players_dict)} unique players")
+        print(f"Script version: {SCRIPT_VERSION}")
+        print(f"Database version: {database['metadata']['version']}")
+        print("\nPosition breakdown:")
+        for pos, count in database['metadata']['position_breakdown'].items():
+            if count > 0:
+                print(f"  {pos}: {count} players")
+        
+        # Show sample players to verify diversity
+        print(f"\nSample players (first 5):")
+        for i, (player_id, player_data) in enumerate(list(players_dict.items())[:5]):
+            print(f"  {player_data['position']}: {player_data['player_name']} ({player_data['team']})")
+    else:
+        print("FATAL ERROR: Failed to save database")
+        return
     
-    print(f"\n✅ SUCCESS: Created database with {len(players_dict)} unique players")
-    print("\nPosition breakdown:")
-    for pos, count in database['metadata']['position_breakdown'].items():
-        if count > 0:
-            print(f"  {pos}: {count} players")
-    
-    # Show sample players to verify diversity
-    print(f"\nSample players:")
-    for i, (player_id, player_data) in enumerate(list(players_dict.items())[:5]):
-        print(f"  {player_data['position']}: {player_data['player_name']} ({player_data['team']})")
-    
-    # Run enhanced AI analysis
     print("\n" + "="*60)
-    result = enhanced_ai_analysis_with_roster_verification()
-    print(f"\nFinal result: {result}")
+    
+    # Enhanced AI analysis would run here but we'll skip it for debugging
+    print("Skipping AI analysis for debugging focus")
+    
+    print(f"\nDEBUG SESSION COMPLETE")
+    print(f"Script version: {SCRIPT_VERSION}")
 
 if __name__ == "__main__":
     main()
