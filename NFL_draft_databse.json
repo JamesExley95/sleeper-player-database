@@ -1,1068 +1,240 @@
-{
-  "databaseInfo": {
-    "title": "2025 Fantasy Football Player Insights Database - Complete & Validated",
-    "version": "2.0",
-    "lastUpdated": "2025-08-25",
-    "dataSource": "FantasyPros ADP, ESPN Rankings, FantasyFootballCalculator.com API, Real-time Research",
-    "totalPlayers": 275,
-    "corrections": [
-      "Fixed JSON structure and syntax errors",
-      "Validated all ADP ranges against current market data",
-      "Added scoring format variations for better draft accuracy",
-      "Expanded coverage to include deep sleepers, K/DST, and reach candidates",
-      "Corrected team assignments and 2025 context accuracy"
-    ]
-  },
-  "players": [
-    {
-      "playerId": "saquon_barkley",
-      "position": "RB",
-      "tier": 1,
-      "scoringVariations": {
-        "standard": {
-          "adp": 1.8,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "high"
-        },
-        "ppr": {
-          "adp": 1.6,
-          "adpRange": "rounds 1-1", 
-          "draftCapital": "high"
-        },
-        "halfPpr": {
-          "adp": 1.7,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "high"
+#!/usr/bin/env python3
+"""
+NFL Data Collection Script - Production Version
+Version: 3.2 - Cleaned from working debug version
+"""
+
+import nfl_data_py as nfl
+import json
+import os
+import hashlib
+from datetime import datetime
+import requests
+
+SCRIPT_VERSION = "3.2"
+
+def load_nfl_data():
+    """Load NFL data using the working API calls from debug version"""
+    print("Loading NFL data...")
+    
+    datasets = {}
+    
+    try:
+        # Use same API calls that worked in debug version
+        print("  Loading rosters...")
+        datasets['rosters'] = nfl.import_rosters([2024])
+        
+        print("  Loading weekly data...")
+        datasets['weekly'] = nfl.import_weekly_data([2024])
+        
+        print("  Loading seasonal data...")
+        datasets['seasonal'] = nfl.import_seasonal_data([2024])
+        
+        print("  Loading IDs...")
+        datasets['ids'] = nfl.import_ids()
+        
+        print("Data loading complete")
+        return datasets
+        
+    except Exception as e:
+        print(f"Error loading NFL data: {e}")
+        raise
+
+def aggregate_players(datasets):
+    """Aggregate player data with the same deduplication logic from debug version"""
+    print("Aggregating player data...")
+    
+    player_data = {}
+    
+    # Process rosters (primary source)
+    if datasets.get('rosters') is not None:
+        for _, player in datasets['rosters'].iterrows():
+            if player['position'] in ['QB', 'RB', 'WR', 'TE']:
+                key = f"{player['player_name']}_{player['position']}"
+                
+                if key not in player_data:
+                    player_data[key] = {
+                        'player_name': player['player_name'],
+                        'position': player['position'],
+                        'team': player['team'],
+                        'season_data': []
+                    }
+                
+                player_data[key]['team'] = player['team']  # Update team
+    
+    # Add weekly stats
+    if datasets.get('weekly') is not None:
+        for _, stats in datasets['weekly'].iterrows():
+            if stats['position'] in ['QB', 'RB', 'WR', 'TE']:
+                key = f"{stats['player_name']}_{stats['position']}"
+                
+                if key in player_data:
+                    player_data[key]['season_data'].append({
+                        'week': stats.get('week', 0),
+                        'fantasy_points': stats.get('fantasy_points_ppr', 0)
+                    })
+    
+    # Add seasonal totals
+    if datasets.get('seasonal') is not None:
+        for _, seasonal in datasets['seasonal'].iterrows():
+            if seasonal['position'] in ['QB', 'RB', 'WR', 'TE']:
+                key = f"{seasonal['player_name']}_{seasonal['position']}"
+                
+                if key in player_data:
+                    player_data[key]['total_fantasy_points'] = seasonal.get('fantasy_points_ppr', 0)
+                    player_data[key]['games_played'] = seasonal.get('games', 0)
+    
+    print(f"Aggregated {len(player_data)} unique players")
+    return player_data
+
+def create_players_json(player_data):
+    """Create final players JSON with projections and rankings"""
+    print("Creating player objects...")
+    
+    players_dict = {}
+    all_players = list(player_data.values())
+    
+    # Sort by total fantasy points for ranking
+    all_players.sort(key=lambda x: x.get('total_fantasy_points', 0), reverse=True)
+    
+    for i, player in enumerate(all_players):
+        # Calculate metrics
+        total_points = player.get('total_fantasy_points', 0)
+        games = player.get('games_played', 1)
+        avg_per_game = total_points / max(games, 1)
+        
+        # Generate projections based on performance
+        projected_points = calculate_projection(player['position'], total_points, avg_per_game)
+        adp = calculate_adp(player['position'], projected_points, i + 1)
+        risk_score = calculate_risk(player['position'], avg_per_game, games)
+        
+        # Create player ID
+        name_clean = player['player_name'].replace(' ', '.').replace("'", "")[:10]
+        player_id = f"{name_clean}_{player['position']}_{i+1:03d}"
+        
+        # Create player object
+        players_dict[player_id] = {
+            'player_name': player['player_name'],
+            'position': player['position'],
+            'team': player['team'],
+            'fantasy_points_season': round(total_points, 1),
+            'projected_points_ppr': round(projected_points, 1),
+            'games_played': games,
+            'avg_points_per_game': round(avg_per_game, 1),
+            'adp_overall': adp,
+            'risk_score': risk_score,
+            'injury_status': 'healthy',
+            'last_updated': datetime.now().isoformat()
         }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Eagles system upgrade with Sirianni, prime workload behind improved offensive line",
-        "strengths": ["Elite talent in new system", "Reduced injury concerns from fresh start", "Goal-line upside with Hurts"],
-        "concerns": ["Age 28 season", "Eagles RB committee history", "Massive workload expectations after 2K season"],
-        "strategy": "First overall candidate but beware 2000-yard regression",
-        "handcuff": "kenneth_gainwell",
-        "contextualAnalysis": {
-          "earlyPick": "Taking 1.01 defensible but historically RBs decline after 2000-yard seasons",
-          "valuePick": "Consensus top-3 represents ceiling play with defined floor in Eagles offense",
-          "latePick": "Impossible to fall past pick 4, pure value if available late round 1",
-          "keeperContext": "Elite keeper but age and workload concerns for long-term leagues",
-          "redraftContext": "Anchor RB1 with 2000+ total yard ceiling but regression risk from historic 2024"
-        },
-        "scoringImpact": {
-          "standardBest": "TD-dependent value benefits from Eagles red zone efficiency",
-          "pprBest": "Pass-catching ability maximizes value in Eagles system",
-          "scoringNeutral": "Elite talent translates across all formats despite slight PPR edge"
-        }
-      }
-    },
-    {
-      "playerId": "bijan_robinson",
-      "position": "RB", 
-      "tier": 1,
-      "scoringVariations": {
-        "standard": {
-          "adp": 2.4,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "high"
-        },
-        "ppr": {
-          "adp": 2.0,
-          "adpRange": "rounds 1-1",
-          "draftCapital": "high" 
-        },
-        "halfPpr": {
-          "adp": 2.2,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "high"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Full offensive control expected after Arthur Smith departure, Falcons system overhaul",
-        "strengths": ["Elite receiving ability maximized", "Improved usage under new OC", "Goal-line role secured with Cousins"],
-        "concerns": ["Previous underutilization trauma", "Falcons offensive line questions", "Can team support RB1 volume"],
-        "strategy": "Second-year breakout candidate with highest ceiling upside", 
-        "handcuff": "tyler_allgeier",
-        "contextualAnalysis": {
-          "earlyPick": "Taking 1.01 requires belief in coaching change impact and elite talent ceiling",
-          "valuePick": "Consensus 1.02-1.03 represents fair value with massive upside if usage corrects",
-          "latePick": "Steal if falls past pick 4, Arthur Smith departure narrative undervalued",
-          "keeperContext": "Premium keeper with multiple years of RB1 upside and youth",
-          "redraftContext": "High-ceiling play banking on Falcons finally maximizing elite talent"
-        },
-        "scoringImpact": {
-          "standardBest": "Goal-line work and TD upside with Cousins upgrade",
-          "pprBest": "Elite pass-catching ability provides massive PPR ceiling",
-          "scoringNeutral": "Three-down skillset valuable in all formats with slight PPR edge"
-        }
-      }
-    },
-    {
-      "playerId": "ashton_jeanty",
-      "position": "RB",
-      "tier": 1, 
-      "scoringVariations": {
-        "standard": {
-          "adp": 8.2,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "high"
-        },
-        "ppr": {
-          "adp": 9.8,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "medium"
-        },
-        "halfPpr": {
-          "adp": 9.0,
-          "adpRange": "rounds 1-2", 
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "rookie",
-      "insights": {
-        "situation2025": "Raiders featured back with clear path to workhorse role, weak competition",
-        "strengths": ["Elite college production (2601 yards, 29 TDs)", "Three-down skillset with receiving ability", "Raiders committed with 6th overall pick"],
-        "concerns": ["Rookie adjustment to NFL speed", "Raiders offensive line ranked 22nd", "Mountain West to NFL competition jump"],
-        "strategy": "High-upside rookie RB worth round 1 investment for ceiling",
-        "handcuff": "raheem_mostert",
-        "contextualAnalysis": {
-          "earlyPick": "Taking top-8 aggressive but talent and opportunity combination rare for rookies",
-          "valuePick": "Current ADP around pick 9 represents good value for workhorse rookie upside",
-          "latePick": "Massive steal if falls to round 2, rookie RBs historically outperform ADP",
-          "keeperContext": "Premium dynasty asset with multiple years of RB1 ceiling if hits",
-          "redraftContext": "Boom-bust play requiring belief in immediate NFL translation"
-        },
-        "scoringImpact": {
-          "standardBest": "Goal-line work and TD upside maximized in standard scoring",
-          "pprBest": "Pass-catching ability adds safety net in PPR formats", 
-          "scoringNeutral": "Three-down profile valuable across formats with standard edge"
-        }
-      }
-    },
-    {
-      "playerId": "malik_nabers",
-      "position": "WR",
-      "tier": 1,
-      "scoringVariations": {
-        "standard": {
-          "adp": 7.8,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "high"
-        },
-        "ppr": {
-          "adp": 6.4,
-          "adpRange": "rounds 1-1",
-          "draftCapital": "high"
-        },
-        "halfPpr": {
-          "adp": 7.1,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "high"
-        }
-      },
-      "playerType": "second_year",
-      "insights": {
-        "situation2025": "Target monster with QB upgrade to Russell Wilson, minimal target competition",
-        "strengths": ["Record rookie 109 catches with terrible QBs", "35% target share security", "QB upgrade from Jones/DeVito to Wilson"],
-        "concerns": ["Russell Wilson limitations at age 36", "Giants offensive line struggles", "Toe injury concerns from camp"],
-        "strategy": "Second-year WR1 with target security and QB upgrade",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking top-6 overall aggressive but 35% target share historically supports WR1 ceiling",
-          "valuePick": "Current ADP around pick 7 represents fair value for target dominance and QB upgrade",
-          "latePick": "Steal if falls to round 2, rookie success with terrible QBs bodes extremely well",
-          "keeperContext": "Must-keep young WR with established role and multiple years of WR1 upside",
-          "redraftContext": "Safest WR1 investment given target security and realistic QB improvement"
-        },
-        "scoringImpact": {
-          "standardBest": "Big-play ability and red zone targets benefit standard scoring",
-          "pprBest": "35% target share and 109 rookie catches make him PPR gold",
-          "scoringNeutral": "Target volume valuable across formats with clear PPR advantage"
-        }
-      }
-    },
-    {
-      "playerId": "travis_hunter",
-      "position": "WR",
-      "tier": 2,
-      "scoringVariations": {
-        "standard": {
-          "adp": 72.4,
-          "adpRange": "rounds 3-4", 
-          "draftCapital": "medium"
-        },
-        "ppr": {
-          "adp": 63.8,
-          "adpRange": "rounds 3-4",
-          "draftCapital": "medium"
-        },
-        "halfPpr": {
-          "adp": 68.1,
-          "adpRange": "rounds 3-4",
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "rookie",
-      "insights": {
-        "situation2025": "Unique two-way player focusing on WR initially, Jaguars paid premium for versatility",
-        "strengths": ["Heisman winner with elite college production", "Jaguars traded up to #2 overall", "Two-way ability adds IDP league value"],
-        "concerns": ["Two-way usage limits offensive snaps", "Rookie WR adjustment period", "Snap count uncertainty with defensive duties"],
-        "strategy": "High-upside swing pick worth mid-round investment for ceiling",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 3 very aggressive given usage uncertainty and rookie status",
-          "valuePick": "Current ADP around pick 65 represents upside play worth considering at cost",
-          "latePick": "Excellent value round 5+, ceiling too high to ignore if usage clarifies favorably",
-          "keeperContext": "Intriguing dynasty stash but usage questions limit immediate value",
-          "redraftContext": "Boom-bust rookie requiring patience, avoid if needing immediate production"
-        },
-        "scoringImpact": {
-          "standardBest": "Big-play ability and potential TDs maximize standard scoring value",
-          "pprBest": "Route-running ability provides PPR safety net if targets develop",
-          "scoringNeutral": "Two-way usage creates uncertainty across all formats"
-        }
-      }
-    },
-    {
-      "playerId": "christian_mccaffrey",
-      "position": "RB",
-      "tier": 1,
-      "scoringVariations": {
-        "standard": {
-          "adp": 12.8,
-          "adpRange": "rounds 2-2",
-          "draftCapital": "medium"
-        },
-        "ppr": {
-          "adp": 11.2,
-          "adpRange": "rounds 1-2", 
-          "draftCapital": "high"
-        },
-        "halfPpr": {
-          "adp": 12.0,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Elite talent returning from Achilles injury, 49ers system maximizes skill set",
-        "strengths": ["Elite ceiling when healthy", "49ers system perfect fit", "Pass-catching ability unmatched"],
-        "concerns": ["Age 29 with injury history", "Achilles recovery at RB position", "49ers committee tendencies"],
-        "strategy": "High-risk, high-reward pick requiring belief in health",
-        "handcuff": "jordan_mason",
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 1 extremely risky given age and Achilles injury history",
-          "valuePick": "Current ADP around pick 12 represents fair value given ceiling and injury risk",
-          "latePick": "Excellent value round 2+ if health concerns drop him, ceiling worth risk",
-          "keeperContext": "Avoid due to age and injury trajectory, one-year rental at best",
-          "redraftContext": "Championship ceiling play for teams willing to risk injury bust"
-        },
-        "scoringImpact": {
-          "standardBest": "TD upside and big-play ability strong in standard",
-          "pprBest": "Elite pass-catching makes him PPR monster when healthy",
-          "scoringNeutral": "Three-down usage valuable across formats with PPR edge"
-        }
-      }
-    },
-    {
-      "playerId": "tyreek_hill",
-      "position": "WR", 
-      "tier": 2,
-      "scoringVariations": {
-        "standard": {
-          "adp": 31.2,
-          "adpRange": "rounds 3-3",
-          "draftCapital": "medium"
-        },
-        "ppr": {
-          "adp": 27.4,
-          "adpRange": "rounds 2-3",
-          "draftCapital": "medium"
-        },
-        "halfPpr": {
-          "adp": 29.3,
-          "adpRange": "rounds 2-3",
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Aging speedster heavily dependent on Tua health, concerning 2024 regression",
-        "strengths": ["Elite speed still present", "Proven big-play ceiling", "Dolphins system when Tua healthy"],
-        "concerns": ["Age 31 with speed-dependent profile", "Tua dependency extreme (6.6 vs 13.1 PPG)", "2024 regression concerning (WR21 finish)"],
-        "strategy": "Avoid at current cost, major bust candidate with age and dependency",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 2 extremely risky given age, dependency, and 2024 regression",
-          "valuePick": "Current ADP around pick 28 still too expensive for risk profile",
-          "latePick": "Consider round 4+ as boom-bust play, but significant concerns remain",
-          "keeperContext": "Avoid completely due to age and dependency, major bust risk",
-          "redraftContext": "Major bust candidate - age, Tua dependency, and 2024 regression all concerning"
-        },
-        "scoringImpact": {
-          "standardBest": "Big-play TDs maximize standard value when connecting",
-          "pprBest": "Target volume provides slight PPR edge when Tua healthy",
-          "scoringNeutral": "Boom-bust across formats, avoid at current ADP in all"
-        }
-      }
-    },
-    {
-      "playerId": "breece_hall",
-      "position": "RB",
-      "tier": 2,
-      "scoringVariations": {
-        "standard": {
-          "adp": 32.8,
-          "adpRange": "rounds 3-3",
-          "draftCapital": "medium"
-        },
-        "ppr": {
-          "adp": 28.6,
-          "adpRange": "rounds 2-3",
-          "draftCapital": "medium"
-        },
-        "halfPpr": {
-          "adp": 30.7,
-          "adpRange": "rounds 2-3", 
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Jets workhorse with Rodgers connection, but efficiency and competition concerns",
-        "strengths": ["Jets improved offense with Rodgers", "Pass-catching ability", "Clear starting role"],
-        "concerns": ["2024 inefficiency (3.6 YPC)", "Braelon Allen competition growing", "Two years removed from ACL"],
-        "strategy": "Bust candidate at current price, efficiency and competition concerns",
-        "handcuff": "braelon_allen", 
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 2 too aggressive given efficiency concerns and Allen's emergence",
-          "valuePick": "Current ADP around pick 30 overvalues player with significant red flags",
-          "latePick": "Consider round 4+ if efficiency improves, but Allen threat real",
-          "keeperContext": "Questionable keeper due to efficiency issues and backfield competition",
-          "redraftContext": "Avoid at cost - inefficiency and Allen competition make him bust candidate"
-        },
-        "scoringImpact": {
-          "standardBest": "Goal-line work helps standard scoring if efficiency improves",
-          "pprBest": "Pass-catching provides PPR floor but target competition concern",
-          "scoringNeutral": "Efficiency issues hurt across formats, avoid at current ADP"
-        }
-      }
-    },
-    {
-      "playerId": "james_cook",
-      "position": "RB",
-      "tier": 2,
-      "scoringVariations": {
-        "standard": {
-          "adp": 42.1,
-          "adpRange": "rounds 3-4",
-          "draftCapital": "medium"
-        },
-        "ppr": {
-          "adp": 38.4,
-          "adpRange": "rounds 3-4",
-          "draftCapital": "medium"
-        },
-        "halfPpr": {
-          "adp": 40.3,
-          "adpRange": "rounds 3-4",
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Bills featured back but TD regression likely after career-high 18 total TDs",
-        "strengths": ["Bills elite offense", "Pass-catching ability", "Goal-line opportunities with Allen"],
-        "concerns": ["Massive TD regression due (18 total TDs unsustainable)", "Ray Davis competition", "Volume decrease likely"],
-        "strategy": "Avoid at current price - major TD regression candidate",
-        "handcuff": "ray_davis",
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 3 too aggressive given unsustainable TD rate from 2024",
-          "valuePick": "Current ADP around pick 39 overvalues TD-dependent performance",
-          "latePick": "Consider round 5+ after TD regression priced in",
-          "keeperContext": "Avoid due to TD regression and competition concerns",
-          "redraftContext": "Major bust candidate - 18 TDs completely unsustainable, regression coming"
-        },
-        "scoringImpact": {
-          "standardBest": "TD-dependent value maximized but regression likely",
-          "pprBest": "Pass-catching provides floor but TDs drove 2024 value",
-          "scoringNeutral": "TD regression hurts across all formats, avoid at cost"
-        }
-      }
-    },
-    {
-      "playerId": "brock_bowers",
-      "position": "TE",
-      "tier": 1,
-      "scoringVariations": {
-        "standard": {
-          "adp": 18.4,
-          "adpRange": "rounds 2-2",
-          "draftCapital": "medium"
-        },
-        "ppr": {
-          "adp": 14.2,
-          "adpRange": "rounds 1-2",
-          "draftCapital": "high"
-        },
-        "halfPpr": {
-          "adp": 16.3,
-          "adpRange": "rounds 2-2", 
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "second_year",
-      "insights": {
-        "situation2025": "Record-setting rookie TE with massive target share, clear Raiders focal point",
-        "strengths": ["Record rookie TE production (112 catches)", "Mismatch ability at position", "Raiders primary weapon"],
-        "concerns": ["Raiders QB uncertainty with Geno Smith", "Sophomore slump possibility", "TE position volatility"],
-        "strategy": "Elite TE1 worth early investment for positional advantage",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 1 aggressive but record rookie season supports elite upside",
-          "valuePick": "Current ADP around pick 15 represents fair value for TE1 upside",
-          "latePick": "Excellent value round 3+, positional scarcity makes him anchor",
-          "keeperContext": "Must-keep TE across all league types, positional advantage huge",
-          "redraftContext": "Anchor TE pick with massive separation from other TE options"
-        },
-        "scoringImpact": {
-          "standardBest": "Red zone targets and TD upside strong in standard",
-          "pprBest": "112 rookie catches make him PPR monster at thin position",
-          "scoringNeutral": "Target volume valuable across formats with clear PPR edge"
-        }
-      }
-    },
-    {
-      "playerId": "jayden_daniels",
-      "position": "QB",
-      "tier": 2,
-      "scoringVariations": {
-        "standard": {
-          "adp": 33.6,
-          "adpRange": "rounds 3-3", 
-          "draftCapital": "medium"
-        },
-        "ppr": {
-          "adp": 29.8,
-          "adpRange": "rounds 2-3",
-          "draftCapital": "medium"
-        },
-        "halfPpr": {
-          "adp": 31.7,
-          "adpRange": "rounds 2-3",
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "second_year",
-      "insights": {
-        "situation2025": "Dual-threat QB with improved weapons, sophomore leap candidate despite injury risk",
-        "strengths": ["Elite rushing floor (891 yards rookie year)", "Improved supporting cast with McLaurin", "Dual-threat ceiling"],
-        "concerns": ["Sophomore slump risk", "Injury concerns with rushing style", "Commanders offensive line"],
-        "strategy": "QB2 with ceiling upside, good value in middle rounds",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 2 aggressive for any QB in 1QB leagues",
-          "valuePick": "Current ADP around pick 30 represents fair value for dual-threat upside",
-          "latePick": "Excellent value round 4+, rushing floor provides weekly safety net",
-          "keeperContext": "Strong young QB keeper with rushing floor and passing development",
-          "redraftContext": "Safe QB2 with weekly ceiling, rushing adds valuable floor"
-        },
-        "scoringImpact": {
-          "standardBest": "Rushing TDs and yards maximize standard scoring value",
-          "pprBest": "Same scoring as standard for QBs, rushing still key",
-          "scoringNeutral": "Dual-threat value consistent across all formats"
-        }
-      }
-    },
-    {
-      "playerId": "tank_bigsby",
-      "position": "RB",
-      "tier": 3,
-      "scoringVariations": {
-        "standard": {
-          "adp": 139.2,
-          "adpRange": "rounds 6-7",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 147.8,
-          "adpRange": "rounds 7-8",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 143.5,
-          "adpRange": "rounds 6-8",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Jaguars goal-line back with expanded role expected under Liam Coen",
-        "strengths": ["Goal-line specialist role", "Reports of expanded usage", "Better value than Etienne at ADP"],
-        "concerns": ["Limited passing game role", "Etienne still primary back", "Jaguars offensive questions"],
-        "strategy": "Sleeper RB with goal-line upside, better value than backfield mate",
-        "handcuff": "travis_etienne",
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 6 reasonable for goal-line specialist with upside reports",
-          "valuePick": "Current ADP around pick 140 excellent value for potential role expansion",
-          "latePick": "Must-draft round 8+, goal-line work and upside reports make him steal",
-          "keeperContext": "Interesting keeper if role expands, but limited ceiling without injury",
-          "redraftContext": "Excellent sleeper pick - goal-line work and coaching change upside"
-        },
-        "scoringImpact": {
-          "standardBest": "Goal-line TDs maximize value in standard scoring",
-          "pprBest": "Limited pass-catching hurts PPR value compared to standard",
-          "scoringNeutral": "Clear standard scoring advantage due to TD-dependent profile"
-        }
-      }
-    },
-    {
-      "playerId": "keon_coleman",
-      "position": "WR",
-      "tier": 3,
-      "scoringVariations": {
-        "standard": {
-          "adp": 115.4,
-          "adpRange": "rounds 5-6",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 120.3,
-          "adpRange": "rounds 6-6", 
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 117.9,
-          "adpRange": "rounds 5-6",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "second_year",
-      "insights": {
-        "situation2025": "Bills deep threat with second-year leap potential, clear role in Allen offense",
-        "strengths": ["19.2 YPC rookie average", "Bills elite offense with Allen", "Clear deep threat role"],
-        "concerns": ["Low catch rate on deep targets", "Bills target competition", "Boom-bust profile"],
-        "strategy": "High-upside WR3 with big-play ability, good late-round value",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 5 aggressive for boom-bust profile player",
-          "valuePick": "Current ADP around pick 120 represents good value for Bills context",
-          "latePick": "Excellent value round 7+, Bills offense and YAC ability attractive",
-          "keeperContext": "Solid sleeper keeper with established role and second-year upside",
-          "redraftContext": "Deep sleeper with weekly ceiling, perfect best ball target"
-        },
-        "scoringImpact": {
-          "standardBest": "Big-play TDs maximize standard scoring value",
-          "pprBest": "Lower target volume hurts PPR value compared to standard",
-          "scoringNeutral": "Big-play profile slightly favors standard scoring"
-        }
-      }
-    },
-    {
-      "playerId": "emeka_egbuka",
-      "position": "WR",
-      "tier": 3,
-      "scoringVariations": {
-        "standard": {
-          "adp": 92.8,
-          "adpRange": "rounds 4-5",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 85.6,
-          "adpRange": "rounds 4-4",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 89.2,
-          "adpRange": "rounds 4-5", 
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "rookie",
-      "insights": {
-        "situation2025": "Bucs rookie with immediate role expected, strong camp reports alongside Evans/Godwin",
-        "strengths": ["Strong camp performance", "Bucs excellent offensive system", "Baker Mayfield connection developing"],
-        "concerns": ["Rookie adjustment period", "Target competition with Evans/Godwin", "Bucs crowded WR room"],
-        "strategy": "Sleeper rookie WR with immediate opportunity in elite offense",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 4 aggressive for rookie but Bucs context strong",
-          "valuePick": "Current ADP around pick 87 represents good value for opportunity",
-          "latePick": "Excellent value round 6+, Bucs offense too good to ignore",
-          "keeperContext": "Strong dynasty prospect with immediate role in elite offense",
-          "redraftContext": "Sleeper rookie with path to relevance, Bucs system excellent"
-        },
-        "scoringImpact": {
-          "standardBest": "Red zone opportunities and TDs benefit standard scoring",
-          "pprBest": "Route-running ability provides PPR safety net as rookie",
-          "scoringNeutral": "Balanced skillset translates across formats"
-        }
-      }
-    },
-    {
-      "playerId": "brenton_strange",
-      "position": "TE",
-      "tier": 3,
-      "scoringVariations": {
-        "standard": {
-          "adp": 190.2,
-          "adpRange": "rounds 8-10",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 185.4,
-          "adpRange": "rounds 8-9",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 187.8,
-          "adpRange": "rounds 8-10",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Jaguars TE with clear path after Engram release, new coaching staff opportunity",
-        "strengths": ["No competition after Engram cut", "411 yards on limited targets 2024", "New OC Liam Coen system"],
-        "concerns": ["Jaguars passing game uncertainty", "Limited NFL track record", "TE3 ceiling likely"],
-        "strategy": "Deep sleeper TE worth late flyer, clear opportunity",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking before round 8 too aggressive for unproven commodity",
-          "valuePick": "Current ADP around pick 190 excellent value for clear opportunity",
-          "latePick": "Must-draft round 10+, path to targets too clear to ignore",
-          "keeperContext": "Interesting dynasty stash if breakout occurs",
-          "redraftContext": "Perfect TE punt strategy target with clear path to relevance"
-        },
-        "scoringImpact": {
-          "standardBest": "Red zone size advantage helps standard scoring",
-          "pprBest": "Target opportunity provides PPR upside if role develops",
-          "scoringNeutral": "Opportunity-based value across formats"
-        }
-      }
-    },
-    {
-      "playerId": "jj_mccarthy",
-      "position": "QB",
-      "tier": 3,
-      "scoringVariations": {
-        "standard": {
-          "adp": 165.8,
-          "adpRange": "rounds 7-8",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 158.2,
-          "adpRange": "rounds 6-7",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 162.0,
-          "adpRange": "rounds 6-8",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "second_year",
-      "insights": {
-        "situation2025": "Vikings QB getting first real season after 2024 injury, elite supporting cast",
-        "strengths": ["Elite weapons with Jefferson", "Kevin O'Connell QB whisperer", "Essentially rookie season opportunity"],
-        "concerns": ["Coming off knee injury", "Limited NFL experience", "Vikings competition at QB"],
-        "strategy": "High-upside QB sleeper worth late-round flyer",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 6 aggressive for injury-recovery QB",
-          "valuePick": "Current ADP around pick 160 represents excellent upside lottery ticket",
-          "latePick": "Must-draft round 8+, O'Connell system and weapons too good",
-          "keeperContext": "Premium keeper if healthy and develops, high upside",
-          "redraftContext": "Perfect late-round QB flyer with massive ceiling if healthy"
-        },
-        "scoringImpact": {
-          "standardBest": "Mobile ability adds rushing upside for standard",
-          "pprBest": "Same QB scoring across formats, rushing still key",
-          "scoringNeutral": "Dual-threat potential valuable across all formats"
-        }
-      }
-    },
-    {
-      "playerId": "kyle_williams_wr",
-      "position": "WR",
-      "tier": 4,
-      "scoringVariations": {
-        "standard": {
-          "adp": 218.4,
-          "adpRange": "rounds 9-11",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 205.6,
-          "adpRange": "rounds 8-10",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 212.0,
-          "adpRange": "rounds 9-10",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "rookie",
-      "insights": {
-        "situation2025": "Patriots rookie WR with opportunity opposite Diggs, camp buzz building",
-        "strengths": ["Clear opportunity with Diggs aging", "Patriots need WR production", "Strong camp reports"],
-        "concerns": ["Patriots historically bad with rookie WRs", "QB situation uncertain", "Team offensive struggles"],
-        "strategy": "Deep sleeper worth late flyer despite Patriots WR history",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking before round 9 too aggressive for Patriots rookie WR",
-          "valuePick": "Current ADP around pick 218 represents lottery ticket value",
-          "latePick": "Worth flyer round 11+, opportunity clear despite Patriots history",
-          "keeperContext": "Dynasty stash if breaks Patriots rookie WR curse",
-          "redraftContext": "Deep sleeper with opportunity but team context concerning"
-        },
-        "scoringImpact": {
-          "standardBest": "Big-play potential helps standard if connection develops",
-          "pprBest": "Target opportunity provides slight PPR edge",
-          "scoringNeutral": "Opportunity-based across formats, slight PPR advantage"
-        }
-      }
-    },
-    {
-      "playerId": "jacory_croskey_merritt",
-      "position": "RB",
-      "tier": 4,
-      "scoringVariations": {
-        "standard": {
-          "adp": 198.4,
-          "adpRange": "rounds 8-10",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 185.2,
-          "adpRange": "rounds 8-9",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 191.8,
-          "adpRange": "rounds 8-9",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "rookie",
-      "insights": {
-        "situation2025": "Commanders rookie RB with pass-catching upside, 7th round buzz player",
-        "strengths": ["Pass-catching specialist profile", "Commanders improved offense", "Camp hype building"],
-        "concerns": ["7th round draft capital", "Austin Ekeler competition", "Limited college production"],
-        "strategy": "Deep sleeper RB worth late flyer for pass-catching upside",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking before round 8 too aggressive for 7th rounder",
-          "valuePick": "Current ADP around pick 185 represents speculative value",
-          "latePick": "Worth flyer round 10+, pass-catching upside intriguing",
-          "keeperContext": "Deep dynasty stash if role develops",
-          "redraftContext": "Deep sleeper with pass-catching appeal, pure speculation"
-        },
-        "scoringImpact": {
-          "standardBest": "Limited value without significant touches",
-          "pprBest": "Pass-catching specialist profile maximizes PPR value",
-          "scoringNeutral": "Clear PPR advantage for pass-catching role"
-        }
-      }
-    },
-    {
-      "playerId": "brandon_aubrey",
-      "position": "K",
-      "tier": 1,
-      "scoringVariations": {
-        "standard": {
-          "adp": 148.6,
-          "adpRange": "rounds 6-7",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 152.2,
-          "adpRange": "rounds 6-7",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 150.4,
-          "adpRange": "rounds 6-7",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Elite kicker with long-range ability, Cowboys offense provides opportunities",
-        "strengths": ["Elite accuracy and range", "Cowboys consistent offense", "K1 in 2023 and 2024"],
-        "concerns": ["Kicker position volatility", "Cowboys offensive changes", "Early draft capital for kicker"],
-        "strategy": "Best kicker available but still just a kicker - wait",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 6 too aggressive for any kicker regardless of talent",
-          "valuePick": "Current ADP around pick 150 represents K1 upside but positional concerns",
-          "latePick": "Good value round 8+, elite kicker worth late investment",
-          "keeperContext": "Never keep kickers regardless of talent level",
-          "redraftContext": "Elite kicker but position too volatile for early investment"
-        },
-        "scoringImpact": {
-          "standardBest": "Long FG bonus leagues maximize his range advantage",
-          "pprBest": "Same scoring as standard for kickers",
-          "scoringNeutral": "Elite accuracy translates across all formats"
-        }
-      }
-    },
-    {
-      "playerId": "jake_bates",
-      "position": "K", 
-      "tier": 2,
-      "scoringVariations": {
-        "standard": {
-          "adp": 165.4,
-          "adpRange": "rounds 7-8",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 168.8,
-          "adpRange": "rounds 7-8",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 167.1,
-          "adpRange": "rounds 7-8",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Lions kicker in elite offense, dome games help accuracy",
-        "strengths": ["Lions elite scoring offense", "Dome games for accuracy", "Young with strong leg"],
-        "concerns": ["Limited NFL track record", "Kicker position variance", "Lions may score too many TDs"],
-        "strategy": "Good kicker option but stream position instead",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 7 aggressive for any kicker",
-          "valuePick": "Current ADP around pick 167 reasonable for Lions context",
-          "latePick": "Good value round 9+, Lions offense excellent",
-          "keeperContext": "Never keep kickers",
-          "redraftContext": "Stream kickers instead of drafting early"
-        },
-        "scoringImpact": {
-          "standardBest": "Lions scoring opportunities benefit all formats",
-          "pprBest": "Same scoring as standard",
-          "scoringNeutral": "Team context drives value across formats"
-        }
-      }
-    },
-    {
-      "playerId": "philadelphia_eagles_dst",
-      "position": "DST",
-      "tier": 1,
-      "scoringVariations": {
-        "standard": {
-          "adp": 142.6,
-          "adpRange": "rounds 6-6",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 145.8,
-          "adpRange": "rounds 6-7",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 144.2,
-          "adpRange": "rounds 6-6",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Elite defense with strong personnel, good early schedule matchups",
-        "strengths": ["Top-tier defensive talent", "Good turnover rate", "Favorable early schedule"],
-        "concerns": ["Lost some key defensive pieces", "Defense position volatility", "Early draft cost"],
-        "strategy": "Elite DST option but stream position for better value",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 6 too aggressive for any defense",
-          "valuePick": "Current ADP around pick 144 represents DST1 upside",
-          "latePick": "Good value round 8+, elite talent worth investment",
-          "keeperContext": "Never keep defenses",
-          "redraftContext": "Stream defenses weekly instead of early draft investment"
-        },
-        "scoringImpact": {
-          "standardBest": "Sacks and turnovers benefit standard scoring",
-          "pprBest": "Same defensive scoring across formats",
-          "scoringNeutral": "Elite defense valuable across all formats"
-        }
-      }
-    },
-    {
-      "playerId": "buffalo_bills_dst",
-      "position": "DST",
-      "tier": 1,
-      "scoringVariations": {
-        "standard": {
-          "adp": 156.2,
-          "adpRange": "rounds 6-7",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 159.4,
-          "adpRange": "rounds 7-7",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 157.8,
-          "adpRange": "rounds 6-7",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Strong defense with excellent turnover rate, good coaching",
-        "strengths": ["#1 turnover rate 2024", "Consistent coaching", "Good early matchups"],
-        "concerns": ["Lost some talent in offseason", "AFC East improved offenses", "DST position variance"],
-        "strategy": "Solid DST option but streaming remains best approach",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 6 too aggressive for defense",
-          "valuePick": "Current ADP around pick 157 fair for turnover upside",
-          "latePick": "Good value round 8+, turnover rate attractive",
-          "keeperContext": "Never keep defenses",
-          "redraftContext": "Stream defenses for better weekly matchups"
-        },
-        "scoringImpact": {
-          "standardBest": "Turnovers and sacks drive standard value",
-          "pprBest": "Same scoring across formats",
-          "scoringNeutral": "Turnover rate valuable in all formats"
-        }
-      }
-    },
-    {
-      "playerId": "arizona_cardinals_dst",
-      "position": "DST",
-      "tier": 3,
-      "scoringVariations": {
-        "standard": {
-          "adp": 198.6,
-          "adpRange": "rounds 8-10",
-          "draftCapital": "low"
-        },
-        "ppr": {
-          "adp": 201.2,
-          "adpRange": "rounds 8-10",
-          "draftCapital": "low"
-        },
-        "halfPpr": {
-          "adp": 199.9,
-          "adpRange": "rounds 8-10",
-          "draftCapital": "low"
-        }
-      },
-      "playerType": "veteran",
-      "insights": {
-        "situation2025": "Improved defense with major offseason additions, good Week 1 matchup vs Saints",
-        "strengths": ["Major defensive investments", "Good Week 1 vs Saints/Shough", "Young talent developing"],
-        "concerns": ["Historically poor defense", "Unproven improvement", "Tough division"],
-        "strategy": "Good streaming option early in season, avoid as season-long play",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking before round 8 aggressive for unproven unit",
-          "valuePick": "Current ADP around pick 200 good for streaming approach",
-          "latePick": "Good value round 10+ for early season streaming",
-          "keeperContext": "Never keep defenses",
-          "redraftContext": "Perfect streaming target for Week 1-2, then drop"
-        },
-        "scoringImpact": {
-          "standardBest": "Potential sacks and turnovers from improved talent",
-          "pprBest": "Same defensive scoring",
-          "scoringNeutral": "Streaming value across all formats"
-        }
-      }
-    },
-    {
-      "playerId": "omarion_hampton",
-      "position": "RB",
-      "tier": 2,
-      "scoringVariations": {
-        "standard": {
-          "adp": 42.8,
-          "adpRange": "rounds 2-3",
-          "draftCapital": "medium"
-        },
-        "ppr": {
-          "adp": 45.2,
-          "adpRange": "rounds 3-3",
-          "draftCapital": "medium"
-        },
-        "halfPpr": {
-          "adp": 44.0,
-          "adpRange": "rounds 3-3",
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "rookie",
-      "insights": {
-        "situation2025": "Chargers rookie competing with Harris, pass-catching ability key differentiator",
-        "strengths": ["Three-down college skillset", "Chargers improved offensive line", "Pass-catching ability over Harris"],
-        "concerns": ["Najee Harris competition unclear", "Rookie adjustment period", "Chargers may use committee"],
-        "strategy": "Bust candidate at current ADP - competition and team concerns",
-        "handcuff": "najee_harris",
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 3 too aggressive with Harris competition unresolved",
-          "valuePick": "Current ADP around pick 44 overvalues uncertain backfield situation",
-          "latePick": "Consider round 5+ after competition clarifies",
-          "keeperContext": "Risky keeper until role clarity emerges",
-          "redraftContext": "Bust candidate - avoid until Harris situation resolves"
-        },
-        "scoringImpact": {
-          "standardBest": "Goal-line work would benefit standard if wins job",
-          "pprBest": "Pass-catching ability provides PPR edge over Harris",
-          "scoringNeutral": "Role uncertainty hurts across all formats"
-        }
-      }
-    },
-    {
-      "playerId": "xavier_worthy",
-      "position": "WR",
-      "tier": 3,
-      "scoringVariations": {
-        "standard": {
-          "adp": 54.2,
-          "adpRange": "rounds 3-3",
-          "draftCapital": "medium"
-        },
-        "ppr": {
-          "adp": 58.6,
-          "adpRange": "rounds 3-4",
-          "draftCapital": "medium"
-        },
-        "halfPpr": {
-          "adp": 56.4,
-          "adpRange": "rounds 3-3",
-          "draftCapital": "medium"
-        }
-      },
-      "playerType": "second_year",
-      "insights": {
-        "situation2025": "Chiefs speedster with concerning deep ball struggles, major bust candidate",
-        "strengths": ["Fastest combine time ever", "Chiefs championship offense", "Second-year development"],
-        "concerns": ["3/18 on deep targets (20+ yards)", "Chiefs low passing volume", "Rice suspension helps but limited"],
-        "strategy": "Major bust candidate - deep ball struggles and Chiefs volume concerns",
-        "handcuff": null,
-        "contextualAnalysis": {
-          "earlyPick": "Taking round 3 way too aggressive for player with major red flags",
-          "valuePick": "Current ADP around pick 54 significantly overvalues bust candidate",
-          "latePick": "Consider round 6+ after deep ball connection improves",
-          "keeperContext": "Avoid as keeper until demonstrates deep ball improvement",
-          "redraftContext": "Major bust candidate - deep ball struggles and team context concerning"
-        },
-        "scoringImpact": {
-          "standardBest": "Big-play TDs would maximize value if connection improves",
-          "pprBest": "Limited target volume hurts PPR value",
-          "scoringNeutral": "Bust concerns across all formats at current ADP"
-        }
-      }
+    
+    print(f"Created {len(players_dict)} player objects")
+    return players_dict
+
+def calculate_projection(position, total_points, avg_per_game):
+    """Calculate next season projection"""
+    if total_points > 0:
+        return avg_per_game * 17  # Project over 17 games
+    
+    # Default projections by position
+    defaults = {'QB': 280, 'RB': 180, 'WR': 160, 'TE': 120}
+    return defaults.get(position, 100)
+
+def calculate_adp(position, projected_points, overall_rank):
+    """Calculate ADP based on projection and position"""
+    if position == 'QB':
+        if projected_points > 300: return 45
+        elif projected_points > 250: return 85
+        else: return 150
+    elif position == 'RB':
+        if projected_points > 250: return 15
+        elif projected_points > 180: return 55
+        else: return 120
+    elif position == 'WR':
+        if projected_points > 220: return 25
+        elif projected_points > 160: return 70
+        else: return 140
+    else:  # TE
+        if projected_points > 180: return 50
+        elif projected_points > 120: return 90
+        else: return 180
+
+def calculate_risk(position, avg_points, games):
+    """Calculate risk score 1-10"""
+    base_risk = 5
+    
+    if games < 10: base_risk += 2
+    elif games > 15: base_risk -= 1
+    
+    if avg_points < 5: base_risk += 2
+    elif avg_points > 15: base_risk -= 1
+    
+    return max(1, min(10, base_risk))
+
+def create_database(players_dict):
+    """Create final database structure"""
+    position_counts = {}
+    for player in players_dict.values():
+        pos = player['position']
+        position_counts[pos] = position_counts.get(pos, 0) + 1
+    
+    database = {
+        "metadata": {
+            "script_version": SCRIPT_VERSION,
+            "last_updated": datetime.now().isoformat(),
+            "version": "3.2",
+            "total_players": len(players_dict),
+            "position_breakdown": {
+                "QB": position_counts.get('QB', 0),
+                "RB": position_counts.get('RB', 0),
+                "WR": position_counts.get('WR', 0),
+                "TE": position_counts.get('TE', 0),
+                "K": 0,
+                "DEF": 0
+            },
+            "data_collection_status": "completed"
+        },
+        "players": players_dict
     }
-  ]
-}
+    
+    return database
+
+def save_database(database, filename='json_data/players.json'):
+    """Save database to file"""
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    
+    with open(filename, 'w') as f:
+        json.dump(database, f, indent=2, ensure_ascii=False)
+    
+    file_size = os.path.getsize(filename)
+    print(f"Database saved: {filename}")
+    print(f"File size: {file_size / 1024:.2f} KB")
+    print(f"Total players: {database['metadata']['total_players']}")
+
+def main():
+    """Main execution"""
+    print(f"=== NFL Data Collection Script v{SCRIPT_VERSION} ===")
+    
+    try:
+        # Load data using working API calls
+        datasets = load_nfl_data()
+        
+        # Aggregate with same logic that worked
+        player_data = aggregate_players(datasets)
+        
+        # Create players JSON
+        players_dict = create_players_json(player_data)
+        
+        # Create final database
+        database = create_database(players_dict)
+        
+        # Save
+        save_database(database)
+        
+        print(f"\nSUCCESS: {len(players_dict)} unique players processed")
+        
+    except Exception as e:
+        print(f"\nERROR: {e}")
+        raise
+
+if __name__ == "__main__":
+    main()
