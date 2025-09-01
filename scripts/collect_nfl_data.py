@@ -40,32 +40,89 @@ def load_nfl_data():
     current_year = 2024
     years = [current_year]
     
+    # Debug: Check what functions are actually available
+    print("Checking available nfl_data_py functions...")
+    available_functions = [attr for attr in dir(nfl) if not attr.startswith('_')]
+    print(f"Public functions: {available_functions[:10]}...")  # Show first 10
+    
+    # Check for private functions that might be the real ones
+    private_functions = [attr for attr in dir(nfl) if attr.startswith('__') and 'import' in attr.lower()]
+    if private_functions:
+        print(f"Private import functions found: {private_functions}")
+    
     datasets = {}
     
     try:
         print("Loading NFL datasets...")
         print(f"Target year: {current_year}")
         
-        # Core player data
+        # Core player data - try multiple API approaches
         print("  - Loading roster data...")
-        datasets['rosters'] = nfl.import_rosters(years)
-        print(f"    Rosters loaded: {len(datasets['rosters'])} records")
+        try:
+            datasets['rosters'] = nfl.import_rosters(years)
+            print(f"    ✅ import_rosters worked: {len(datasets['rosters'])} records")
+        except AttributeError:
+            print("    ❌ import_rosters not available, trying alternatives...")
+            try:
+                # Try private function
+                datasets['rosters'] = nfl.__import_rosters(years)
+                print(f"    ✅ __import_rosters worked: {len(datasets['rosters'])} records")
+            except:
+                print("    ❌ No roster import function available")
+                datasets['rosters'] = None
         
         print("  - Loading weekly stats...")
-        datasets['weekly'] = nfl.import_weekly_data(years)
-        print(f"    Weekly data loaded: {len(datasets['weekly'])} records")
+        try:
+            datasets['weekly'] = nfl.import_weekly_data(years)
+            print(f"    ✅ import_weekly_data worked: {len(datasets['weekly'])} records")
+        except AttributeError:
+            print("    ❌ import_weekly_data not available, trying alternatives...")
+            try:
+                datasets['weekly'] = nfl.__import_weekly_data(years)
+                print(f"    ✅ __import_weekly_data worked: {len(datasets['weekly'])} records")
+            except:
+                print("    ❌ No weekly data import function available")
+                datasets['weekly'] = None
         
-        print("  - Loading seasonal stats...")  
-        datasets['seasonal'] = nfl.import_seasonal_data(years)
-        print(f"    Seasonal data loaded: {len(datasets['seasonal'])} records")
+        print("  - Loading seasonal stats...")
+        try:
+            datasets['seasonal'] = nfl.import_seasonal_data(years)
+            print(f"    ✅ import_seasonal_data worked: {len(datasets['seasonal'])} records")
+        except AttributeError:
+            print("    ❌ import_seasonal_data not available, trying alternatives...")
+            try:
+                datasets['seasonal'] = nfl.__import_seasonal_data(years)
+                print(f"    ✅ __import_seasonal_data worked: {len(datasets['seasonal'])} records")
+            except:
+                print("    ❌ No seasonal data import function available")
+                datasets['seasonal'] = None
         
         print("  - Loading player IDs...")
-        datasets['ids'] = nfl.import_ids()
-        if datasets['ids'] is not None:
-            print(f"    Player IDs loaded: {len(datasets['ids'])} records")
-        else:
-            print("    Player IDs: None returned")
-            
+        try:
+            datasets['ids'] = nfl.import_ids()
+            if datasets['ids'] is not None:
+                print(f"    ✅ import_ids worked: {len(datasets['ids'])} records")
+            else:
+                print("    ✅ import_ids worked but returned None")
+        except AttributeError:
+            print("    ❌ import_ids not available, trying alternatives...")
+            try:
+                datasets['ids'] = nfl.__import_ids()
+                if datasets['ids'] is not None:
+                    print(f"    ✅ __import_ids worked: {len(datasets['ids'])} records")
+                else:
+                    print("    ✅ __import_ids worked but returned None")
+            except:
+                print("    ❌ No IDs import function available")
+                datasets['ids'] = None
+        
+        # Check if we got any usable data
+        data_sources = [k for k, v in datasets.items() if v is not None]
+        if not data_sources:
+            raise Exception("No NFL data sources available - all import functions failed")
+        
+        print(f"Successfully loaded data from: {data_sources}")
+        
         # Advanced metrics (optional)
         print("  - Loading advanced stats...")
         try:
