@@ -122,6 +122,16 @@ def load_nfl_data():
             raise Exception("No NFL data sources available - all import functions failed")
         
         print(f"Successfully loaded data from: {data_sources}")
+        
+        # Advanced metrics (optional)
+        print("  - Loading advanced stats...")
+        try:
+            datasets['advanced'] = nfl.import_pbp_data(years, columns=['player_id', 'player_name', 'passer_rating', 'cpoe'])
+            if datasets['advanced'] is not None:
+                print(f"    Advanced stats loaded: {len(datasets['advanced'])} records")
+        except Exception as e:
+            print(f"    Advanced stats unavailable: {e}")
+            datasets['advanced'] = None
             
     except Exception as e:
         print(f"CRITICAL ERROR in data loading: {e}")
