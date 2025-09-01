@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 NFL Data Collection Script - Production Version
-Version: 3.2
-Consolidated from debugged version with core fixes preserved
+Version: 3.2 - Cleaned from working debug version
 """
 
 import nfl_data_py as nfl
@@ -15,153 +14,133 @@ import requests
 SCRIPT_VERSION = "3.2"
 
 def load_nfl_data():
-    """Load and combine NFL data from multiple sources"""
+    """Load NFL data using the working API calls from debug version"""
     print("Loading NFL data...")
     
-    current_year = 2024
-    years = [current_year]
-    
-    # Load comprehensive NFL datasets
     datasets = {}
     
     try:
-        # Core player data
-        print("  - Loading roster data...")
-        datasets['rosters'] = nfl.import_rosters(years)
+        # Use same API calls that worked in debug version
+        print("  Loading rosters...")
+        datasets['rosters'] = nfl.import_rosters([2024])
         
-        print("  - Loading weekly stats...")
-        datasets['weekly'] = nfl.import_weekly_data(years)
+        print("  Loading weekly data...")
+        datasets['weekly'] = nfl.import_weekly_data([2024])
         
-        print("  - Loading seasonal stats...")  
-        datasets['seasonal'] = nfl.import_seasonal_data(years)
+        print("  Loading seasonal data...")
+        datasets['seasonal'] = nfl.import_seasonal_data([2024])
         
-        print("  - Loading player IDs...")
+        print("  Loading IDs...")
         datasets['ids'] = nfl.import_ids()
         
-        # Advanced metrics
-        print("  - Loading advanced stats...")
-        try:
-            datasets['advanced'] = nfl.import_pbp_data(years, columns=['player_id', 'player_name', 'passer_rating', 'cpoe'])
-        except Exception as e:
-            print(f"    Advanced stats unavailable: {e}")
-            datasets['advanced'] = None
-            
+        print("Data loading complete")
+        return datasets
+        
     except Exception as e:
         print(f"Error loading NFL data: {e}")
         raise
-    
-    print(f"Data loading complete. Processing datasets...")
-    return datasets
 
-def process_players(datasets):
-    """Process and aggregate player data with proper deduplication"""
-    print("Processing player data...")
+def aggregate_players(datasets):
+    """Aggregate player data with the same deduplication logic from debug version"""
+    print("Aggregating player data...")
     
-    # Step 1: Aggregate all player records by unique player identifier
-    player_aggregations = {}
+    player_data = {}
     
-    # Process roster data (primary source)
-    if 'rosters' in datasets and datasets['rosters'] is not None:
+    # Process rosters (primary source)
+    if datasets.get('rosters') is not None:
         for _, player in datasets['rosters'].iterrows():
             if player['position'] in ['QB', 'RB', 'WR', 'TE']:
-                # Create unique key for deduplication
                 key = f"{player['player_name']}_{player['position']}"
                 
-                if key not in player_aggregations:
-                    player_aggregations[key] = {
+                if key not in player_data:
+                    player_data[key] = {
                         'player_name': player['player_name'],
                         'position': player['position'],
                         'team': player['team'],
-                        'records': []
+                        'season_data': []
                     }
                 
-                player_aggregations[key]['records'].append({
-                    'source': 'roster',
-                    'team': player['team'],
-                    'season': player.get('season', 2024)
-                })
+                player_data[key]['team'] = player['team']  # Update team
     
-    # Enhance with weekly stats
-    if 'weekly' in datasets and datasets['weekly'] is not None:
+    # Add weekly stats
+    if datasets.get('weekly') is not None:
         for _, stats in datasets['weekly'].iterrows():
             if stats['position'] in ['QB', 'RB', 'WR', 'TE']:
                 key = f"{stats['player_name']}_{stats['position']}"
                 
-                if key in player_aggregations:
-                    player_aggregations[key]['records'].append({
-                        'source': 'weekly_stats',
-                        'fantasy_points': stats.get('fantasy_points_ppr', 0),
-                        'week': stats.get('week', 0)
+                if key in player_data:
+                    player_data[key]['season_data'].append({
+                        'week': stats.get('week', 0),
+                        'fantasy_points': stats.get('fantasy_points_ppr', 0)
                     })
     
-    # Enhance with seasonal data
-    if 'seasonal' in datasets and datasets['seasonal'] is not None:
+    # Add seasonal totals
+    if datasets.get('seasonal') is not None:
         for _, seasonal in datasets['seasonal'].iterrows():
             if seasonal['position'] in ['QB', 'RB', 'WR', 'TE']:
                 key = f"{seasonal['player_name']}_{seasonal['position']}"
                 
-                if key in player_aggregations:
-                    player_aggregations[key]['records'].append({
-                        'source': 'seasonal',
-                        'fantasy_points': seasonal.get('fantasy_points_ppr', 0),
-                        'games': seasonal.get('games', 0)
-                    })
+                if key in player_data:
+                    player_data[key]['total_fantasy_points'] = seasonal.get('fantasy_points_ppr', 0)
+                    player_data[key]['games_played'] = seasonal.get('games', 0)
     
-    print(f"Unique players after aggregation: {len(player_aggregations)}")
+    print(f"Aggregated {len(player_data)} unique players")
+    return player_data
+
+def create_players_json(player_data):
+    """Create final players JSON with projections and rankings"""
+    print("Creating player objects...")
     
-    # Step 2: Create final player objects
-    processed_players = []
+    players_dict = {}
+    all_players = list(player_data.values())
     
-    for key, aggregated_data in player_aggregations.items():
-        # Calculate aggregated stats from all records
-        total_fantasy_points = sum(r.get('fantasy_points', 0) for r in aggregated_data['records'] if 'fantasy_points' in r)
-        total_games = sum(r.get('games', 0) for r in aggregated_data['records'] if 'games' in r)
-        weekly_records = [r for r in aggregated_data['records'] if r['source'] == 'weekly_stats']
+    # Sort by total fantasy points for ranking
+    all_players.sort(key=lambda x: x.get('total_fantasy_points', 0), reverse=True)
+    
+    for i, player in enumerate(all_players):
+        # Calculate metrics
+        total_points = player.get('total_fantasy_points', 0)
+        games = player.get('games_played', 1)
+        avg_per_game = total_points / max(games, 1)
         
-        # Generate projections and risk scores
-        avg_points = total_fantasy_points / max(total_games, 1) if total_games > 0 else 0
-        projected_season = avg_points * 17 if avg_points > 0 else generate_projection(aggregated_data['position'])
+        # Generate projections based on performance
+        projected_points = calculate_projection(player['position'], total_points, avg_per_game)
+        adp = calculate_adp(player['position'], projected_points, i + 1)
+        risk_score = calculate_risk(player['position'], avg_per_game, games)
         
-        player_obj = {
-            'player_name': aggregated_data['player_name'],
-            'position': aggregated_data['position'],
-            'team': aggregated_data['team'],
-            'fantasy_points_season': round(total_fantasy_points, 1),
-            'projected_points_ppr': round(projected_season, 1),
-            'games_played': total_games,
-            'avg_points_per_game': round(avg_points, 1),
-            'weekly_records': len(weekly_records),
-            'adp_overall': generate_adp(aggregated_data['position'], projected_season),
-            'risk_score': calculate_risk_score(aggregated_data['position'], avg_points, len(weekly_records)),
-            'injury_status': 'healthy',  # Default - would be enhanced with injury API
+        # Create player ID
+        name_clean = player['player_name'].replace(' ', '.').replace("'", "")[:10]
+        player_id = f"{name_clean}_{player['position']}_{i+1:03d}"
+        
+        # Create player object
+        players_dict[player_id] = {
+            'player_name': player['player_name'],
+            'position': player['position'],
+            'team': player['team'],
+            'fantasy_points_season': round(total_points, 1),
+            'projected_points_ppr': round(projected_points, 1),
+            'games_played': games,
+            'avg_points_per_game': round(avg_per_game, 1),
+            'adp_overall': adp,
+            'risk_score': risk_score,
+            'injury_status': 'healthy',
             'last_updated': datetime.now().isoformat()
         }
-        
-        processed_players.append(player_obj)
     
-    # Sort by projected points for consistent ordering
-    processed_players.sort(key=lambda x: x['projected_points_ppr'], reverse=True)
-    
-    print(f"Final processed players: {len(processed_players)}")
-    print(f"Positions: QB={sum(1 for p in processed_players if p['position'] == 'QB')}, "
-          f"RB={sum(1 for p in processed_players if p['position'] == 'RB')}, "
-          f"WR={sum(1 for p in processed_players if p['position'] == 'WR')}, "
-          f"TE={sum(1 for p in processed_players if p['position'] == 'TE')}")
-    
-    return processed_players
+    print(f"Created {len(players_dict)} player objects")
+    return players_dict
 
-def generate_projection(position):
-    """Generate realistic fantasy projections by position"""
-    base_projections = {
-        'QB': 280,  # ~16.5 ppg
-        'RB': 180,  # ~10.6 ppg  
-        'WR': 160,  # ~9.4 ppg
-        'TE': 120   # ~7.1 ppg
-    }
-    return base_projections.get(position, 100)
+def calculate_projection(position, total_points, avg_per_game):
+    """Calculate next season projection"""
+    if total_points > 0:
+        return avg_per_game * 17  # Project over 17 games
+    
+    # Default projections by position
+    defaults = {'QB': 280, 'RB': 180, 'WR': 160, 'TE': 120}
+    return defaults.get(position, 100)
 
-def generate_adp(position, projected_points):
-    """Generate realistic ADP based on position and projections"""
+def calculate_adp(position, projected_points, overall_rank):
+    """Calculate ADP based on projection and position"""
     if position == 'QB':
         if projected_points > 300: return 45
         elif projected_points > 250: return 85
@@ -179,55 +158,40 @@ def generate_adp(position, projected_points):
         elif projected_points > 120: return 90
         else: return 180
 
-def calculate_risk_score(position, avg_points, weekly_records):
-    """Calculate risk score based on consistency and sample size"""
+def calculate_risk(position, avg_points, games):
+    """Calculate risk score 1-10"""
     base_risk = 5
     
-    # Adjust for sample size
-    if weekly_records < 5:
-        base_risk += 2
-    elif weekly_records > 12:
-        base_risk -= 1
-        
-    # Adjust for position volatility
-    volatility = {'QB': 0, 'RB': 1, 'WR': 2, 'TE': 1}
-    base_risk += volatility.get(position, 1)
+    if games < 10: base_risk += 2
+    elif games > 15: base_risk -= 1
     
-    # Adjust for performance level
-    if avg_points < 5:
-        base_risk += 2
-    elif avg_points > 15:
-        base_risk -= 1
+    if avg_points < 5: base_risk += 2
+    elif avg_points > 15: base_risk -= 1
     
     return max(1, min(10, base_risk))
 
-def create_player_json(processed_players):
-    """Create JSON structure with unique player IDs"""
-    players_dict = {}
-    
-    for i, player in enumerate(processed_players):
-        # Create unique, consistent player ID
-        name_short = player['player_name'].replace(' ', '.').replace("'", "")[:10]
-        player_id = f"{name_short}_{player['position']}_{i+1:03d}"
-        
-        players_dict[player_id] = player
+def create_database(players_dict):
+    """Create final database structure"""
+    position_counts = {}
+    for player in players_dict.values():
+        pos = player['position']
+        position_counts[pos] = position_counts.get(pos, 0) + 1
     
     database = {
         "metadata": {
             "script_version": SCRIPT_VERSION,
             "last_updated": datetime.now().isoformat(),
             "version": "3.2",
-            "total_players": len(processed_players),
+            "total_players": len(players_dict),
             "position_breakdown": {
-                "QB": sum(1 for p in processed_players if p['position'] == 'QB'),
-                "RB": sum(1 for p in processed_players if p['position'] == 'RB'), 
-                "WR": sum(1 for p in processed_players if p['position'] == 'WR'),
-                "TE": sum(1 for p in processed_players if p['position'] == 'TE'),
+                "QB": position_counts.get('QB', 0),
+                "RB": position_counts.get('RB', 0),
+                "WR": position_counts.get('WR', 0),
+                "TE": position_counts.get('TE', 0),
                 "K": 0,
                 "DEF": 0
             },
-            "data_collection_status": "completed",
-            "next_update": "automated_weekly"
+            "data_collection_status": "completed"
         },
         "players": players_dict
     }
@@ -235,55 +199,193 @@ def create_player_json(processed_players):
     return database
 
 def save_database(database, filename='json_data/players.json'):
-    """Save database with basic verification"""
+    """Save database to file"""
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     
-    try:
-        with open(filename, 'w') as f:
-            json.dump(database, f, indent=2, ensure_ascii=False)
-        
-        # Verify save
-        file_size = os.path.getsize(filename)
-        print(f"Database saved successfully: {filename}")
-        print(f"File size: {file_size / 1024:.2f} KB")
-        print(f"Total players: {database['metadata']['total_players']}")
-        
-        return True
-        
-    except Exception as e:
-        print(f"Error saving database: {e}")
-        return False
+    with open(filename, 'w') as f:
+        json.dump(database, f, indent=2, ensure_ascii=False)
+    
+    file_size = os.path.getsize(filename)
+    print(f"Database saved: {filename}")
+    print(f"File size: {file_size / 1024:.2f} KB")
+    print(f"Total players: {database['metadata']['total_players']}")
 
 def main():
-    """Main execution flow"""
+    """Main execution"""
     print(f"=== NFL Data Collection Script v{SCRIPT_VERSION} ===")
     
     try:
-        # Load data
+        # Load data using working API calls
         datasets = load_nfl_data()
         
-        # Process with proper deduplication 
-        processed_players = process_players(datasets)
+        # Aggregate with same logic that worked
+        player_data = aggregate_players(datasets)
         
-        if not processed_players:
-            raise Exception("No players processed - check data sources")
+        # Create players JSON
+        players_dict = create_players_json(player_data)
         
-        # Create JSON database
-        database = create_player_json(processed_players)
+        # Create final database
+        database = create_database(players_dict)
         
-        # Save to file
-        success = save_database(database)
+        # Save
+        save_database(database)
         
-        if success:
-            print(f"\n=== SUCCESS ===")
-            print(f"Unique players in database: {len(processed_players)}")
-            print(f"Data collection completed successfully")
-        else:
-            raise Exception("Database save failed")
-            
+        print(f"\nSUCCESS: {len(players_dict)} unique players processed")
+        
     except Exception as e:
-        print(f"\n=== ERROR ===")
-        print(f"Script failed: {e}")
+        print(f"\nERROR: {e}")
+        raise
+
+if __name__ == "__main__":
+    main()
+
+def create_players_json(player_data):
+    """Create final players JSON with projections and rankings"""
+    print("Creating player objects...")
+    
+    players_dict = {}
+    all_players = list(player_data.values())
+    
+    # Sort by total fantasy points for ranking
+    all_players.sort(key=lambda x: x.get('total_fantasy_points', 0), reverse=True)
+    
+    for i, player in enumerate(all_players):
+        # Calculate metrics
+        total_points = player.get('total_fantasy_points', 0)
+        games = player.get('games_played', 1)
+        avg_per_game = total_points / max(games, 1)
+        
+        # Generate projections based on performance
+        projected_points = calculate_projection(player['position'], total_points, avg_per_game)
+        adp = calculate_adp(player['position'], projected_points, i + 1)
+        risk_score = calculate_risk(player['position'], avg_per_game, games)
+        
+        # Create player ID
+        name_clean = player['player_name'].replace(' ', '.').replace("'", "")[:10]
+        player_id = f"{name_clean}_{player['position']}_{i+1:03d}"
+        
+        # Create player object
+        players_dict[player_id] = {
+            'player_name': player['player_name'],
+            'position': player['position'],
+            'team': player['team'],
+            'fantasy_points_season': round(total_points, 1),
+            'projected_points_ppr': round(projected_points, 1),
+            'games_played': games,
+            'avg_points_per_game': round(avg_per_game, 1),
+            'adp_overall': adp,
+            'risk_score': risk_score,
+            'injury_status': 'healthy',
+            'last_updated': datetime.now().isoformat()
+        }
+    
+    print(f"Created {len(players_dict)} player objects")
+    return players_dict
+
+def calculate_projection(position, total_points, avg_per_game):
+    """Calculate next season projection"""
+    if total_points > 0:
+        return avg_per_game * 17  # Project over 17 games
+    
+    # Default projections by position
+    defaults = {'QB': 280, 'RB': 180, 'WR': 160, 'TE': 120}
+    return defaults.get(position, 100)
+
+def calculate_adp(position, projected_points, overall_rank):
+    """Calculate ADP based on projection and position"""
+    if position == 'QB':
+        if projected_points > 300: return 45
+        elif projected_points > 250: return 85
+        else: return 150
+    elif position == 'RB':
+        if projected_points > 250: return 15
+        elif projected_points > 180: return 55
+        else: return 120
+    elif position == 'WR':
+        if projected_points > 220: return 25
+        elif projected_points > 160: return 70
+        else: return 140
+    else:  # TE
+        if projected_points > 180: return 50
+        elif projected_points > 120: return 90
+        else: return 180
+
+def calculate_risk(position, avg_points, games):
+    """Calculate risk score 1-10"""
+    base_risk = 5
+    
+    if games < 10: base_risk += 2
+    elif games > 15: base_risk -= 1
+    
+    if avg_points < 5: base_risk += 2
+    elif avg_points > 15: base_risk -= 1
+    
+    return max(1, min(10, base_risk))
+
+def create_database(players_dict):
+    """Create final database structure"""
+    position_counts = {}
+    for player in players_dict.values():
+        pos = player['position']
+        position_counts[pos] = position_counts.get(pos, 0) + 1
+    
+    database = {
+        "metadata": {
+            "script_version": SCRIPT_VERSION,
+            "last_updated": datetime.now().isoformat(),
+            "version": "3.2",
+            "total_players": len(players_dict),
+            "position_breakdown": {
+                "QB": position_counts.get('QB', 0),
+                "RB": position_counts.get('RB', 0),
+                "WR": position_counts.get('WR', 0),
+                "TE": position_counts.get('TE', 0),
+                "K": 0,
+                "DEF": 0
+            },
+            "data_collection_status": "completed"
+        },
+        "players": players_dict
+    }
+    
+    return database
+
+def save_database(database, filename='json_data/players.json'):
+    """Save database to file"""
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    
+    with open(filename, 'w') as f:
+        json.dump(database, f, indent=2, ensure_ascii=False)
+    
+    file_size = os.path.getsize(filename)
+    print(f"Database saved: {filename}")
+    print(f"File size: {file_size / 1024:.2f} KB")
+    print(f"Total players: {database['metadata']['total_players']}")
+
+def main():
+    """Main execution"""
+    print(f"=== NFL Data Collection Script v{SCRIPT_VERSION} ===")
+    
+    try:
+        # Load data using working API calls
+        datasets = load_nfl_data()
+        
+        # Aggregate with same logic that worked
+        player_data = aggregate_players(datasets)
+        
+        # Create players JSON
+        players_dict = create_players_json(player_data)
+        
+        # Create final database
+        database = create_database(players_dict)
+        
+        # Save
+        save_database(database)
+        
+        print(f"\nSUCCESS: {len(players_dict)} unique players processed")
+        
+    except Exception as e:
+        print(f"\nERROR: {e}")
         raise
 
 if __name__ == "__main__":
